@@ -46,15 +46,14 @@ def show_img_ls(img_ls):
 def calc_histograms(img, channel=0, hist_size=256, hist_range=(0,256)):
     return cv.calcHist([img], [channel], None, [hist_size], hist_range)
 
-def calc_hist_dist(primary_hist, *args, **kwargs):
+def calc_hist_dist(primary_hist, in_ls, **kwargs):
     if len(kwargs) == 0:
         method=2
-        distance = [cv.compareHist(primary_hist, np.array(ii, np.int32), method) for ii in args]
-    elif 'method' not in kwargs:
+        distance = [cv.compareHist(primary_hist,ii,method) for ii in in_ls]
+    elif 'method' not in kwin_lis:
         raise KeyError('key word is not supported')
     else:
-        distance = [cv.compareHist(primary_hist, ii, kwargs['method']) for ii in args]
-    distance=1
+        distance = [cv.compareHist(primary_hist,ii,kwargs['method']) for ii in in_lis]
     return distance
 
 def show_histograms(image):
