@@ -131,10 +131,12 @@ def harris(img, color=[0,0,255]):
 
     #0.04 - 0.06
     detected_img  = cv.cornerHarris(gray_img, 2, 3, 0.04)
+    #you want the raw key points, which hasn't been manipulated in any way
+    kp_mat = detected_img
     detected_img = cv.dilate(detected_img, None)
     #filltering the corners we detected by our choosen threshold
     img[detected_img > 0.01 * detected_img.max()] = color
-    return img
+    return img, kp_mat
 
 
 def count_pixels(img_ls):

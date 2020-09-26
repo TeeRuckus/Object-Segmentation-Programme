@@ -47,13 +47,13 @@ def activity_one(imgList):
     #performing the harris corner detection on the original image, so we have
     #a base point for comparisions latter onwards
     green = [0,255,0]
-    og_diamond_harris = harris(diamond_img.copy(), green)
+    og_diamond_harris = harris(diamond_img.copy(), green)[0]
 
     #creating a list of images which contains the rotate iamges with the harris
     #corner detection performed on each image
-    harris_diamonds_rotated = [harris(ii, green) for ii in rotated_diamonds]
+    harris_diamonds_rotated = [harris(ii, green)[0] for ii in rotated_diamonds]
     #the thing which is happening above is the same thing which is happening here
-    harris_diamonds_scaled = [harris(ii, green) for ii in scaled_diamonds]
+    harris_diamonds_scaled = [harris(ii, green)[0] for ii in scaled_diamonds]
 
     channel = 1
     bin_size = 16
@@ -68,6 +68,7 @@ def activity_one(imgList):
 
     #EXPERIMENT ONE: checking if the harris corner detection picked up the same
     #poins
+
 
 
     #EXPERIMENT TWO: plotting the histograms of the image, to see if they is a
