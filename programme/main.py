@@ -74,13 +74,14 @@ def activity_one(imgList):
     #---------------------------------------------------------------------------
     #Experiments for rotated diamond images
     #---------------------------------------------------------------------------
+    #EXPERIMENT ONE: checking if the harris corner detection picked up the same
+    #poins
     fileName = 'results/Task_1/rotated_experiements/Harris/playing_card/comparison.csv'
     diff_frm_og = get_diff_pixels(num_kp_og_rotated[0],num_kp_rotated)
     labels = generate_labels(len(num_kp_rotated))
     save_comparisons(labels, num_kp_rotated,diff_frm_og, fileName)
-
-    #EXPERIMENT ONE: checking if the harris corner detection picked up the same
-    #poins
+    show_diff_dist(diff_frm_og, title='Difference between key points')
+    #open_file(fileName)
 
     #EXPERIMENT TWO: plotting the histograms of the image, to see if they is a
     #change in the count of green pixels found in the image
@@ -91,7 +92,7 @@ def activity_one(imgList):
     #taking advantage of the image, the only thing green on the image is the
     #detected points
     distance = calc_hist_dist(og_diamond_hist, hists_diamonds_rotated)
-    show_diff_dist(distance)
+    show_diff_dist(distance, title='Diffetences between histograms')
 
     #EXPERIMENT FOUR: a visual inspection to ensure that the same points
     #were found across the generated images relative to the first image
@@ -118,7 +119,7 @@ def show_diff_hists(base_hist, op_base_hist, op_hists, xLim):
     plt.title('Rotated Diamonds harris comparison')
     plt.show()
 
-def show_diff_dist(distance):
+def show_diff_dist(distance, **kwargs):
     #getting the distances of the rotated image relative to the orginal image
     labels = ['img: %s' % ii for ii in range(len(distance))]
     labels = tuple(labels)
@@ -128,7 +129,7 @@ def show_diff_dist(distance):
     plt.xticks(y_pos, labels)
     plt.ylabel('Distance from orginal Harris image')
     plt.xlabel('Distances (units)')
-    plt.title('Comparing histogram distances from the orginal histogram')
+    plt.title(kwargs['title'])
 
     plt.show()
 

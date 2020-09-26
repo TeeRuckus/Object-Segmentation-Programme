@@ -149,7 +149,6 @@ def count_pixels(img_ls):
     return [np.count_nonzero(ii > 0) for ii in img_ls]
 
 def get_diff_pixels(base_comp, comp_ls):
-    check_types_ls(comp_ls)
     return [abs(float(base_comp) - float(ii)) for ii in comp_ls]
 
 def generate_labels(num_images):
