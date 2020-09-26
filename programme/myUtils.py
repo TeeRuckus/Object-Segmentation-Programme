@@ -139,5 +139,4 @@ def harris(img, color=[0,0,255]):
     #blurred image but, for the other images, it pretty much has no
     #effect on the numbr of corners it picked up
     img[detected_img > 0.01 * detected_img.max()] = color
-    #cv.imshow('harris %s' % jj, img)
     return img

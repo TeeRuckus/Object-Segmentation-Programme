@@ -1,0 +1,29 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+SIFT	myUtils.py	/^def SIFT(img):$/;"	f
+activity_one	main.py	/^def activity_one(imgList):$/;"	f
+calc_hist_dist	myUtils.py	/^def calc_hist_dist(primary_hist, in_ls, **kwargs):$/;"	f
+calc_histograms	myUtils.py	/^def calc_histograms(img, channel=0, hist_size=256, hist_range=(0,256)):$/;"	f
+check_sizes	debug.py	/^def check_sizes(in_ls):$/;"	f
+check_types	debug.py	/^def check_types(*args):$/;"	f
+harris	myUtils.py	/^def harris(img, color=[0,0,255]):$/;"	f
+imgList	main.py	/^    imgList = ['imgs\/diamond2.png', 'imgs\/Dugong.jpg']$/;"	v
+list_one	play.py	/^list_one = [ii+1 for ii in range(10)]$/;"	v
+list_three	play.py	/^list_three = [ii * 2 for ii in range(10)]$/;"	v
+list_two	play.py	/^list_two = [ii + 2 for ii in range(10)]$/;"	v
+log	debug.py	/^def log(item=''):$/;"	f
+map_colors	myUtils.py	/^def map_colors(number):$/;"	f
+para_one	play.py	/^para_one = 'tawana'$/;"	v
+para_two	play.py	/^para_two = 'kwararamba'$/;"	v
+resize_img	myUtils.py	/^def resize_img(img, reduction=0.5):$/;"	f
+rotate_image	myUtils.py	/^def rotate_image(img, angle=45):$/;"	f
+rotate_image_b	myUtils.py	/^def rotate_image_b(img, angle=45):$/;"	f
+show_diff_dist	main.py	/^def show_diff_dist(distance):$/;"	f
+show_diff_hists	main.py	/^def show_diff_hists(base_hist, op_base_hist, op_hists, xLim):$/;"	f
+show_histograms	myUtils.py	/^def show_histograms(image):$/;"	f
+show_img_ls	myUtils.py	/^def show_img_ls(img_ls):$/;"	f
+some_func	play.py	/^def some_func(para_one, para_two, *args):$/;"	f

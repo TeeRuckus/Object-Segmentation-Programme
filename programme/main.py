@@ -11,9 +11,8 @@ def activity_one(imgList):
     PURPOSE:
 
     TO DO:
-        -I need to make the process of comparing the rotated images into
-        its own function. So I can use the exact same function to do the
-        comparisions for the scaled images
+        - you need to be able to extract the keypoints from the harris function
+        so you can compre the number of keypoints found
     """
     diamond_img = cv.imread(imgList[0])
     dugong_img = cv.imread(imgList[1])
