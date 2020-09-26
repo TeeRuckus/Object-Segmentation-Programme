@@ -11,5 +11,7 @@ def check_sizes(in_ls):
             print('%s l: %s w: %s z: %s' % (ii, value.shape[0], value.shape[1], value.shape[2]))
         elif len(value.shape) == 2:
             print('%s l: %s w: %s' % (ii, value.shape[0], value.shape[1]))
+        elif len(value.shape) == 1:
+            print('%s: l: %s' % (ii, value.shape[0]))
         else:
-            print('%s' % (ii, value.shape[0]))
+            print("CAN'T GET SIZE OF IMAGE")

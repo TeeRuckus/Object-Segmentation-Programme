@@ -13,6 +13,17 @@ def activity_one(imgList):
     TO DO:
         - you need to be able to extract the keypoints from the harris function
         so you can compre the number of keypoints found
+        -create your algorithm which counts how many corners you found in your
+        image
+        - have a nother algorithm which will calculate the difference of points
+        found from the orignal image  to the first  image
+        - then write all those data to a file, so you can include it inside your
+        report later on
+
+
+    NOTES:
+            - you might be able to get better results by comparing the matrix
+            of keypoints --> maybe this is something for you to think about
     """
     diamond_img = cv.imread(imgList[0])
     dugong_img = cv.imread(imgList[1])
@@ -67,8 +78,6 @@ def activity_one(imgList):
     #EXPERIMENT THREE: calculating the distances between the produced histograms
     #taking advantage of the image, the only thing green on the image is the
     #detected points
-    log(og_diamond_harris.size)
-    log(hists_diamonds_rotated[4].size)
     distance = calc_hist_dist(og_diamond_hist, hists_diamonds_rotated)
     show_diff_dist(distance)
 

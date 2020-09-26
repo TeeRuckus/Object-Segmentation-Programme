@@ -1,9 +1,8 @@
 import cv2 as cv
 import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib.image as mpimg
-from datetime import datetime
 from debug import *
+import math
 import os
 
 def map_colors(number):
@@ -61,7 +60,6 @@ def show_histograms(image):
     adapted from: https://medium.com/@rndayala/image-histograms-in-opencv-40ee5969a3b7
     """
     for i, col in enumerate(['b', 'g', 'r']):
-        log('i: %s and col: %s' % (i, col))
         hist = cv.calcHist([image], [i], None, [256], [0, 256])
         plt.plot(hist, color = col)
         plt.xlim([0, 256])
@@ -134,9 +132,36 @@ def harris(img, color=[0,0,255]):
     #0.04 - 0.06
     detected_img  = cv.cornerHarris(gray_img, 2, 3, 0.04)
     detected_img = cv.dilate(detected_img, None)
-
-    #if you make 0.01 smaller, it's going to pick up more corners in the
-    #blurred image but, for the other images, it pretty much has no
-    #effect on the numbr of corners it picked up
+    #filltering the corners we detected by our choosen threshold
     img[detected_img > 0.01 * detected_img.max()] = color
     return img
+
+
+def count_pixels(img_ls):
+    """
+    IMPORT:
+    EXPORT:
+    PURPOSE: to count the how many non-zero pixels exist in an image
+    """
+    return [np.count_nonzero(ii > 0) for ii in img_ls]
+
+def get_diff_pixels(base_comp, comp_ls):
+    return [abs(base_comp - ii) for ii in comp_ls]
+
+def generate_labels(num_images):
+    ret = ['experiment image: %s' % ii for ii in range(num_images)]
+    ret.insert(0, 'orginal')
+    return ret
+
+def compare_keypoints(labels, raw_pixels, diff_frm_og, fileName):
+    headers = ['Image Name', 'Number of key points', 'difference between orginal keypoints and experiment']
+    all_data = zip(labels, raw_pixels, diff_frm_og)
+    with open(fileName, 'wt') as inStrm:
+        csv_writer = csv.writer(inStrm)
+        csv_writer.writerow(headers)
+
+        for ii in all_data:
+            csv.writer.writerow(ii)
+
+def open_file(fileName):
+    os.system('xdg-open %s' % fileName)
