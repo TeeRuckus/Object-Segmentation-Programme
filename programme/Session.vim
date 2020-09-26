@@ -2,10 +2,10 @@ let SessionLoad = 1
 if &cp | set nocp | endif
 let s:cpo_save=&cpo
 set cpo&vim
-imap <Nul> <C-Space>
-inoremap <expr> <Up> pumvisible() ? "\" : "\<Up>"
-inoremap <expr> <S-Tab> pumvisible() ? "\" : "\<S-Tab>"
 inoremap <expr> <Down> pumvisible() ? "\" : "\<Down>"
+inoremap <expr> <S-Tab> pumvisible() ? "\" : "\<S-Tab>"
+inoremap <expr> <Up> pumvisible() ? "\" : "\<Up>"
+imap <Nul> <C-Space>
 inoremap <silent> <Plug>NERDCommenterInsert  <BS>:call NERDComment('i', 'insert')
 inoremap <Plug>(emmet-merge-lines) =emmet#util#closePopup()=emmet#mergeLines()
 inoremap <Plug>(emmet-anchorize-summary) =emmet#util#closePopup()=emmet#anchorizeURL(1)
@@ -50,6 +50,9 @@ nmap u <Plug>(emmet-update-tag)
 nmap ; <Plug>(emmet-expand-word)
 vmap , <Plug>(emmet-expand-abbr)
 nmap , <Plug>(emmet-expand-abbr)
+nnoremap  h :wincmd h
+vnoremap  h :noh
+onoremap  h :noh
 nnoremap  d :YcmShowDetailedDiagnostic
 nmap  t <Plug>(CommandT)
 nmap  ca <Plug>NERDCommenterAltDelims
@@ -86,10 +89,7 @@ nnoremap  v :vsplit
 nnoremap  l :wincmd l
 nnoremap  k :wincmd k
 nnoremap  j :wincmd j
-nnoremap  h :wincmd h
 nnoremap  b :ls:b 
-vnoremap  h :noh
-onoremap  h :noh
 noremap  n :NERDTreeToggle
 xmap S <Plug>VSurround
 nnoremap bd :bdelete 
@@ -116,6 +116,7 @@ nmap ySs <Plug>YSsurround
 nmap yss <Plug>Yssurround
 nmap yS <Plug>YSurround
 nmap ys <Plug>Ysurround
+nnoremap <SNR>90_: :=v:count ? v:count : ''
 nnoremap <SNR>99_: :=v:count ? v:count : ''
 vnoremap <silent> <Plug>NetrwBrowseXVis :call netrw#BrowseXVis()
 nnoremap <silent> <Plug>NetrwBrowseX :call netrw#BrowseX(expand((exists("g:netrw_gx")? g:netrw_gx : '<cfile>')),netrw#CheckIfRemote())
@@ -237,7 +238,6 @@ set backspace=indent,eol,start
 set cmdheight=2
 set completefunc=youcompleteme#CompleteFunc
 set completeopt=preview,menuone
-set cpoptions=aAceFsB
 set expandtab
 set fileencodings=ucs-bom,utf-8,default,latin1
 set helplang=en
@@ -250,9 +250,9 @@ set nrformats=alpha
 set pastetoggle=<F2>
 set printoptions=paper:a4
 set ruler
-set runtimepath=~/.vim,~/.vim/bundle/vim,~/.vim/bundle/nerdtree,~/.vim/bundle/dracula,~/.vim/bundle/vim-indent-guides,~/.vim/bundle/SimpylFold,~/.vim/bundle/syntastic,~/.vim/bundle/vim-flake8,~/.vim/bundle/ctrlp.vim,~/.vim/bundle/ale,~/.vim/bundle/vim-eunuch,~/.vim/bundle/vim-commentary,~/.vim/bundle/vim-surround,~/.vim/bundle/emmet-vim,~/.vim/bundle/nerdcommenter,~/.vim/bundle/YouCompleteMe,~/.vim/bundle/gruvbox,~/.vim/bundle/Vundle.vim,~/.vim/bundle/vim-fugitive,~/.vim/bundle/command-t,~/.vim/bundle/sparkup/vim/,/var/lib/vim/addons,/usr/share/vim/vimfiles,/usr/share/vim/vim80,/usr/share/vim/vimfiles/after,/var/lib/vim/addons/after,~/.vim/after,~/.vim/bundle/Vundle.vim,~/.vim/bundle/vim/after,~/.vim/bundle/nerdtree/after,~/.vim/bundle/dracula/after,~/.vim/bundle/vim-indent-guides/after,~/.vim/bundle/SimpylFold/after,~/.vim/bundle/syntastic/after,~/.vim/bundle/vim-flake8/after,~/.vim/bundle/ctrlp.vim/after,~/.vim/bundle/ale/after,~/.vim/bundle/vim-eunuch/after,~/.vim/bundle/vim-commentary/after,~/.vim/bundle/vim-surround/after,~/.vim/bundle/emmet-vim/after,~/.vim/bundle/nerdcommenter/after,~/.vim/bundle/YouCompleteMe/after,~/.vim/bundle/gruvbox/after,~/.vim/bundle/Vundle.vim/after,~/.vim/bundle/vim-fugitive/after,~/.vim/bundle/command-t/after,~/.vim/bundle/sparkup/vim//after,/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
+set runtimepath=~/.vim,~/.vim/bundle/vim,~/.vim/bundle/nerdtree,~/.vim/bundle/dracula,~/.vim/bundle/vim-indent-guides,~/.vim/bundle/SimpylFold,~/.vim/bundle/syntastic,~/.vim/bundle/vim-flake8,~/.vim/bundle/ctrlp.vim,~/.vim/bundle/ale,~/.vim/bundle/vim-eunuch,~/.vim/bundle/vim-commentary,~/.vim/bundle/vim-surround,~/.vim/bundle/emmet-vim,~/.vim/bundle/nerdcommenter,~/.vim/bundle/YouCompleteMe,~/.vim/bundle/gruvbox,~/.vim/bundle/Vundle.vim,~/.vim/bundle/vim-fugitive,~/.vim/bundle/command-t,~/.vim/bundle/sparkup/vim/,/var/lib/vim/addons,/usr/share/vim/vimfiles,/usr/share/vim/vim80,/usr/share/vim/vimfiles/after,/var/lib/vim/addons/after,~/.vim/after,~/.vim/bundle/Vundle.vim,/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/,~/.vim/bundle/vim/after,~/.vim/bundle/nerdtree/after,~/.vim/bundle/dracula/after,~/.vim/bundle/vim-indent-guides/after,~/.vim/bundle/SimpylFold/after,~/.vim/bundle/syntastic/after,~/.vim/bundle/vim-flake8/after,~/.vim/bundle/ctrlp.vim/after,~/.vim/bundle/ale/after,~/.vim/bundle/vim-eunuch/after,~/.vim/bundle/vim-commentary/after,~/.vim/bundle/vim-surround/after,~/.vim/bundle/emmet-vim/after,~/.vim/bundle/nerdcommenter/after,~/.vim/bundle/YouCompleteMe/after,~/.vim/bundle/gruvbox/after,~/.vim/bundle/Vundle.vim/after,~/.vim/bundle/vim-fugitive/after,~/.vim/bundle/command-t/after,~/.vim/bundle/sparkup/vim//after
 set shiftwidth=4
-set shortmess=ac
+set shortmess=a
 set softtabstop=4
 set splitbelow
 set splitright
@@ -263,6 +263,7 @@ set tabline=%!py3eval('powerline.tabline()')
 set tabstop=4
 set timeoutlen=500
 set wildignore=*.pyc
+set winwidth=81
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
@@ -271,25 +272,34 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +40 main.py
-badd +13 play.py
-badd +0 \!/bin/zsh
-badd +130 myUtils.py
-badd +10 debug.py
-badd +9 ~/Desktop/MP/Prac03/imageProcess.py
+badd +17 main.py
+badd +17 play.py
+badd +79 myUtils.py
+badd +11 debug.py
 badd +60 ~/Desktop/MP/Prac04/imageProecess.py
+badd +1597 \!/bin/zsh
+badd +3 test_file.csv
+badd +0 \!/bin/zsh\ (1)
 argglobal
 silent! argdel *
 edit main.py
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
-1wincmd h
+wincmd _ | wincmd |
+vsplit
+wincmd _ | wincmd |
+vsplit
+3wincmd h
+wincmd w
+wincmd w
 wincmd w
 wincmd t
 set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 136 + 136) / 272)
-exe 'vert 2resize ' . ((&columns * 135 + 136) / 272)
+exe 'vert 1resize ' . ((&columns * 81 + 136) / 272)
+exe 'vert 2resize ' . ((&columns * 53 + 136) / 272)
+exe 'vert 3resize ' . ((&columns * 81 + 136) / 272)
+exe 'vert 4resize ' . ((&columns * 54 + 136) / 272)
 argglobal
 let s:cpo_save=&cpo
 set cpo&vim
@@ -393,7 +403,7 @@ setlocal nospell
 setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
 setlocal spellfile=
 setlocal spelllang=en
-setlocal statusline=%!py3eval('powerline.statusline(7)')
+setlocal statusline=%!py3eval('powerline.statusline(16)')
 setlocal suffixesadd=.py
 setlocal swapfile
 setlocal synmaxcol=3000
@@ -413,19 +423,295 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-7
+9
 normal! zo
-let s:l = 15 - ((14 * winheight(0) + 33) / 67)
+82
+normal! zo
+let s:l = 8 - ((7 * winheight(0) + 33) / 67)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-15
+8
 normal! 055|
 lcd ~/Desktop/MP/assignment_one/programme
 wincmd w
 argglobal
+if bufexists('~/Desktop/MP/assignment_one/programme/main.py') | buffer ~/Desktop/MP/assignment_one/programme/main.py | else | edit ~/Desktop/MP/assignment_one/programme/main.py | endif
+let s:cpo_save=&cpo
+set cpo&vim
+noremap <buffer> <F7> :call flake8#Flake8()
+let &cpo=s:cpo_save
+unlet s:cpo_save
+setlocal keymap=
+setlocal noarabic
+setlocal autoindent
+setlocal backupcopy=
+setlocal balloonexpr=
+setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),:,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+set colorcolumn=80
+setlocal colorcolumn=80
+setlocal comments=b:#,fb:-
+setlocal commentstring=#\ %s
+setlocal complete=.,w,b,u,t,i
+setlocal concealcursor=
+setlocal conceallevel=0
+setlocal completefunc=youcompleteme#CompleteFunc
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != 'python'
+setlocal filetype=python
+endif
+setlocal fixendofline
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=SimpylFold#FoldExpr(v:lnum)
+setlocal foldignore=#
+set foldlevel=99
+setlocal foldlevel=99
+setlocal foldmarker={{{,}}}
+set foldmethod=indent
+setlocal foldmethod=expr
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=tcq
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal formatprg=
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=-1
+setlocal include=^\\s*\\(from\\|import\\)
+setlocal includeexpr=substitute(v:fname,'\\.','/','g')
+setlocal indentexpr=GetPythonIndent(v:lnum)
+setlocal indentkeys=0{,0},:,!^F,o,O,e,<:>,=elif,=except
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=pydoc
+setlocal nolinebreak
+setlocal nolisp
+setlocal lispwords=
+setlocal nolist
+setlocal makeencoding=
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=alpha
+set number
+setlocal nonumber
+setlocal numberwidth=4
+setlocal omnifunc=python3complete#Complete
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+set relativenumber
+setlocal norelativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal shiftwidth=4
+setlocal noshortname
+setlocal signcolumn=no
+setlocal nosmartindent
+setlocal softtabstop=4
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=%!py3eval('powerline.statusline(22)')
+setlocal suffixesadd=.py
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'python'
+setlocal syntax=python
+endif
+setlocal tabstop=8
+setlocal tagcase=
+setlocal tags=
+setlocal termkey=
+setlocal termsize=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal undolevels=-123456
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+9
+normal! zo
+82
+normal! zo
+let s:l = 18 - ((1 * winheight(0) + 33) / 67)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+18
+normal! 05|
+lcd ~/Desktop/MP/assignment_one/programme
+wincmd w
+argglobal
+if bufexists('~/Desktop/MP/assignment_one/programme/myUtils.py') | buffer ~/Desktop/MP/assignment_one/programme/myUtils.py | else | edit ~/Desktop/MP/assignment_one/programme/myUtils.py | endif
+let s:cpo_save=&cpo
+set cpo&vim
+noremap <buffer> <F7> :call flake8#Flake8()
+let &cpo=s:cpo_save
+unlet s:cpo_save
+setlocal keymap=
+setlocal noarabic
+setlocal autoindent
+setlocal backupcopy=
+setlocal balloonexpr=
+setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),:,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+set colorcolumn=80
+setlocal colorcolumn=80
+setlocal comments=b:#,fb:-
+setlocal commentstring=#\ %s
+setlocal complete=.,w,b,u,t,i
+setlocal concealcursor=
+setlocal conceallevel=0
+setlocal completefunc=youcompleteme#CompleteFunc
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != 'python'
+setlocal filetype=python
+endif
+setlocal fixendofline
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=SimpylFold#FoldExpr(v:lnum)
+setlocal foldignore=#
+set foldlevel=99
+setlocal foldlevel=99
+setlocal foldmarker={{{,}}}
+set foldmethod=indent
+setlocal foldmethod=expr
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=tcq
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal formatprg=
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=-1
+setlocal include=^\\s*\\(from\\|import\\)
+setlocal includeexpr=substitute(v:fname,'\\.','/','g')
+setlocal indentexpr=GetPythonIndent(v:lnum)
+setlocal indentkeys=0{,0},:,!^F,o,O,e,<:>,=elif,=except
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=pydoc
+setlocal nolinebreak
+setlocal nolisp
+setlocal lispwords=
+setlocal nolist
+setlocal makeencoding=
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=alpha
+set number
+setlocal nonumber
+setlocal numberwidth=4
+setlocal omnifunc=python3complete#Complete
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+set relativenumber
+setlocal norelativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal shiftwidth=4
+setlocal noshortname
+setlocal signcolumn=no
+setlocal nosmartindent
+setlocal softtabstop=4
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=%!py3eval('powerline.statusline(24)')
+setlocal suffixesadd=.py
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'python'
+setlocal syntax=python
+endif
+setlocal tabstop=8
+setlocal tagcase=
+setlocal tags=
+setlocal termkey=
+setlocal termsize=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal undolevels=-123456
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+59
+normal! zo
+87
+normal! zo
+144
+normal! zo
+let s:l = 127 - ((38 * winheight(0) + 33) / 67)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+127
+normal! 0
+lcd ~/Desktop/MP/assignment_one/programme
+wincmd w
+argglobal
 enew
-file \!/bin/zsh
+file \!/bin/zsh\ (1)
 setlocal keymap=
 setlocal noarabic
 setlocal noautoindent
@@ -523,7 +809,7 @@ setlocal nospell
 setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
 setlocal spellfile=
 setlocal spelllang=en
-setlocal statusline=%!py3eval('powerline.statusline(5)')
+setlocal statusline=%!py3eval('powerline.statusline(23)')
 setlocal suffixesadd=
 setlocal swapfile
 setlocal synmaxcol=3000
@@ -543,15 +829,18 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
+lcd ~/Desktop/MP/assignment_one/programme
 wincmd w
-exe 'vert 1resize ' . ((&columns * 136 + 136) / 272)
-exe 'vert 2resize ' . ((&columns * 135 + 136) / 272)
+exe 'vert 1resize ' . ((&columns * 81 + 136) / 272)
+exe 'vert 2resize ' . ((&columns * 53 + 136) / 272)
+exe 'vert 3resize ' . ((&columns * 81 + 136) / 272)
+exe 'vert 4resize ' . ((&columns * 54 + 136) / 272)
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
 endif
 unlet! s:wipebuf
-set winheight=1 winwidth=20 shortmess=ac
+set winheight=1 winwidth=81 shortmess=a
 set winminheight=1 winminwidth=1
 let s:sx = expand("<sfile>:p:r")."x.vim"
 if file_readable(s:sx)

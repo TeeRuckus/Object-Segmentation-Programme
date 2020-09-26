@@ -120,11 +120,12 @@ def SIFT(img):
     sift = cv.xfeatures2d.SIFT_create()
     #kp = sift.detect(img,None)
     kp, des = sift.detectAndCompute(img, None)
+    log(kp)
     img = cv.drawKeypoints(img, kp, img,
             flags=cv.DRAW_MATCHES_FLAGS_DRAW_RICH_KEYPOINTS)
     #kp, des = sift.compute(img, kp)
 
-    return kp, des
+    return des, kp
 
 def harris(img, color=[0,0,255]):
     gray_img = cv.cvtColor(img, cv.COLOR_BGR2GRAY)

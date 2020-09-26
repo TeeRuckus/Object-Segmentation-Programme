@@ -2,28 +2,17 @@ from myUtils import *
 import numpy as np
 from matplotlib import pyplot as plt
 from debug import *
+"""
+TO DO:
 
+    You need to debug your sift alogithm inside myUtils
+"""
 
 def activity_one_harris_diamond_rotated(imgList):
     """
     IMPORTS:
     EXPORTS:
     PURPOSE:
-
-    TO DO:
-        - you need to be able to extract the keypoints from the harris function
-        so you can compre the number of keypoints found
-        -create your algorithm which counts how many corners you found in your
-        image
-        - have a nother algorithm which will calculate the difference of points
-        found from the orignal image  to the first  image
-        - then write all those data to a file, so you can include it inside your
-        report later on
-
-
-    NOTES:
-            - you might be able to get better results by comparing the matrix
-            of keypoints --> maybe this is something for you to think about
     """
     diamond_img = cv.imread(imgList[0])
     #-------------------------------------------------------------------------------
@@ -157,6 +146,9 @@ def activity_one_harris_diamond_scaled(im):
     #produced
     scaled_diamonds.insert(0, og_diamond_harris)
     show_img_ls(scaled_diamonds)
+
+def activity_one_SIFT_diamond_rotated(im):
+    pass
 
 
 def show_diff_hists(base_hist, op_base_hist, op_hists, xLim):
