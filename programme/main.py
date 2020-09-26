@@ -42,47 +42,62 @@ def activity_one(imgList):
     #the thing which is happening above is the same thing which is happening here
     harris_diamonds_scaled = [harris(ii) for ii in scaled_diamonds]
 
-    #taking advantage of the image, the only thing green on the image is the
-    #detected points
     channel = 1
     bin_size = 16
     size = len(harris_diamonds_rotated)
-    og_diamond_hist_harris = calc_histograms(og_diamond_harris, channel, bin_size)
+    #the histogram of the very orginal image is needed, to confirm that the
+    #harris corner detection which introduce variance in the produced histograms
     og_diamond_hist = calc_histograms(diamond_img.copy(), channel, bin_size)
-
+    og_diamond_hist_harris = calc_histograms(og_diamond_harris, channel, bin_size)
     hists_diamonds_rotated = [calc_histograms(ii,channel, bin_size) for ii in harris_diamonds_rotated]
+    #EXPERIMENT ONE: checking if the harris corner detection picked up the same
+    #poins
 
+
+    #EXPERIMENT TWO: plotting the histograms of the image, to see if they is a
+    #change in the count of green pixels found in the image
+    show_diff_hists(og_diamond_hist, og_diamond_hist_harris, hists_diamonds_rotated, bin_size)
+
+
+    #EXPERIMENT THREE: calculating the distances between the produced histograms
+    #taking advantage of the image, the only thing green on the image is the
+    #detected points
+
+
+
+def show_diff_hists(base_hist, op_base_hist, op_hist, xLim):
     #showing all the rotated histograms
-    plt.plot(og_diamond_hist, color=map_colors(1), label='original image')
-    plt.plot(og_diamond_hist_harris, color=map_colors(2), label='harris orignal image')
+    plt.plot(base_hist, color=map_colors(1), label='original image')
+    plt.plot(op_base_hist, color=map_colors(2), label='harris orignal image')
 
-    for ii, hist in enumerate(hists_diamonds_rotated):
+    for ii, hist in enumerate(op_hist):
         #need to offset color by 2 as the first two colors were used by the first
         #two images
         color = ii + 2
-        plt.plot(hist, color=map_colors(color), label='harris roated: %s' % ii, linestyle='--')
+        plt.plot(hist, color=map_colors(color), label='op: %s' % ii, linestyle='--')
 
-    plt.xlim([0,bin_size])
+    plt.xlim([0,xLim])
     plt.legend(loc='upper center')
     plt.ylabel('Frequency')
     plt.xlabel('intensity value')
     plt.title('Rotated Diamonds harris comparison')
     plt.show()
 
-    distance = calc_hist_dist(og_diamond_hist, hists_diamonds_rotated)
-    #getting the distances of the rotated image relative to the orginal image
-    #labels = ('distnance| 1 : 2', 'distance | 1: 3', 'distance | 1: 4')
-    labels = ['img: %s' % ii for ii in range(len(distance))]
-    labels = tuple(labels)
-    y_pos = np.arange(len(labels))
-    #distances = [0, 20, 30]
-    plt.bar(y_pos, distance, align='center', alpha=0.15)
-    plt.xticks(y_pos, labels)
-    plt.ylabel('Distance from orginal Harris image')
-    plt.xlabel('Distances (units)')
-    plt.title('Comparing histogram distances from the orginal histogram')
-
-    plt.show()
+#
+#    distance = calc_hist_dist(og_diamond_hist, hists_diamonds_rotated)
+#    #getting the distances of the rotated image relative to the orginal image
+#    #labels = ('distnance| 1 : 2', 'distance | 1: 3', 'distance | 1: 4')
+#    labels = ['img: %s' % ii for ii in range(len(distance))]
+#    labels = tuple(labels)
+#    y_pos = np.arange(len(labels))
+#    #distances = [0, 20, 30]
+#    plt.bar(y_pos, distance, align='center', alpha=0.15)
+#    plt.xticks(y_pos, labels)
+#    plt.ylabel('Distance from orginal Harris image')
+#    plt.xlabel('Distances (units)')
+#    plt.title('Comparing histogram distances from the orginal histogram')
+#
+#    plt.show()
 
 if __name__ == '__main__':
     imgList = ['imgs/diamond2.png', 'imgs/Dugong.jpg']
