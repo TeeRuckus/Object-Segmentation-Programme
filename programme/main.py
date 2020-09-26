@@ -4,8 +4,10 @@ from matplotlib import pyplot as plt
 from debug import *
 """
 TO DO:
-
-    You need to debug your sift alogithm inside myUtils
+    - for your sift experiments, you can get the number og key-points they're
+    by just getting the length of the list the key-points returned too, and
+    comparing if each transform got the same number of keypoints
+    -
 """
 
 def activity_one_harris_diamond_rotated(imgList):
@@ -186,5 +188,5 @@ def show_diff_dist(distance, **kwargs):
 if __name__ == '__main__':
     imgList = ['imgs/diamond2.png', 'imgs/Dugong.jpg']
     #activity_one_harris_diamond_rotated(imgList)
-    activity_one_harris_diamond_scaled(imgList[0])
+    #activity_one_harris_diamond_scaled(imgList[0])
     cv.waitKey(0)

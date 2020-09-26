@@ -118,14 +118,13 @@ def rotate_image_b(img, angle=45):
 def SIFT(img):
     img = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
     sift = cv.xfeatures2d.SIFT_create()
-    #kp = sift.detect(img,None)
     kp, des = sift.detectAndCompute(img, None)
-    log(kp)
-    img = cv.drawKeypoints(img, kp, img,
-            flags=cv.DRAW_MATCHES_FLAGS_DRAW_RICH_KEYPOINTS)
-    #kp, des = sift.compute(img, kp)
-
+    #img = cv.drawKeypoints(img, kp, img,
+    #        flags=cv.DRAW_MATCHES_FLAGS_DRAW_RICH_KEYPOINTS)
+    img = cv.drawKeypoints(img, kp, img)
+    display_image(img)
     return des, kp
+SIFT(cv.imread('imgs/diamond2.png'))
 
 def harris(img, color=[0,0,255]):
     gray_img = cv.cvtColor(img, cv.COLOR_BGR2GRAY)

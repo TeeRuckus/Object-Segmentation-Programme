@@ -279,7 +279,6 @@ badd +11 debug.py
 badd +60 ~/Desktop/MP/Prac04/imageProecess.py
 badd +1597 \!/bin/zsh
 badd +3 test_file.csv
-badd +0 \!/bin/zsh\ (1)
 argglobal
 silent! argdel *
 edit main.py
@@ -288,18 +287,14 @@ wincmd _ | wincmd |
 vsplit
 wincmd _ | wincmd |
 vsplit
-wincmd _ | wincmd |
-vsplit
-3wincmd h
-wincmd w
+2wincmd h
 wincmd w
 wincmd w
 wincmd t
 set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 81 + 136) / 272)
-exe 'vert 2resize ' . ((&columns * 53 + 136) / 272)
-exe 'vert 3resize ' . ((&columns * 81 + 136) / 272)
-exe 'vert 4resize ' . ((&columns * 54 + 136) / 272)
+exe 'vert 1resize ' . ((&columns * 90 + 136) / 272)
+exe 'vert 2resize ' . ((&columns * 90 + 136) / 272)
+exe 'vert 3resize ' . ((&columns * 90 + 136) / 272)
 argglobal
 let s:cpo_save=&cpo
 set cpo&vim
@@ -333,7 +328,7 @@ setlocal nocopyindent
 setlocal cryptmethod=
 setlocal nocursorbind
 setlocal nocursorcolumn
-setlocal cursorline
+setlocal nocursorline
 setlocal define=
 setlocal dictionary=
 setlocal nodiff
@@ -381,7 +376,7 @@ setlocal modeline
 setlocal modifiable
 setlocal nrformats=alpha
 set number
-setlocal number
+setlocal nonumber
 setlocal numberwidth=4
 setlocal omnifunc=python3complete#Complete
 setlocal path=
@@ -390,13 +385,13 @@ setlocal nopreviewwindow
 setlocal quoteescape=\\
 setlocal noreadonly
 set relativenumber
-setlocal relativenumber
+setlocal norelativenumber
 setlocal norightleft
 setlocal rightleftcmd=search
 setlocal noscrollbind
 setlocal shiftwidth=4
 setlocal noshortname
-setlocal signcolumn=auto
+setlocal signcolumn=no
 setlocal nosmartindent
 setlocal softtabstop=4
 setlocal nospell
@@ -427,12 +422,12 @@ setlocal wrapmargin=0
 normal! zo
 82
 normal! zo
-let s:l = 8 - ((7 * winheight(0) + 33) / 67)
+let s:l = 9 - ((8 * winheight(0) + 33) / 67)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-8
-normal! 055|
+9
+normal! 03|
 lcd ~/Desktop/MP/assignment_one/programme
 wincmd w
 argglobal
@@ -563,11 +558,11 @@ setlocal wrapmargin=0
 normal! zo
 82
 normal! zo
-let s:l = 18 - ((1 * winheight(0) + 33) / 67)
+let s:l = 20 - ((0 * winheight(0) + 33) / 67)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-18
+20
 normal! 05|
 lcd ~/Desktop/MP/assignment_one/programme
 wincmd w
@@ -605,7 +600,7 @@ setlocal nocopyindent
 setlocal cryptmethod=
 setlocal nocursorbind
 setlocal nocursorcolumn
-setlocal nocursorline
+setlocal cursorline
 setlocal define=
 setlocal dictionary=
 setlocal nodiff
@@ -653,7 +648,7 @@ setlocal modeline
 setlocal modifiable
 setlocal nrformats=alpha
 set number
-setlocal nonumber
+setlocal number
 setlocal numberwidth=4
 setlocal omnifunc=python3complete#Complete
 setlocal path=
@@ -662,13 +657,13 @@ setlocal nopreviewwindow
 setlocal quoteescape=\\
 setlocal noreadonly
 set relativenumber
-setlocal norelativenumber
+setlocal relativenumber
 setlocal norightleft
 setlocal rightleftcmd=search
 setlocal noscrollbind
 setlocal shiftwidth=4
 setlocal noshortname
-setlocal signcolumn=no
+setlocal signcolumn=auto
 setlocal nosmartindent
 setlocal softtabstop=4
 setlocal nospell
@@ -701,140 +696,18 @@ normal! zo
 normal! zo
 144
 normal! zo
-let s:l = 127 - ((38 * winheight(0) + 33) / 67)
+let s:l = 129 - ((40 * winheight(0) + 33) / 67)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-127
+129
 normal! 0
 lcd ~/Desktop/MP/assignment_one/programme
 wincmd w
-argglobal
-enew
-file \!/bin/zsh\ (1)
-setlocal keymap=
-setlocal noarabic
-setlocal noautoindent
-setlocal backupcopy=
-setlocal balloonexpr=
-setlocal nobinary
-setlocal nobreakindent
-setlocal breakindentopt=
-setlocal bufhidden=
-setlocal buflisted
-setlocal buftype=terminal
-setlocal nocindent
-setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
-setlocal cinoptions=
-setlocal cinwords=if,else,while,do,for,switch
-set colorcolumn=80
-setlocal colorcolumn=80
-setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
-setlocal commentstring=/*%s*/
-setlocal complete=.,w,b,u,t,i
-setlocal concealcursor=
-setlocal conceallevel=0
-setlocal completefunc=youcompleteme#CompleteFunc
-setlocal nocopyindent
-setlocal cryptmethod=
-setlocal nocursorbind
-setlocal nocursorcolumn
-setlocal nocursorline
-setlocal define=
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal expandtab
-if &filetype != ''
-setlocal filetype=
-endif
-setlocal fixendofline
-setlocal foldcolumn=0
-setlocal foldenable
-setlocal foldexpr=0
-setlocal foldignore=#
-set foldlevel=99
-setlocal foldlevel=99
-setlocal foldmarker={{{,}}}
-set foldmethod=indent
-setlocal foldmethod=indent
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=foldtext()
-setlocal formatexpr=
-setlocal formatoptions=tcq
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal formatprg=
-setlocal grepprg=
-setlocal iminsert=0
-setlocal imsearch=-1
-setlocal include=
-setlocal includeexpr=
-setlocal indentexpr=
-setlocal indentkeys=0{,0},:,0#,!^F,o,O,e
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255
-setlocal keywordprg=
-setlocal nolinebreak
-setlocal nolisp
-setlocal lispwords=
-setlocal nolist
-setlocal makeencoding=
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:]
-setlocal modeline
-setlocal nomodifiable
-setlocal nrformats=alpha
-set number
-setlocal nonumber
-setlocal numberwidth=4
-setlocal omnifunc=
-setlocal path=
-setlocal nopreserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-set relativenumber
-setlocal norelativenumber
-setlocal norightleft
-setlocal rightleftcmd=search
-setlocal noscrollbind
-setlocal shiftwidth=4
-setlocal noshortname
-setlocal signcolumn=no
-setlocal nosmartindent
-setlocal softtabstop=4
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal statusline=%!py3eval('powerline.statusline(23)')
-setlocal suffixesadd=
-setlocal swapfile
-setlocal synmaxcol=3000
-if &syntax != ''
-setlocal syntax=
-endif
-setlocal tabstop=4
-setlocal tagcase=
-setlocal tags=
-setlocal termkey=
-setlocal termsize=
-setlocal textwidth=0
-setlocal thesaurus=
-setlocal noundofile
-setlocal undolevels=-123456
-setlocal nowinfixheight
-setlocal nowinfixwidth
-setlocal wrap
-setlocal wrapmargin=0
-lcd ~/Desktop/MP/assignment_one/programme
-wincmd w
-exe 'vert 1resize ' . ((&columns * 81 + 136) / 272)
-exe 'vert 2resize ' . ((&columns * 53 + 136) / 272)
-exe 'vert 3resize ' . ((&columns * 81 + 136) / 272)
-exe 'vert 4resize ' . ((&columns * 54 + 136) / 272)
+3wincmd w
+exe 'vert 1resize ' . ((&columns * 90 + 136) / 272)
+exe 'vert 2resize ' . ((&columns * 90 + 136) / 272)
+exe 'vert 3resize ' . ((&columns * 90 + 136) / 272)
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
