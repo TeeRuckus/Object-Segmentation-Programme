@@ -1,4 +1,5 @@
 import cv2 as cv
+import csv
 import numpy as np
 import matplotlib.pyplot as plt
 from debug import *
@@ -148,14 +149,15 @@ def count_pixels(img_ls):
     return [np.count_nonzero(ii > 0) for ii in img_ls]
 
 def get_diff_pixels(base_comp, comp_ls):
-    return [abs(base_comp - ii) for ii in comp_ls]
+    check_types_ls(comp_ls)
+    return [abs(float(base_comp) - float(ii)) for ii in comp_ls]
 
 def generate_labels(num_images):
     ret = ['experiment image: %s' % ii for ii in range(num_images)]
     ret.insert(0, 'orginal')
     return ret
 
-def compare_keypoints(labels, raw_pixels, diff_frm_og, fileName):
+def save_comparisons(labels, raw_pixels, diff_frm_og, fileName):
     headers = ['Image Name', 'Number of key points', 'difference between orginal keypoints and experiment']
     all_data = zip(labels, raw_pixels, diff_frm_og)
     with open(fileName, 'wt') as inStrm:
@@ -163,7 +165,7 @@ def compare_keypoints(labels, raw_pixels, diff_frm_og, fileName):
         csv_writer.writerow(headers)
 
         for ii in all_data:
-            csv.writer.writerow(ii)
+            csv_writer.writerow(ii)
 
 def open_file(fileName):
     os.system('xdg-open %s' % fileName)

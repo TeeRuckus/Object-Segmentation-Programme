@@ -1,15 +1,217 @@
+S	Session.vim	/^imap S <Plug>ISurround$/;"	m
+s	Session.vim	/^imap s <Plug>Isurround$/;"	m
+		Session.vim	/^inoremap <expr> 	 pumvisible() ? "\\" : "\\	"$/;"	m
+	Session.vim	/^nmap  c  <Plug>NERDCommenterToggle$/;"	m
+	Session.vim	/^nmap  c$ <Plug>NERDCommenterToEOL$/;"	m
+	Session.vim	/^nmap  cA <Plug>NERDCommenterAppend$/;"	m
+	Session.vim	/^nmap  ca <Plug>NERDCommenterAltDelims$/;"	m
+	Session.vim	/^nmap  cb <Plug>NERDCommenterAlignBoth$/;"	m
+	Session.vim	/^nmap  cc <Plug>NERDCommenterComment$/;"	m
+	Session.vim	/^nmap  ci <Plug>NERDCommenterInvert$/;"	m
+	Session.vim	/^nmap  cl <Plug>NERDCommenterAlignLeft$/;"	m
+	Session.vim	/^nmap  cm <Plug>NERDCommenterMinimal$/;"	m
+	Session.vim	/^nmap  cn <Plug>NERDCommenterNested$/;"	m
+	Session.vim	/^nmap  cs <Plug>NERDCommenterSexy$/;"	m
+	Session.vim	/^nmap  cu <Plug>NERDCommenterUncomment$/;"	m
+	Session.vim	/^nmap  cy <Plug>NERDCommenterYank$/;"	m
+	Session.vim	/^nmap  t <Plug>(CommandT)$/;"	m
+	Session.vim	/^nmap <silent>  ig <Plug>IndentGuidesToggle$/;"	m
+	Session.vim	/^nnoremap  <G> gcgc$/;"	m
+	Session.vim	/^nnoremap  <f> za$/;"	m
+	Session.vim	/^nnoremap  <g> gc$/;"	m
+	Session.vim	/^nnoremap  b :ls$/;"	m
+	Session.vim	/^nnoremap  d :YcmShowDetailedDiagnostic$/;"	m
+	Session.vim	/^nnoremap  h :wincmd h$/;"	m
+	Session.vim	/^nnoremap  j :wincmd j$/;"	m
+	Session.vim	/^nnoremap  k :wincmd k$/;"	m
+	Session.vim	/^nnoremap  l :wincmd l$/;"	m
+	Session.vim	/^nnoremap  q :q$/;"	m
+	Session.vim	/^nnoremap  s :split$/;"	m
+	Session.vim	/^nnoremap  v :vsplit$/;"	m
+	Session.vim	/^nnoremap  w :w$/;"	m
+	Session.vim	/^noremap  n :NERDTreeToggle$/;"	m
+	Session.vim	/^onoremap  h :noh$/;"	m
+	Session.vim	/^vnoremap  h :noh$/;"	m
+	Session.vim	/^nnoremap $/;"	m
+	Session.vim	/^nnoremap <silent>  :CtrlP$/;"	m
+	Session.vim	/^imap  <Plug>Isurround$/;"	m
+<	Session.vim	/^noremap < :vertical:resize -5$/;"	m
++	Session.vim	/^noremap + :resize +5$/;"	m
+-	Session.vim	/^noremap - :resize -5$/;"	m
+>	Session.vim	/^noremap > :vertical:resize +5$/;"	m
+,	Session.vim	/^imap , <Plug>(emmet-expand-abbr)$/;"	m
+,	Session.vim	/^nmap , <Plug>(emmet-expand-abbr)$/;"	m
+,	Session.vim	/^vmap , <Plug>(emmet-expand-abbr)$/;"	m
+/	Session.vim	/^imap \/ <Plug>(emmet-toggle-comment)$/;"	m
+/	Session.vim	/^nmap \/ <Plug>(emmet-toggle-comment)$/;"	m
+;	Session.vim	/^imap ; <Plug>(emmet-expand-word)$/;"	m
+;	Session.vim	/^nmap ; <Plug>(emmet-expand-word)$/;"	m
+A	Session.vim	/^imap A <Plug>(emmet-anchorize-summary)$/;"	m
+A	Session.vim	/^nmap A <Plug>(emmet-anchorize-summary)$/;"	m
+D	Session.vim	/^imap D <Plug>(emmet-balance-tag-outword)$/;"	m
+D	Session.vim	/^nmap D <Plug>(emmet-balance-tag-outword)$/;"	m
+D	Session.vim	/^vmap D <Plug>(emmet-balance-tag-outword)$/;"	m
+I	Session.vim	/^imap I <Plug>(emmet-image-encode)$/;"	m
+I	Session.vim	/^nmap I <Plug>(emmet-image-encode)$/;"	m
+N	Session.vim	/^imap N <Plug>(emmet-move-prev)$/;"	m
+N	Session.vim	/^nmap N <Plug>(emmet-move-prev)$/;"	m
+a	Session.vim	/^imap a <Plug>(emmet-anchorize-url)$/;"	m
+a	Session.vim	/^nmap a <Plug>(emmet-anchorize-url)$/;"	m
+c	Session.vim	/^vmap c <Plug>(emmet-code-pretty)$/;"	m
+d	Session.vim	/^imap d <Plug>(emmet-balance-tag-inward)$/;"	m
+d	Session.vim	/^nmap d <Plug>(emmet-balance-tag-inward)$/;"	m
+d	Session.vim	/^vmap d <Plug>(emmet-balance-tag-inward)$/;"	m
+i	Session.vim	/^imap i <Plug>(emmet-image-size)$/;"	m
+i	Session.vim	/^nmap i <Plug>(emmet-image-size)$/;"	m
+j	Session.vim	/^imap j <Plug>(emmet-split-join-tag)$/;"	m
+j	Session.vim	/^nmap j <Plug>(emmet-split-join-tag)$/;"	m
+k	Session.vim	/^imap k <Plug>(emmet-remove-tag)$/;"	m
+k	Session.vim	/^nmap k <Plug>(emmet-remove-tag)$/;"	m
+m	Session.vim	/^imap m <Plug>(emmet-merge-lines)$/;"	m
+m	Session.vim	/^nmap m <Plug>(emmet-merge-lines)$/;"	m
+n	Session.vim	/^imap n <Plug>(emmet-move-next)$/;"	m
+n	Session.vim	/^nmap n <Plug>(emmet-move-next)$/;"	m
+u	Session.vim	/^imap u <Plug>(emmet-update-tag)$/;"	m
+u	Session.vim	/^nmap u <Plug>(emmet-update-tag)$/;"	m
 !_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
 !_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
 !_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+055|	Session.vim	/^normal! 055|$/;"	m
+<Down>	Session.vim	/^inoremap <expr> <Down> pumvisible() ? "\\" : "\\<Down>"$/;"	m
+<F7>	Session.vim	/^noremap <buffer> <F7> :call flake8#Flake8()$/;"	m
+<Nul>	Session.vim	/^imap <Nul> <C-Space>$/;"	m
+<Plug>(CommandT)	Session.vim	/^nnoremap <silent> <Plug>(CommandT) :CommandT$/;"	m
+<Plug>(CommandTBuffer)	Session.vim	/^nnoremap <silent> <Plug>(CommandTBuffer) :CommandTBuffer$/;"	m
+<Plug>(CommandTCommand)	Session.vim	/^nnoremap <silent> <Plug>(CommandTCommand) :CommandTCommand$/;"	m
+<Plug>(CommandTHelp)	Session.vim	/^nnoremap <silent> <Plug>(CommandTHelp) :CommandTHelp$/;"	m
+<Plug>(CommandTHistory)	Session.vim	/^nnoremap <silent> <Plug>(CommandTHistory) :CommandTHistory$/;"	m
+<Plug>(CommandTJump)	Session.vim	/^nnoremap <silent> <Plug>(CommandTJump) :CommandTJump$/;"	m
+<Plug>(CommandTLine)	Session.vim	/^nnoremap <silent> <Plug>(CommandTLine) :CommandTLine$/;"	m
+<Plug>(CommandTMRU)	Session.vim	/^nnoremap <silent> <Plug>(CommandTMRU) :CommandTMRU$/;"	m
+<Plug>(CommandTSearch)	Session.vim	/^nnoremap <silent> <Plug>(CommandTSearch) :CommandTSearch$/;"	m
+<Plug>(CommandTTag)	Session.vim	/^nnoremap <silent> <Plug>(CommandTTag) :CommandTTag$/;"	m
+<Plug>(ale_complete)	Session.vim	/^inoremap <silent> <Plug>(ale_complete) :ALEComplete$/;"	m
+<Plug>(ale_detail)	Session.vim	/^nnoremap <silent> <Plug>(ale_detail) :ALEDetail$/;"	m
+<Plug>(ale_disable)	Session.vim	/^nnoremap <silent> <Plug>(ale_disable) :ALEDisable$/;"	m
+<Plug>(ale_disable_buffer)	Session.vim	/^nnoremap <silent> <Plug>(ale_disable_buffer) :ALEDisableBuffer$/;"	m
+<Plug>(ale_documentation)	Session.vim	/^nnoremap <silent> <Plug>(ale_documentation) :ALEDocumentation$/;"	m
+<Plug>(ale_enable)	Session.vim	/^nnoremap <silent> <Plug>(ale_enable) :ALEEnable$/;"	m
+<Plug>(ale_enable_buffer)	Session.vim	/^nnoremap <silent> <Plug>(ale_enable_buffer) :ALEEnableBuffer$/;"	m
+<Plug>(ale_find_references)	Session.vim	/^nnoremap <silent> <Plug>(ale_find_references) :ALEFindReferences$/;"	m
+<Plug>(ale_first)	Session.vim	/^nnoremap <silent> <Plug>(ale_first) :ALEFirst$/;"	m
+<Plug>(ale_fix)	Session.vim	/^nnoremap <silent> <Plug>(ale_fix) :ALEFix$/;"	m
+<Plug>(ale_go_to_definition)	Session.vim	/^nnoremap <silent> <Plug>(ale_go_to_definition) :ALEGoToDefinition$/;"	m
+<Plug>(ale_go_to_definition_in_split)	Session.vim	/^nnoremap <silent> <Plug>(ale_go_to_definition_in_split) :ALEGoToDefinitionInSplit$/;"	m
+<Plug>(ale_go_to_definition_in_tab)	Session.vim	/^nnoremap <silent> <Plug>(ale_go_to_definition_in_tab) :ALEGoToDefinitionInTab$/;"	m
+<Plug>(ale_go_to_definition_in_vsplit)	Session.vim	/^nnoremap <silent> <Plug>(ale_go_to_definition_in_vsplit) :ALEGoToDefinitionInVSplit$/;"	m
+<Plug>(ale_go_to_type_definition)	Session.vim	/^nnoremap <silent> <Plug>(ale_go_to_type_definition) :ALEGoToTypeDefinition$/;"	m
+<Plug>(ale_go_to_type_definition_in_split)	Session.vim	/^nnoremap <silent> <Plug>(ale_go_to_type_definition_in_split) :ALEGoToTypeDefinitionInSplit$/;"	m
+<Plug>(ale_go_to_type_definition_in_tab)	Session.vim	/^nnoremap <silent> <Plug>(ale_go_to_type_definition_in_tab) :ALEGoToTypeDefinitionInTab$/;"	m
+<Plug>(ale_go_to_type_definition_in_vsplit)	Session.vim	/^nnoremap <silent> <Plug>(ale_go_to_type_definition_in_vsplit) :ALEGoToTypeDefinitionInVSplit$/;"	m
+<Plug>(ale_hover)	Session.vim	/^nnoremap <silent> <Plug>(ale_hover) :ALEHover$/;"	m
+<Plug>(ale_last)	Session.vim	/^nnoremap <silent> <Plug>(ale_last) :ALELast$/;"	m
+<Plug>(ale_lint)	Session.vim	/^nnoremap <silent> <Plug>(ale_lint) :ALELint$/;"	m
+<Plug>(ale_next)	Session.vim	/^nnoremap <silent> <Plug>(ale_next) :ALENext$/;"	m
+<Plug>(ale_next_error)	Session.vim	/^nnoremap <silent> <Plug>(ale_next_error) :ALENext -error$/;"	m
+<Plug>(ale_next_warning)	Session.vim	/^nnoremap <silent> <Plug>(ale_next_warning) :ALENext -warning$/;"	m
+<Plug>(ale_next_wrap)	Session.vim	/^nnoremap <silent> <Plug>(ale_next_wrap) :ALENextWrap$/;"	m
+<Plug>(ale_next_wrap_error)	Session.vim	/^nnoremap <silent> <Plug>(ale_next_wrap_error) :ALENext -wrap -error$/;"	m
+<Plug>(ale_next_wrap_warning)	Session.vim	/^nnoremap <silent> <Plug>(ale_next_wrap_warning) :ALENext -wrap -warning$/;"	m
+<Plug>(ale_previous)	Session.vim	/^nnoremap <silent> <Plug>(ale_previous) :ALEPrevious$/;"	m
+<Plug>(ale_previous_error)	Session.vim	/^nnoremap <silent> <Plug>(ale_previous_error) :ALEPrevious -error$/;"	m
+<Plug>(ale_previous_warning)	Session.vim	/^nnoremap <silent> <Plug>(ale_previous_warning) :ALEPrevious -warning$/;"	m
+<Plug>(ale_previous_wrap)	Session.vim	/^nnoremap <silent> <Plug>(ale_previous_wrap) :ALEPreviousWrap$/;"	m
+<Plug>(ale_previous_wrap_error)	Session.vim	/^nnoremap <silent> <Plug>(ale_previous_wrap_error) :ALEPrevious -wrap -error$/;"	m
+<Plug>(ale_previous_wrap_warning)	Session.vim	/^nnoremap <silent> <Plug>(ale_previous_wrap_warning) :ALEPrevious -wrap -warning$/;"	m
+<Plug>(ale_rename)	Session.vim	/^nnoremap <silent> <Plug>(ale_rename) :ALERename$/;"	m
+<Plug>(ale_reset)	Session.vim	/^nnoremap <silent> <Plug>(ale_reset) :ALEReset$/;"	m
+<Plug>(ale_reset_buffer)	Session.vim	/^nnoremap <silent> <Plug>(ale_reset_buffer) :ALEResetBuffer$/;"	m
+<Plug>(ale_toggle)	Session.vim	/^nnoremap <silent> <Plug>(ale_toggle) :ALEToggle$/;"	m
+<Plug>(ale_toggle_buffer)	Session.vim	/^nnoremap <silent> <Plug>(ale_toggle_buffer) :ALEToggleBuffer$/;"	m
+<Plug>(emmet-anchorize-summary)	Session.vim	/^inoremap <Plug>(emmet-anchorize-summary) =emmet#util#closePopup()$/;"	m
+<Plug>(emmet-anchorize-summary)	Session.vim	/^nnoremap <Plug>(emmet-anchorize-summary) :call emmet#anchorizeURL(1)$/;"	m
+<Plug>(emmet-anchorize-url)	Session.vim	/^inoremap <Plug>(emmet-anchorize-url) =emmet#util#closePopup()$/;"	m
+<Plug>(emmet-anchorize-url)	Session.vim	/^nnoremap <Plug>(emmet-anchorize-url) :call emmet#anchorizeURL(0)$/;"	m
+<Plug>(emmet-balance-tag-inward)	Session.vim	/^inoremap <Plug>(emmet-balance-tag-inward) :call emmet#balanceTag(1)$/;"	m
+<Plug>(emmet-balance-tag-inward)	Session.vim	/^nnoremap <Plug>(emmet-balance-tag-inward) :call emmet#balanceTag(1)$/;"	m
+<Plug>(emmet-balance-tag-inward)	Session.vim	/^vnoremap <Plug>(emmet-balance-tag-inward) :call emmet#balanceTag(1)$/;"	m
+<Plug>(emmet-balance-tag-outword)	Session.vim	/^inoremap <Plug>(emmet-balance-tag-outword) :call emmet#balanceTag(-1)$/;"	m
+<Plug>(emmet-balance-tag-outword)	Session.vim	/^nnoremap <Plug>(emmet-balance-tag-outword) :call emmet#balanceTag(-1)$/;"	m
+<Plug>(emmet-balance-tag-outword)	Session.vim	/^vnoremap <Plug>(emmet-balance-tag-outword) :call emmet#balanceTag(-1)$/;"	m
+<Plug>(emmet-code-pretty)	Session.vim	/^vnoremap <Plug>(emmet-code-pretty) :call emmet#codePretty()$/;"	m
+<Plug>(emmet-expand-abbr)	Session.vim	/^inoremap <Plug>(emmet-expand-abbr) =emmet#util#closePopup()$/;"	m
+<Plug>(emmet-expand-abbr)	Session.vim	/^nnoremap <Plug>(emmet-expand-abbr) :call emmet#expandAbbr(3,"")$/;"	m
+<Plug>(emmet-expand-abbr)	Session.vim	/^vnoremap <Plug>(emmet-expand-abbr) :call emmet#expandAbbr(2,"")$/;"	m
+<Plug>(emmet-expand-word)	Session.vim	/^inoremap <Plug>(emmet-expand-word) =emmet#util#closePopup()$/;"	m
+<Plug>(emmet-expand-word)	Session.vim	/^nnoremap <Plug>(emmet-expand-word) :call emmet#expandAbbr(1,"")$/;"	m
+<Plug>(emmet-image-encode)	Session.vim	/^inoremap <Plug>(emmet-image-encode) =emmet#util#closePopup()$/;"	m
+<Plug>(emmet-image-encode)	Session.vim	/^nnoremap <Plug>(emmet-image-encode) :call emmet#imageEncode()$/;"	m
+<Plug>(emmet-image-size)	Session.vim	/^inoremap <Plug>(emmet-image-size) =emmet#util#closePopup()$/;"	m
+<Plug>(emmet-image-size)	Session.vim	/^nnoremap <Plug>(emmet-image-size) :call emmet#imageSize()$/;"	m
+<Plug>(emmet-merge-lines)	Session.vim	/^inoremap <Plug>(emmet-merge-lines) =emmet#util#closePopup()$/;"	m
+<Plug>(emmet-merge-lines)	Session.vim	/^nnoremap <Plug>(emmet-merge-lines) :call emmet#mergeLines()$/;"	m
+<Plug>(emmet-move-next)	Session.vim	/^inoremap <Plug>(emmet-move-next) =emmet#util#closePopup()$/;"	m
+<Plug>(emmet-move-next)	Session.vim	/^nnoremap <Plug>(emmet-move-next) :call emmet#moveNextPrev(0)$/;"	m
+<Plug>(emmet-move-next-item)	Session.vim	/^inoremap <Plug>(emmet-move-next-item) :call emmet#moveNextPrevItem(0)$/;"	m
+<Plug>(emmet-move-next-item)	Session.vim	/^nnoremap <Plug>(emmet-move-next-item) :call emmet#moveNextPrevItem(0)$/;"	m
+<Plug>(emmet-move-prev)	Session.vim	/^inoremap <Plug>(emmet-move-prev) =emmet#util#closePopup()$/;"	m
+<Plug>(emmet-move-prev)	Session.vim	/^nnoremap <Plug>(emmet-move-prev) :call emmet#moveNextPrev(1)$/;"	m
+<Plug>(emmet-move-prev-item)	Session.vim	/^inoremap <Plug>(emmet-move-prev-item) :call emmet#moveNextPrevItem(1)$/;"	m
+<Plug>(emmet-move-prev-item)	Session.vim	/^nnoremap <Plug>(emmet-move-prev-item) :call emmet#moveNextPrevItem(1)$/;"	m
+<Plug>(emmet-remove-tag)	Session.vim	/^inoremap <Plug>(emmet-remove-tag) =emmet#util#closePopup()$/;"	m
+<Plug>(emmet-remove-tag)	Session.vim	/^nnoremap <Plug>(emmet-remove-tag) :call emmet#removeTag()$/;"	m
+<Plug>(emmet-split-join-tag)	Session.vim	/^inoremap <Plug>(emmet-split-join-tag) :call emmet#splitJoinTag()$/;"	m
+<Plug>(emmet-split-join-tag)	Session.vim	/^nnoremap <Plug>(emmet-split-join-tag) :call emmet#splitJoinTag()$/;"	m
+<Plug>(emmet-toggle-comment)	Session.vim	/^inoremap <Plug>(emmet-toggle-comment) =emmet#util#closePopup()$/;"	m
+<Plug>(emmet-toggle-comment)	Session.vim	/^nnoremap <Plug>(emmet-toggle-comment) :call emmet#toggleComment()$/;"	m
+<Plug>(emmet-update-tag)	Session.vim	/^inoremap <Plug>(emmet-update-tag) =emmet#util#closePopup()$/;"	m
+<Plug>(emmet-update-tag)	Session.vim	/^nnoremap <Plug>(emmet-update-tag) :call emmet#updateTag()$/;"	m
+<Plug>CommentaryUndo	Session.vim	/^nmap <silent> <Plug>CommentaryUndo :echoerr "Change your <Plug>CommentaryUndo map to <Plug>Commentary<Plug>Commentary"$/;"	m
+<Plug>NERDCommenterAlignBoth	Session.vim	/^nnoremap <silent> <Plug>NERDCommenterAlignBoth :call NERDComment("n", "AlignBoth")$/;"	m
+<Plug>NERDCommenterAlignLeft	Session.vim	/^nnoremap <silent> <Plug>NERDCommenterAlignLeft :call NERDComment("n", "AlignLeft")$/;"	m
+<Plug>NERDCommenterAppend	Session.vim	/^nnoremap <silent> <Plug>NERDCommenterAppend :call NERDComment("n", "Append")$/;"	m
+<Plug>NERDCommenterComment	Session.vim	/^nnoremap <silent> <Plug>NERDCommenterComment :call NERDComment("n", "Comment")$/;"	m
+<Plug>NERDCommenterInsert	Session.vim	/^inoremap <silent> <Plug>NERDCommenterInsert  <BS>:call NERDComment('i', 'insert')$/;"	m
+<Plug>NERDCommenterInvert	Session.vim	/^nnoremap <silent> <Plug>NERDCommenterInvert :call NERDComment("n", "Invert")$/;"	m
+<Plug>NERDCommenterMinimal	Session.vim	/^nnoremap <silent> <Plug>NERDCommenterMinimal :call NERDComment("n", "Minimal")$/;"	m
+<Plug>NERDCommenterNested	Session.vim	/^nnoremap <silent> <Plug>NERDCommenterNested :call NERDComment("n", "Nested")$/;"	m
+<Plug>NERDCommenterSexy	Session.vim	/^nnoremap <silent> <Plug>NERDCommenterSexy :call NERDComment("n", "Sexy")$/;"	m
+<Plug>NERDCommenterToEOL	Session.vim	/^nnoremap <silent> <Plug>NERDCommenterToEOL :call NERDComment("n", "ToEOL")$/;"	m
+<Plug>NERDCommenterToggle	Session.vim	/^nnoremap <silent> <Plug>NERDCommenterToggle :call NERDComment("n", "Toggle")$/;"	m
+<Plug>NERDCommenterUncomment	Session.vim	/^nnoremap <silent> <Plug>NERDCommenterUncomment :call NERDComment("n", "Uncomment")$/;"	m
+<Plug>NERDCommenterYank	Session.vim	/^nnoremap <silent> <Plug>NERDCommenterYank :call NERDComment("n", "Yank")$/;"	m
+<Plug>NetrwBrowseX	Session.vim	/^nnoremap <silent> <Plug>NetrwBrowseX :call netrw#BrowseX(expand((exists("g:netrw_gx")? g:netrw_gx : '<cfile>')),netrw#CheckIfRemote())$/;"	m
+<Plug>NetrwBrowseXVis	Session.vim	/^vnoremap <silent> <Plug>NetrwBrowseXVis :call netrw#BrowseXVis()$/;"	m
+<Plug>SurroundRepeat	Session.vim	/^nnoremap <silent> <Plug>SurroundRepeat .$/;"	m
+<S-Tab>	Session.vim	/^inoremap <expr> <S-Tab> pumvisible() ? "\\" : "\\<S-Tab>"$/;"	m
+<SNR>99_:	Session.vim	/^nnoremap <SNR>99_: :=v:count ? v:count : ''$/;"	m
+<Up>	Session.vim	/^inoremap <expr> <Up> pumvisible() ? "\\" : "\\<Up>"$/;"	m
 SIFT	myUtils.py	/^def SIFT(img):$/;"	f
+SessionLoad	Session.vim	/^let SessionLoad = 1$/;"	v
 activity_one	main.py	/^def activity_one(imgList):$/;"	f
+bd	Session.vim	/^nnoremap bd :bdelete $/;"	m
+bn	Session.vim	/^nnoremap bn :bnext!$/;"	m
+bp	Session.vim	/^nnoremap bp :bprev!$/;"	m
+cS	Session.vim	/^nmap cS <Plug>CSurround$/;"	m
 calc_hist_dist	myUtils.py	/^def calc_hist_dist(primary_hist, in_ls, **kwargs):$/;"	f
 calc_histograms	myUtils.py	/^def calc_histograms(img, channel=0, hist_size=256, hist_range=(0,256)):$/;"	f
 check_sizes	debug.py	/^def check_sizes(in_ls):$/;"	f
 check_types	debug.py	/^def check_types(*args):$/;"	f
+count_pixels	myUtils.py	/^def count_pixels(img_ls):$/;"	f
+cs	Session.vim	/^nmap cs <Plug>Csurround$/;"	m
+display_image	debug.py	/^def display_image(im):$/;"	f
+ds	Session.vim	/^nmap ds <Plug>Dsurround$/;"	m
+gc	Session.vim	/^nmap gc <Plug>Commentary$/;"	m
+gc	Session.vim	/^omap gc <Plug>Commentary$/;"	m
+gcc	Session.vim	/^nmap gcc <Plug>CommentaryLine$/;"	m
+gcu	Session.vim	/^nmap gcu <Plug>Commentary<Plug>Commentary$/;"	m
+generate_labels	myUtils.py	/^def generate_labels(num_images):$/;"	f
+get_diff_pixels	myUtils.py	/^def get_diff_pixels(base_comp, comp_ls):$/;"	f
+gx	Session.vim	/^nmap gx <Plug>NetrwBrowseX$/;"	m
+gx	Session.vim	/^vmap gx <Plug>NetrwBrowseXVis$/;"	m
 harris	myUtils.py	/^def harris(img, color=[0,0,255]):$/;"	f
 imgList	main.py	/^    imgList = ['imgs\/diamond2.png', 'imgs\/Dugong.jpg']$/;"	v
 list_one	play.py	/^list_one = [ii+1 for ii in range(10)]$/;"	v
@@ -17,13 +219,35 @@ list_three	play.py	/^list_three = [ii * 2 for ii in range(10)]$/;"	v
 list_two	play.py	/^list_two = [ii + 2 for ii in range(10)]$/;"	v
 log	debug.py	/^def log(item=''):$/;"	f
 map_colors	myUtils.py	/^def map_colors(number):$/;"	f
+open_file	myUtils.py	/^def open_file(fileName):$/;"	f
 para_one	play.py	/^para_one = 'tawana'$/;"	v
 para_two	play.py	/^para_two = 'kwararamba'$/;"	v
 resize_img	myUtils.py	/^def resize_img(img, reduction=0.5):$/;"	f
+return_two	play.py	/^def return_two(thing_one, thing_two):$/;"	f
 rotate_image	myUtils.py	/^def rotate_image(img, angle=45):$/;"	f
 rotate_image_b	myUtils.py	/^def rotate_image_b(img, angle=45):$/;"	f
+s:cpo_save	Session.vim	/^let s:cpo_save=&cpo$/;"	v
+s:l	Session.vim	/^let s:l = 15 - ((14 * winheight(0) + 33) \/ 67)$/;"	v
+s:so_save	Session.vim	/^let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0$/;"	v
+s:sx	Session.vim	/^let s:sx = expand("<sfile>:p:r")."x.vim"$/;"	v
+s:wipebuf	Session.vim	/^  let s:wipebuf = bufnr('%')$/;"	v
+save_comparisons	myUtils.py	/^def save_comparisons(labels, raw_pixels, diff_frm_og, fileName):$/;"	f
 show_diff_dist	main.py	/^def show_diff_dist(distance):$/;"	f
 show_diff_hists	main.py	/^def show_diff_hists(base_hist, op_base_hist, op_hists, xLim):$/;"	f
 show_histograms	myUtils.py	/^def show_histograms(image):$/;"	f
 show_img_ls	myUtils.py	/^def show_img_ls(img_ls):$/;"	f
 some_func	play.py	/^def some_func(para_one, para_two, *args):$/;"	f
+th	Session.vim	/^nnoremap th :tabfirst$/;"	m
+tj	Session.vim	/^nnoremap tj :tabprev$/;"	m
+tk	Session.vim	/^nnoremap tk :tabnext$/;"	m
+tl	Session.vim	/^nnoremap tl :tablast$/;"	m
+tn	Session.vim	/^nnoremap tn :tabnew $/;"	m
+write_file	play.py	/^def write_file():$/;"	f
+write_file_two	play.py	/^def write_file_two():$/;"	f
+yS	Session.vim	/^nmap yS <Plug>YSurround$/;"	m
+ySS	Session.vim	/^nmap ySS <Plug>YSsurround$/;"	m
+ySs	Session.vim	/^nmap ySs <Plug>YSsurround$/;"	m
+ys	Session.vim	/^nmap ys <Plug>Ysurround$/;"	m
+yss	Session.vim	/^nmap yss <Plug>Yssurround$/;"	m
+zo	Session.vim	/^normal! zo$/;"	m
+zt	Session.vim	/^normal! zt$/;"	m

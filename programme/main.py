@@ -62,14 +62,25 @@ def activity_one(imgList):
     og_diamond_hist = calc_histograms(diamond_img.copy(), channel, bin_size)
     og_diamond_hist_harris = calc_histograms(og_diamond_harris, channel, bin_size)
     hists_diamonds_rotated = [calc_histograms(ii,channel, bin_size) for ii in harris_diamonds_rotated]
+
+    #setting up the appropriate lists to do the comparisons for the keypoints
+    #found in each matrix
+    og_diamond_harris_kp = harris(diamond_img.copy(), green)[1]
+    harris_diamonds_rotated_kp = [harris(ii, green)[1] for ii in rotated_diamonds]
+
+    num_kp_og_rotated = count_pixels([og_diamond_harris_kp])
+    num_kp_rotated = count_pixels(harris_diamonds_rotated_kp)
+
     #---------------------------------------------------------------------------
     #Experiments for rotated diamond images
     #---------------------------------------------------------------------------
+    fileName = 'results/Task_1/rotated_experiements/Harris/playing_card/comparison.csv'
+    diff_frm_og = get_diff_pixels(num_kp_og_rotated[0],num_kp_rotated)
+    labels = generate_labels(len(num_kp_rotated))
+    save_comparisons(labels, num_kp_rotated,diff_frm_og, fileName)
 
     #EXPERIMENT ONE: checking if the harris corner detection picked up the same
     #poins
-
-
 
     #EXPERIMENT TWO: plotting the histograms of the image, to see if they is a
     #change in the count of green pixels found in the image

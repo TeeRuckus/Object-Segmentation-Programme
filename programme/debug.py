@@ -1,8 +1,14 @@
+import cv2 as cv
+
 def log(item=''):
     print('CALLED %s' % item)
 
 def check_types(*args):
     for ii, value in enumerate(args):
+        print('%s Type of: % s' % (ii, type(value)))
+
+def check_types_ls(in_ls):
+    for ii, value in enumerate(in_ls):
         print('%s Type of: % s' % (ii, type(value)))
 
 def check_sizes(in_ls):
@@ -15,3 +21,9 @@ def check_sizes(in_ls):
             print('%s: l: %s' % (ii, value.shape[0]))
         else:
             print("CAN'T GET SIZE OF IMAGE")
+
+
+def display_image(im):
+    cv.imshow('display the image', im)
+    cv.waitKey()
+    cv.destroyAllWindows()
