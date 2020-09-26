@@ -1,0 +1,25 @@
+Image Name,Number of key points,difference between orginal keypoints and experiment
+orginal,635,495.0
+experiment image: 0,650,480.0
+experiment image: 1,691,439.0
+experiment image: 2,832,298.0
+experiment image: 3,934,196.0
+experiment image: 4,1154,24.0
+experiment image: 5,1227,97.0
+experiment image: 6,1358,228.0
+experiment image: 7,1491,361.0
+experiment image: 8,1727,597.0
+experiment image: 9,1825,695.0
+experiment image: 10,1910,780.0
+experiment image: 11,2681,1551.0
+experiment image: 12,2427,1297.0
+experiment image: 13,2645,1515.0
+experiment image: 14,2889,1759.0
+experiment image: 15,3077,1947.0
+experiment image: 16,3430,2300.0
+experiment image: 17,3681,2551.0
+experiment image: 18,3780,2650.0
+experiment image: 19,4103,2973.0
+experiment image: 20,4349,3219.0
+experiment image: 21,4709,3579.0
+experiment image: 22,4884,3754.0

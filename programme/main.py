@@ -4,7 +4,7 @@ from matplotlib import pyplot as plt
 from debug import *
 
 
-def activity_one(imgList):
+def activity_one_harris_diamond_rotated(imgList):
     """
     IMPORTS:
     EXPORTS:
@@ -26,23 +26,15 @@ def activity_one(imgList):
             of keypoints --> maybe this is something for you to think about
     """
     diamond_img = cv.imread(imgList[0])
-    dugong_img = cv.imread(imgList[1])
     #-------------------------------------------------------------------------------
     #SET UP
     #-------------------------------------------------------------------------------
     #creating copies, as you want to do calculations and manipulations based on
     #copies. Just as an extra  precautious step
     diamond_img_copy = diamond_img.copy()
-    dugong_img_copy = dugong_img.copy()
 
     #creating a list of rotated images with angles of 15 degrees between each image
     rotated_diamonds = [rotate_image_b(diamond_img_copy, angle) for angle in range(15,360,15)]
-    rotated_dugong = [rotate_image_b(dugong_img_copy, angle) for angle in range (15, 360, 15)]
-
-    #create a list of scaled images with each image with a factos difference of 0.0416
-    #between each image
-    scaled_diamonds = [resize_img(diamond_img_copy, factor/24) for factor in range(12, 36, 1)]
-    scaled_dugong = [resize_img(dugong_img_copy, factor/24) for factor in range(12, 36, 1)]
 
     #performing the harris corner detection on the original image, so we have
     #a base point for comparisions latter onwards
@@ -52,8 +44,6 @@ def activity_one(imgList):
     #creating a list of images which contains the rotate iamges with the harris
     #corner detection performed on each image
     harris_diamonds_rotated = [harris(ii, green)[0] for ii in rotated_diamonds]
-    #the thing which is happening above is the same thing which is happening here
-    harris_diamonds_scaled = [harris(ii, green)[0] for ii in scaled_diamonds]
 
     channel = 1
     bin_size = 16
@@ -100,6 +90,74 @@ def activity_one(imgList):
     harris_diamonds_rotated.insert(0, og_diamond_harris)
     show_img_ls(harris_diamonds_rotated)
 
+def activity_one_harris_diamond_scaled(im):
+    """
+    IMPORTS:
+    EXPORTS:
+    PURPOSE:
+    """
+    diamond_img = cv.imread(im)
+    #-------------------------------------------------------------------------------
+    #SET UP
+    #-------------------------------------------------------------------------------
+    #creating copies, as you want to do calculations and manipulations based on
+    #copies. Just as an extra  precautious step
+    diamond_img_copy = diamond_img.copy()
+    green = [0,255,0]
+    #performing the harris corner detection on the original image, so we have
+    #a base point for comparisions latter onwards
+    og_diamond_harris = harris(diamond_img.copy(), green)[0]
+
+    #create a list of scaled images with each image with a factos difference of 0.0416
+    #between each image
+    scaled_diamonds = [resize_img(diamond_img_copy, factor/24) for factor in range(12, 36, 1)]
+
+    channel = 1
+    bin_size = 16
+    #the histogram of the very orginal image is needed, to confirm that the
+    #harris corner detection which introduce variance in the produced histograms
+    og_diamond_hist = calc_histograms(diamond_img.copy(), channel, bin_size)
+    og_diamond_hist_harris = calc_histograms(og_diamond_harris, channel, bin_size)
+    hists_diamonds_scaled = [calc_histograms(ii,channel, bin_size) for ii in scaled_diamonds]
+
+    #setting up the appropriate lists to do the comparisons for the keypoints
+    #found in each matrix
+    og_diamond_harris_kp = harris(diamond_img.copy(), green)[1]
+    harris_diamonds_scaled_kp = [harris(ii, green)[1] for ii in scaled_diamonds]
+
+    num_kp_og_scaled = count_pixels([og_diamond_harris_kp])
+    num_kp_scaled = count_pixels(harris_diamonds_scaled_kp)
+
+    #---------------------------------------------------------------------------
+    #Experiments for scaled diamond images
+    #---------------------------------------------------------------------------
+
+    #EXPERIMENT ONE: checking if the harris corner detection picked up the same
+    #poins
+    fileName = 'results/Task_1/scaled_experiements/Harris/playing_card/comparison.csv'
+    diff_frm_og = get_diff_pixels(num_kp_og_scaled[0],num_kp_scaled)
+    labels = generate_labels(len(num_kp_scaled))
+    save_comparisons(labels, num_kp_scaled,diff_frm_og, fileName)
+    show_diff_dist(diff_frm_og, title='Difference between key points')
+    #open_file(fileName)
+
+    #EXPERIMENT TWO: plotting the histograms of the image, to see if they is a
+    #change in the count of green pixels found in the image
+    show_diff_hists(og_diamond_hist, og_diamond_hist_harris, hists_diamonds_scaled, bin_size)
+
+
+    #EXPERIMENT THREE: calculating the distances between the produced histograms
+    #taking advantage of the image, the only thing green on the image is the
+    #detected points
+    distance = calc_hist_dist(og_diamond_hist, hists_diamonds_scaled)
+    show_diff_dist(distance, title='Diffetences between histograms')
+
+    #EXPERIMENT FOUR: a visual inspection to ensure that the same points
+    #were found across the generated images relative to the first image
+    #produced
+    scaled_diamonds.insert(0, og_diamond_harris)
+    show_img_ls(scaled_diamonds)
+
 
 def show_diff_hists(base_hist, op_base_hist, op_hists, xLim):
     #showing all the rotated histograms
@@ -135,5 +193,6 @@ def show_diff_dist(distance, **kwargs):
 
 if __name__ == '__main__':
     imgList = ['imgs/diamond2.png', 'imgs/Dugong.jpg']
-    activity_one(imgList)
+    #activity_one_harris_diamond_rotated(imgList)
+    activity_one_harris_diamond_scaled(imgList[0])
     cv.waitKey(0)
