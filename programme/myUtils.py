@@ -40,8 +40,8 @@ def map_colors(number):
             30: '#7b68ee'}[number]
 
 def show_img_ls(img_ls):
-    for ii in range(len(img_ls)):
-        cv.imshow('image: %s' % ii, img_ls[ii])
+    for ii, mat in enumerate(img_ls):
+        cv.imshow('image: %s' % ii, mat)
 
 def calc_histograms(img, channel=0, hist_size=256, hist_range=(0,256)):
     return cv.calcHist([img], [channel], None, [hist_size], hist_range)
@@ -122,8 +122,7 @@ def SIFT(img):
     #img = cv.drawKeypoints(img, kp, img,
     #        flags=cv.DRAW_MATCHES_FLAGS_DRAW_RICH_KEYPOINTS)
     img = cv.drawKeypoints(img, kp, img)
-    display_image(img)
-    return des, kp
+    return des, kp, img
 #SIFT(cv.imread('imgs/diamond2.png'))
 
 def harris(img, color=[0,0,255]):
@@ -168,3 +167,35 @@ def save_comparisons(labels, raw_pixels, diff_frm_og, fileName):
 
 def open_file(fileName):
     os.system('xdg-open %s' % fileName)
+
+def show_diff_hists(base_hist, op_base_hist, op_hists, xLim):
+    #showing all the rotated histograms
+    plt.plot(base_hist, color=map_colors(1), label='original image')
+    plt.plot(op_base_hist, color=map_colors(2), label='harris orignal image')
+
+    for ii, hist in enumerate(op_hists):
+        #need to offset color by 2 as the first two colors were used by the first
+        #two images
+        color = ii + 2
+        plt.plot(hist, color=map_colors(color), label='op: %s' % ii, linestyle='--')
+
+    plt.xlim([0,xLim])
+    plt.legend(loc='upper center')
+    plt.ylabel('Frequency')
+    plt.xlabel('intensity value')
+    plt.title('Rotated Diamonds harris comparison')
+    plt.show()
+
+def show_diff_dist(distance, **kwargs):
+    #getting the distances of the rotated image relative to the orginal image
+    labels = ['img: %s' % ii for ii in range(len(distance))]
+    labels = tuple(labels)
+    y_pos = np.arange(len(labels))
+    #distances = [0, 20, 30]
+    plt.bar(y_pos, distance, align='center', alpha=0.25)
+    plt.xticks(y_pos, labels)
+    plt.ylabel('Distance from orginal Harris image')
+    plt.xlabel('Distances (units)')
+    plt.title(kwargs['title'])
+
+    plt.show()

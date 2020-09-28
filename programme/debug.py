@@ -1,7 +1,8 @@
 import cv2 as cv
 
 def log(item=''):
-    print('CALLED %s' % item)
+    #print('CALLED %s' % item)
+    print('CALLED {}'.format(item))
 
 def check_types(*args):
     for ii, value in enumerate(args):
