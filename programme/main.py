@@ -15,7 +15,7 @@ TO DO:
     comparing if each transform got the same number of keypoints
 """
 
-def activity_one_harris_rotated(im):
+def activity_one_harris_rotated(im, channel, **kwargs):
     """
     IMPORTS:
     EXPORTS:
@@ -34,14 +34,12 @@ def activity_one_harris_rotated(im):
 
     #performing the harris corner detection on the original image, so we have
     #a base point for comparisions latter onwards
-    green = [0,255,0]
-    og_harris = harris(img.copy(), green)[0]
+    og_harris = harris(img.copy(),kwargs['thresh'], kwargs['color'])[0]
 
     #creating a list of images which contains the rotate iamges with the harris
     #corner detection performed on each image
-    harris_s_rotated = [harris(ii, green)[0] for ii in rotated_s]
+    harris_s_rotated = [harris(ii, kwargs['thresh'], kwargs['color'])[0] for ii in rotated_s]
 
-    channel = 1
     bin_size = 16
     #the histogram of the very orginal image is needed, to confirm that the
     #harris corner detection which introduce variance in the produced histograms
@@ -51,8 +49,8 @@ def activity_one_harris_rotated(im):
 
     #setting up the appropriate lists to do the comparisons for the keypoints
     #found in each matrix
-    og_harris_kp = harris(img.copy(), green)[1]
-    harris_s_rotated_kp = [harris(ii, green)[1] for ii in rotated_s]
+    og_harris_kp = harris(img.copy(),kwargs['thresh'], kwargs['color'])[1]
+    harris_s_rotated_kp = [harris(ii, kwargs['thresh'], kwargs['color'])[1] for ii in rotated_s]
 
     num_kp_og_rotated = count_pixels([og_harris_kp])
     num_kp_rotated = count_pixels(harris_s_rotated_kp)
@@ -86,7 +84,7 @@ def activity_one_harris_rotated(im):
     harris_s_rotated.insert(0, og_harris)
     show_img_ls(harris_s_rotated)
 
-def activity_one_harris_scaled(im):
+def activity_one_harris_scaled(im, channel, **kwargs):
     """
     IMPORTS:
     EXPORTS:
@@ -102,13 +100,12 @@ def activity_one_harris_scaled(im):
     green = [0,255,0]
     #performing the harris corner detection on the original image, so we have
     #a base point for comparisions latter onwards
-    og_harris = harris(img.copy(), green)[0]
+    og_harris = harris(img.copy(),kwargs['thresh'], kwargs['color'])[0]
 
     #create a list of scaled images with each image with a factos difference of 0.0416
     #between each image
     scaled_s = [resize_img(img_copy, factor/24) for factor in range(12, 36, 1)]
 
-    channel = 1
     bin_size = 16
     #the histogram of the very orginal image is needed, to confirm that the
     #harris corner detection which introduce variance in the produced histograms
@@ -118,8 +115,8 @@ def activity_one_harris_scaled(im):
 
     #setting up the appropriate lists to do the comparisons for the keypoints
     #found in each matrix
-    og_harris_kp = harris(img.copy(), green)[1]
-    harris_s_scaled_kp = [harris(ii, green)[1] for ii in scaled_s]
+    og_harris_kp = harris(img.copy(),kwargs['thresh'],kwargs['color'])[1]
+    harris_s_scaled_kp = [harris(ii,kwargs['thresh'], kwargs['color'])[1] for ii in scaled_s]
 
     num_kp_og_scaled = count_pixels([og_harris_kp])
     num_kp_scaled = count_pixels(harris_s_scaled_kp)
@@ -277,9 +274,20 @@ def activity_one_SIFT_scaled(im):
 
 if __name__ == '__main__':
     imgList = ['imgs/diamond2.png', 'imgs/Dugong.jpg']
+    #---------------------------------------------------------------------------
+    #TASK ONE: Diamond playing card
+    #---------------------------------------------------------------------------
     #running all the experiements for the diamond card
     #activity_one_harris_rotated(imgList[0])
     #activity_one_harris_scaled(imgList[0])
     #activity_one_SIFT_rotated(imgList[0])
-    activity_one_SIFT_scaled(imgList[0])
+    #activity_one_SIFT_scaled(imgList[0])
+
+    #---------------------------------------------------------------------------
+    #TASK ONE: Dugong image
+    #---------------------------------------------------------------------------
+    #activity_one_harris_rotated(imgList[1], 2, color=[0,0,255], thresh=0.06)
+    #activity_one_harris_scaled(imgList[1], 2, color=[0,0,255], thresh=0.06)
+    #activity_one_SIFT_rotated(imgList[1])
+    activity_one_SIFT_scaled(imgList[1])
     cv.waitKey(0)

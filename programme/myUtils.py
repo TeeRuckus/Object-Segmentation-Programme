@@ -125,7 +125,7 @@ def SIFT(img):
     return des, kp, img
 #SIFT(cv.imread('imgs/diamond2.png'))
 
-def harris(img, color=[0,0,255]):
+def harris(img, thresh, color=[0,0,255]):
     gray_img = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
     gray_img = np.float32(gray_img)
 
@@ -135,7 +135,8 @@ def harris(img, color=[0,0,255]):
     kp_mat = detected_img
     detected_img = cv.dilate(detected_img, None)
     #filltering the corners we detected by our choosen threshold
-    img[detected_img > 0.01 * detected_img.max()] = color
+    #img[detected_img > 0.01 * detected_img.max()] = color
+    img[detected_img > thresh * detected_img.max()] = color
     return img, kp_mat
 
 
