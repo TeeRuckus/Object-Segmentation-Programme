@@ -63,7 +63,7 @@ def activity_one_harris_rotated(im, channel, **kwargs):
     fileName = 'results/Task_1/rotated_experiements/Harris/playing_card/comparison.csv'
     diff_frm_og = get_diff_pixels(num_kp_og_rotated[0],num_kp_rotated)
     labels = generate_labels(len(num_kp_rotated))
-    save_comparisons(labels, num_kp_rotated,diff_frm_og, fileName)
+    #save_comparisons(labels, num_kp_rotated,diff_frm_og, fileName)
     show_diff_dist(diff_frm_og, title='Difference between key points')
     #open_file(fileName)
 
@@ -127,10 +127,10 @@ def activity_one_harris_scaled(im, channel, **kwargs):
 
     #EXPERIMENT ONE: checking if the harris corner detection picked up the same
     #poins
-    fileName = 'results/Task_1/scaled_experiements/Harris/playing_card/comparison.csv'
+    #fileName = 'results/Task_1/scaled_experiements/Harris/playing_card/comparison.csv'
     diff_frm_og = get_diff_pixels(num_kp_og_scaled[0],num_kp_scaled)
     labels = generate_labels(len(num_kp_scaled))
-    save_comparisons(labels, num_kp_scaled,diff_frm_og, fileName)
+    #save_comparisons(labels, num_kp_scaled,diff_frm_og, fileName)
     show_diff_dist(diff_frm_og, title='Difference between key points')
     #open_file(fileName)
 
@@ -286,8 +286,8 @@ if __name__ == '__main__':
     #---------------------------------------------------------------------------
     #TASK ONE: Dugong image
     #---------------------------------------------------------------------------
-    #activity_one_harris_rotated(imgList[1], 2, color=[0,0,255], thresh=0.06)
-    #activity_one_harris_scaled(imgList[1], 2, color=[0,0,255], thresh=0.06)
-    #activity_one_SIFT_rotated(imgList[1])
+    activity_one_harris_rotated(imgList[1], 2, color=[0,0,255], thresh=0.06)
+    activity_one_harris_scaled(imgList[1], 2, color=[0,0,255], thresh=0.06)
+    activity_one_SIFT_rotated(imgList[1])
     activity_one_SIFT_scaled(imgList[1])
     cv.waitKey(0)

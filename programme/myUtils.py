@@ -200,3 +200,7 @@ def show_diff_dist(distance, **kwargs):
     plt.title(kwargs['title'])
 
     plt.show()
+
+def HOG(im):
+    im = cv.imread(im)
+    im_copy = im.copy()
