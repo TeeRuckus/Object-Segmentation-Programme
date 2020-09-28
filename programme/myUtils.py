@@ -124,7 +124,7 @@ def SIFT(img):
     img = cv.drawKeypoints(img, kp, img)
     display_image(img)
     return des, kp
-SIFT(cv.imread('imgs/diamond2.png'))
+#SIFT(cv.imread('imgs/diamond2.png'))
 
 def harris(img, color=[0,0,255]):
     gray_img = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
