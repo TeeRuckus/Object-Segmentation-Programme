@@ -79,7 +79,9 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
-055|	Session.vim	/^normal! 055|$/;"	m
+0	Session.vim	/^normal! 0$/;"	m
+03|	Session.vim	/^normal! 03|$/;"	m
+05|	Session.vim	/^normal! 05|$/;"	m
 <Down>	Session.vim	/^inoremap <expr> <Down> pumvisible() ? "\\" : "\\<Down>"$/;"	m
 <F7>	Session.vim	/^noremap <buffer> <F7> :call flake8#Flake8()$/;"	m
 <Nul>	Session.vim	/^imap <Nul> <C-Space>$/;"	m
@@ -187,11 +189,19 @@
 <Plug>NetrwBrowseXVis	Session.vim	/^vnoremap <silent> <Plug>NetrwBrowseXVis :call netrw#BrowseXVis()$/;"	m
 <Plug>SurroundRepeat	Session.vim	/^nnoremap <silent> <Plug>SurroundRepeat .$/;"	m
 <S-Tab>	Session.vim	/^inoremap <expr> <S-Tab> pumvisible() ? "\\" : "\\<S-Tab>"$/;"	m
+<SNR>90_:	Session.vim	/^nnoremap <SNR>90_: :=v:count ? v:count : ''$/;"	m
 <SNR>99_:	Session.vim	/^nnoremap <SNR>99_: :=v:count ? v:count : ''$/;"	m
 <Up>	Session.vim	/^inoremap <expr> <Up> pumvisible() ? "\\" : "\\<Up>"$/;"	m
 SIFT	myUtils.py	/^def SIFT(img):$/;"	f
 SessionLoad	Session.vim	/^let SessionLoad = 1$/;"	v
-activity_one	main.py	/^def activity_one(imgList):$/;"	f
+TOL	myUtils.py	/^TOL = 0.00001$/;"	v
+activity_one_SIFT_rotated	main.py	/^def activity_one_SIFT_rotated(im):$/;"	f
+activity_one_SIFT_scaled	main.py	/^def activity_one_SIFT_scaled(im):$/;"	f
+activity_one_harris_rotated	main.py	/^def activity_one_harris_rotated(im, channel, **kwargs):$/;"	f
+activity_one_harris_scaled	main.py	/^def activity_one_harris_scaled(im, channel, **kwargs):$/;"	f
+activity_three	main.py	/^def activity_three(im, **kwargs):$/;"	f
+activity_two_hog	main.py	/^def activity_two_hog(im):$/;"	f
+activity_two_rotated	main.py	/^def activity_two_rotated(im):$/;"	f
 bd	Session.vim	/^nnoremap bd :bdelete $/;"	m
 bn	Session.vim	/^nnoremap bn :bnext!$/;"	m
 bp	Session.vim	/^nnoremap bp :bprev!$/;"	m
@@ -200,9 +210,13 @@ calc_hist_dist	myUtils.py	/^def calc_hist_dist(primary_hist, in_ls, **kwargs):$/
 calc_histograms	myUtils.py	/^def calc_histograms(img, channel=0, hist_size=256, hist_range=(0,256)):$/;"	f
 check_sizes	debug.py	/^def check_sizes(in_ls):$/;"	f
 check_types	debug.py	/^def check_types(*args):$/;"	f
+check_types_ls	debug.py	/^def check_types_ls(in_ls):$/;"	f
 count_pixels	myUtils.py	/^def count_pixels(img_ls):$/;"	f
+crop_img	myUtils.py	/^def crop_img(img, pt1, pt2):$/;"	f
 cs	Session.vim	/^nmap cs <Plug>Csurround$/;"	m
 display_image	debug.py	/^def display_image(im):$/;"	f
+display_kp_ls	main.py	/^def display_kp_ls(in_ls):$/;"	f
+display_ls	debug.py	/^def display_ls(in_ls):$/;"	f
 ds	Session.vim	/^nmap ds <Plug>Dsurround$/;"	m
 gc	Session.vim	/^nmap gc <Plug>Commentary$/;"	m
 gc	Session.vim	/^omap gc <Plug>Commentary$/;"	m
@@ -212,28 +226,38 @@ generate_labels	myUtils.py	/^def generate_labels(num_images):$/;"	f
 get_diff_pixels	myUtils.py	/^def get_diff_pixels(base_comp, comp_ls):$/;"	f
 gx	Session.vim	/^nmap gx <Plug>NetrwBrowseX$/;"	m
 gx	Session.vim	/^vmap gx <Plug>NetrwBrowseXVis$/;"	m
-harris	myUtils.py	/^def harris(img, color=[0,0,255]):$/;"	f
-imgList	main.py	/^    imgList = ['imgs\/diamond2.png', 'imgs\/Dugong.jpg']$/;"	v
+harris	myUtils.py	/^def harris(img, thresh, color=[0,0,255]):$/;"	f
+hog_descriptor	myUtils.py	/^def hog_descriptor(im, **kwargs):$/;"	f
+hog_preprocessing	myUtils.py	/^def hog_preprocessing(im):$/;"	f
+imList	main.py	/^    imList = ['imgs\/diamond2.png', 'imgs\/Dugong.jpg']$/;"	v
+image_properties	play.py	/^def image_properties():$/;"	f
 list_one	play.py	/^list_one = [ii+1 for ii in range(10)]$/;"	v
 list_three	play.py	/^list_three = [ii * 2 for ii in range(10)]$/;"	v
 list_two	play.py	/^list_two = [ii + 2 for ii in range(10)]$/;"	v
 log	debug.py	/^def log(item=''):$/;"	f
 map_colors	myUtils.py	/^def map_colors(number):$/;"	f
 open_file	myUtils.py	/^def open_file(fileName):$/;"	f
+pad_image	myUtils.py	/^def pad_image(im, row_pad, col_pad):$/;"	f
 para_one	play.py	/^para_one = 'tawana'$/;"	v
 para_two	play.py	/^para_two = 'kwararamba'$/;"	v
+playing_tuples	play.py	/^def playing_tuples():$/;"	f
 resize_img	myUtils.py	/^def resize_img(img, reduction=0.5):$/;"	f
+resize_img_dim	myUtils.py	/^def resize_img_dim(img, nw_width, nw_len):$/;"	f
 return_two	play.py	/^def return_two(thing_one, thing_two):$/;"	f
 rotate_image	myUtils.py	/^def rotate_image(img, angle=45):$/;"	f
 rotate_image_b	myUtils.py	/^def rotate_image_b(img, angle=45):$/;"	f
 s:cpo_save	Session.vim	/^let s:cpo_save=&cpo$/;"	v
-s:l	Session.vim	/^let s:l = 15 - ((14 * winheight(0) + 33) \/ 67)$/;"	v
+s:l	Session.vim	/^let s:l = 129 - ((40 * winheight(0) + 33) \/ 67)$/;"	v
+s:l	Session.vim	/^let s:l = 20 - ((0 * winheight(0) + 33) \/ 67)$/;"	v
+s:l	Session.vim	/^let s:l = 9 - ((8 * winheight(0) + 33) \/ 67)$/;"	v
 s:so_save	Session.vim	/^let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0$/;"	v
 s:sx	Session.vim	/^let s:sx = expand("<sfile>:p:r")."x.vim"$/;"	v
 s:wipebuf	Session.vim	/^  let s:wipebuf = bufnr('%')$/;"	v
 save_comparisons	myUtils.py	/^def save_comparisons(labels, raw_pixels, diff_frm_og, fileName):$/;"	f
-show_diff_dist	main.py	/^def show_diff_dist(distance):$/;"	f
-show_diff_hists	main.py	/^def show_diff_hists(base_hist, op_base_hist, op_hists, xLim):$/;"	f
+save_stats	myUtils.py	/^def save_stats(fileName, tol_labels, area_label_ls, num_labels):$/;"	f
+select_key_point	myUtils.py	/^def select_key_point(im, **kwargs):$/;"	f
+show_diff_dist	myUtils.py	/^def show_diff_dist(distance, **kwargs):$/;"	f
+show_diff_hists	myUtils.py	/^def show_diff_hists(base_hist, op_base_hist, op_hists, xLim):$/;"	f
 show_histograms	myUtils.py	/^def show_histograms(image):$/;"	f
 show_img_ls	myUtils.py	/^def show_img_ls(img_ls):$/;"	f
 some_func	play.py	/^def some_func(para_one, para_two, *args):$/;"	f

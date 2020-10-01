@@ -23,6 +23,10 @@ def check_sizes(in_ls):
         else:
             print("CAN'T GET SIZE OF IMAGE")
 
+def display_ls(in_ls):
+    for ii, thing in enumerate(in_ls):
+        print('{}: item: {}'.format(ii, thing))
+
 
 def display_image(im):
     cv.imshow('display the image', im)

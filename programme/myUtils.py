@@ -6,6 +6,9 @@ from debug import *
 import math
 import os
 
+
+TOL = 0.00001
+
 def map_colors(number):
     return {
             1: '#d3d3d3',
@@ -73,6 +76,11 @@ def resize_img(img, reduction=0.5):
     width = img_copy.shape[1] * reduction
     height = img_copy.shape[0] * reduction
     return cv.resize(img_copy, (int(width), int(height)))
+
+def resize_img_dim(img, nw_width, nw_len):
+    img_copy = img.copy()
+    #chnage everything to the copy image
+    return cv.resize(img_copy, (int(nw_width), int(nw_len)))
 
 
 #TO DO: when you're rotating your images, it's cutting of some of the image
@@ -156,10 +164,23 @@ def generate_labels(num_images):
     ret.insert(0, 'orginal')
     return ret
 
+def save_stats(fileName, area_label_ls, num_labels):
+    headers = ['number of labels', 'label', 'Area of label (units^2)']
+
+    with open(fileName, 'w') as inStrm:
+        csv_writer = csv.writer(inStrm)
+#        csv_writer.writerow([headers[0]])
+#        csv_writer.writerow(str(num_labels))
+        csv_writer.writerow([headers[0]] + [num_labels])
+        csv_writer.writerow(headers[1:])
+
+        for ii, area in enumerate(area_label_ls):
+            csv_writer.writerow([ii] + [area])
+
 def save_comparisons(labels, raw_pixels, diff_frm_og, fileName):
     headers = ['Image Name', 'Number of key points', 'difference between orginal keypoints and experiment']
     all_data = zip(labels, raw_pixels, diff_frm_og)
-    with open(fileName, 'wt') as inStrm:
+    with open(fileName, 'w') as inStrm:
         csv_writer = csv.writer(inStrm)
         csv_writer.writerow(headers)
 
@@ -201,6 +222,95 @@ def show_diff_dist(distance, **kwargs):
 
     plt.show()
 
-def HOG(im):
-    im = cv.imread(im)
-    im_copy = im.copy()
+def crop_img(img, pt1, pt2):
+    x_l = int(pt1[0])
+    y_l = int(pt1[1])
+    x_r = int(pt2[0])
+    y_r = int(pt2[1])
+    return img[y_l:y_r, x_l:x_r]
+
+
+def select_key_point(im, **kwargs):
+    pass
+
+def pad_image(im, row_pad, col_pad):
+    npad = ((row_pad, col_pad), (row_pad, col_pad), (0,0))
+    return np.pad(im, pad_width=npad, mode='constant', constant_values=0)
+
+
+def hog_preprocessing(im):
+    """
+    IMPORT:
+    EXPORT:
+    PURPOSE: To rescale the image, so it will be easier, to do the later steps in
+    the HOG descriptor steps like the 8x8 box, and the 16x16 box thing later in
+    the tutorial
+    """
+    len_im = im.shape[0]
+    width_im = im.shape[1]
+
+    ratio = width_im / len_im
+    if abs(ratio - 0.5)  > TOL:
+        len_im = width_im * 2
+        im = resize_img_dim(im, width_im, len_im)
+        nw_ratio  = im.shape[1] / im.shape[0]
+        #sanity check to make sure that the image, has scaled to the right
+        assert abs(nw_ratio - 0.5) < TOL, 'image is not 1:2 ratio'
+    return im
+
+def hog_descriptor(im, **kwargs):
+    """
+    IMPORT:im (image matrice) a dictonary of all the  hog parameters
+    (it doesn't matter which order
+    you import them)
+    EXPORT: HOG descriptor object
+
+    ASSERTS: returns a hog descriptor object with your given imported parameters
+    """
+
+    win_size = im.shape[:2]
+    #using the convention to set the block size which is typically going to be
+    # 2 x cell size
+    return cv.HOGDescriptor(win_size,
+            kwargs['block_size'], kwargs['block_stride'],
+            kwargs['cell_size'], kwargs['num_bins'],
+            kwargs['deriv_aperature'], kwargs['win_sigma'],
+            kwargs['hist_norm_type'], kwargs['mag_thresh'],
+            kwargs['gamma'], kwargs['num_lvls'],
+            kwargs['signed_grad'])
+
+#def HOG(im):
+#    """
+#    IMPORT:
+#    EXPORT:
+#
+#    PURPOSE:
+#
+#    ADAPTED FROM: Satya Mallick. 2016. Histogram  of oriented Gradients. Learn OpenCv.
+#    https://www.learnopencv.com/histogram-of-oriented-gradients/
+#
+#
+#    ADAPTED FROM: Satya Mallick. 2017. Handwritten Digits Classification: An
+#    OpenCV (C++/Python) Tutorial. Learn OpenCv
+#    .https://www.learnopencv.com/handwritten-digits-classification-an-opencv-c-python-tutorial/
+#    """
+#    #corresponds to step one of the hog process: pre-processing
+#    im = cv.imread(im)
+#    im_copy = im.copy()
+#
+#
+#    #corresponds to step two of the hog process: calculating the gradients
+#    im = np.float32(im_copy) / 255.0
+#    grad_x = cv.Sobel( im, cv.CV_32F, 1, 0, ksize=1)
+#    grad_y = cv.Sobel(im, cv.CV_32F, 0, 1, ksize=1)
+#    mag, angle = cv.cartToPolar(grad_x, grad_y, angleInDegrees=True)
+#
+#    #corresping to step three: calculating HOG of even cells
+#
+#    #corresponding to step four: caclulating the HOG of bigger cells
+#
+#    #corresponding to step five: caclulating the HOG feature vector
+#
+#    #visualizing HOG
+
+#helper functions for hog

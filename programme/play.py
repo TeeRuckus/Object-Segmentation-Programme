@@ -2,6 +2,7 @@ import cv2 as cv
 import numpy as np
 from myUtils import *
 import csv
+import argparse
 
 para_one = 'tawana'
 para_two = 'kwararamba'
@@ -24,6 +25,8 @@ def write_file():
     headers = ['some 1', 'some 2', 'some 3']
     row_one = [1, 'yes', 'no']
     row_two = [2, 'no', 'no']
+    data_one = ['age']
+    date_two = ['20']
 
     all_data  = [row_one, row_two]
     print(all_data)
@@ -31,6 +34,7 @@ def write_file():
     with open('test_file.csv', 'wt') as f:
         csv_writer = csv.writer(f)
 
+        csv_writer.writerow(data_one + date_two)
         #writing the headers down
         csv_writer.writerow(headers)
         csv_writer.writerow(row_one)
@@ -51,6 +55,38 @@ def write_file_two():
             #writing the headers down
             csv_writer.writerow(ii)
 
+def playing_tuples():
+    im = cv.imread('imgs/diamond2.png')
+    print(im.shape[:2])
 
-write_file_two()
+def image_properties():
+    white_img = np.array([[255, 255, 255],
+                          [255, 255, 255],
+                          [255, 255, 255],
+                          [255, 255, 255]])
+
+    padding = np.zeros(white_img.shape)
+    padding[:white_img.shape[0], :white_img.shape[1]] = white_img
+
+    print('white image \n {}'.format(white_img))
+    print('padding image \n {}'.format(padding))
+
+    padded = np.pad(white_img, [2, 1], mode='constant')
+    print('padded \n{}'.format(padded))
+
+if __name__ == '__main__':
+    #write_file()
+    #image_properties()
+    #playing_tuples()
+#    ap = argparse.ArgumentParser()
+#    ap.add_argument("-i", "--images", required=True, help='path to imageas directory')
+#    args = vars(ap.parse_args())
+    #I wonder, what the hell this does aye
+
+    #write_file_two()
 #some_func(para_one, para_two, list_one, list_two, list_three)
+    #I am curious if you can double format a string
+
+    name = 'Tawana'
+    print('hello {}, my name is also {}'.format(name, name))
+    print('hello %s my name is also %s ' % (name, name))

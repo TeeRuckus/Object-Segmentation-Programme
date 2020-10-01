@@ -2,6 +2,7 @@ from myUtils import *
 import numpy as np
 from matplotlib import pyplot as plt
 from debug import *
+np.set_printoptions(threshold=np.inf)
 """
 TO DO:
     - refactor the diamonds rotated, and the scaled ones, so you can pass
@@ -13,6 +14,7 @@ TO DO:
     - for your sift experiments, you can get the number og key-points they're
     by just getting the length of the list the key-points returned too, and
     comparing if each transform got the same number of keypoints
+    -For task 3, when you print out each of the components to the terminal, also number which object is which number
 """
 
 def activity_one_harris_rotated(im, channel, **kwargs):
@@ -130,7 +132,6 @@ def activity_one_harris_scaled(im, channel, **kwargs):
     #fileName = 'results/Task_1/scaled_experiements/Harris/playing_card/comparison.csv'
     diff_frm_og = get_diff_pixels(num_kp_og_scaled[0],num_kp_scaled)
     labels = generate_labels(len(num_kp_scaled))
-    #save_comparisons(labels, num_kp_scaled,diff_frm_og, fileName)
     show_diff_dist(diff_frm_og, title='Difference between key points')
     #open_file(fileName)
 
@@ -186,6 +187,7 @@ def activity_one_SIFT_rotated(im):
     #EXPERIMENT ONE: checking if the harris corner detection picked up the same
     #poins
 
+    #EXPERIMENT ONE: testing the number of key features extracted
     #finding the number of keypoints found, since keypoints are classes, were're
     #just going to check the length of keypoints returned by each list
     kp_len_og = len(og_SIFT[1])
@@ -271,23 +273,158 @@ def activity_one_SIFT_scaled(im):
     scaled_SIFT_imgs.insert(0, og_SIFT[2])
     show_img_ls(scaled_SIFT_imgs)
 
+def activity_two_hog(im):
+    im = cv.imread(im)
+    im_copy = im.copy()
+
+    #-------------------------------------------------------------------------------
+    #SET UP
+    #-------------------------------------------------------------------------------
+
+    #I have choosen the two as the intresting keypoint hence, extracting the two
+    cv.imshow('diamond', im_copy)
+    #pre-processing: the image must have a ratio of 1:2 for the hog to work
+    #properly
+
+    #need to pad the image, so we can extract the two by itself without the
+    #diamond, and to maintain a ratio of 1:2
+    two = crop_img(im_copy, (8, 1), (28, 46))
+    two = pad_image(two, 4, 1)
+    print(two.shape)
+
+    rotated_twos = [rotate_image_b(two.copy(), angle) for angle in range(15,360,15)]
+
+    #focessing the images, too maintain that image ratio of 1:2
+    rotated_twos = [hog_preprocessing(ii) for ii in rotated_twos]
+
+    #using the recommended values for hog
+
+    og_hog = hog_descriptor(two,
+            cell_size=(5,5),
+            block_size=(10,10),
+            block_stride=(5,5),
+            num_bins=9,
+            deriv_aperature=1,
+            win_sigma=-1,
+            hist_norm_type=0,
+            mag_thresh=0.2,
+            gamma=1,
+            num_lvls=64,
+            signed_grad=True )
+
+    og_des = og_hog.compute(two)
+
+def activity_two_rotated(im):
+    im = cv.imread(im)
+    im_copy = im.copy()
+
+    #-------------------------------------------------------------------------------
+    #SET UP
+    #-------------------------------------------------------------------------------
+
+    #I have choosen the two as the intresting keypoint hence, extracting the two
+    cv.imshow('diamond', im_copy)
+    #pre-processing: the image must have a ratio of 1:2 for the hog to work
+    #properly
+
+    #need to pad the image, so we can extract the two by itself without the
+    #diamond, and to maintain a ratio of 1:2
+    two = crop_img(im_copy, (8, 1), (28, 46))
+    two = pad_image(two, 4, 1)
+
+    rotated_twos = [rotate_image_b(two.copy(), angle) for angle in range(15,360,15)]
+    rotated_twos.insert(0, two)
+    #to keep the experiements fair, we have to test the operations on the same
+    #scalling
+
+    #MAKE SURE THAT YOU'RE USING THE SAME IMAGES AS HOG
+    rotated_twos = [hog_preprocessing(ii) for ii in rotated_twos]
+    rotated_twos_SIFT_kp = [SIFT(ii)[1] for ii in rotated_twos]
+
+    #EXPERIMENT ONE: finding the number of features extracted in the image
+    lens_imgs = [len(ii) for ii in rotated_twos_SIFT_kp]
+    show_diff_dist(lens_imgs, title='number of keypoints found for each image')
+
+    #EXPERIMENT TWO:
+
+def display_kp_ls(in_ls):
+    for ii, num_kp in  enumerate(in_ls):
+        print('image: {}, {} key points found'.format(ii,num_kp))
+
+
+def activity_three(im, **kwargs):
+    """
+    Adapted from: #https://iq.opengenus.org/connected-component-labeling/#:~:text=Connected%20Component%20Labeling%20can%20be,connectedComponents()%20function%20in%20OpenCV.&text=The%20function%20is%20defined%20so,path%20to%20the%20original%20image.
+    """
+
+    #task i
+    im = cv.imread(im)
+    im_copy = im.copy()
+    gray_img = cv.cvtColor(im_copy, cv.COLOR_BGR2GRAY)
+
+    #blurring the image to remove any potential noise
+    blur = cv.GaussianBlur(gray_img, (5,5),0)
+    thresh = cv.threshold(gray_img, 0, 255,  cv.THRESH_BINARY+cv.THRESH_OTSU)[1]
+    cv.imshow('threshhold im', thresh)
+    #inverting the defualt background, and foregrounds
+    thresh = thresh.max() - thresh
+
+    #applyting the connected component labelling algorithm
+    connectivity=8
+    num_labels, labels, stats, centroids = cv.connectedComponentsWithStats(thresh, connectivity,cv.CV_32S)
+
+    label_hue = np.uint8(179*labels/np.max(labels))
+    blank_ch = 255 * np.ones_like(label_hue)
+    labeled_img = cv.merge([label_hue, blank_ch, blank_ch])
+    labeled_img = cv.cvtColor(labeled_img, cv.COLOR_HSV2BGR)
+
+    #set bg label to black
+    labeled_img[label_hue==0] = 0
+
+    #drawing the contours onto the image
+    contours  = cv.findContours(thresh, cv.RETR_TREE, cv.CHAIN_APPROX_SIMPLE)
+    cv.drawContours(im_copy, contours[1], -1, (0,255,0), 3)
+
+    cv.imshow('after component labelling: %s' % kwargs['im_name'], labeled_img)
+
+    #task ii)
+    name = kwargs['im_name']
+    fileName ='results/Task_3/%s/results_for_%s.csv' % (name.lower(), name)
+    area_one = stats[0][cv.CC_STAT_AREA]
+    area_two = stats[1][cv.CC_STAT_AREA]
+    area_three = stats[3][cv.CC_STAT_AREA]
+
+    area_of_all_labels = [stats[ii][cv.CC_STAT_AREA] for ii in range(num_labels)]
+
+    save_stats(fileName, area_of_all_labels, labels.max())
+    open_file(fileName)
 
 if __name__ == '__main__':
-    imgList = ['imgs/diamond2.png', 'imgs/Dugong.jpg']
+    imList = ['imgs/diamond2.png', 'imgs/Dugong.jpg']
     #---------------------------------------------------------------------------
     #TASK ONE: Diamond playing card
     #---------------------------------------------------------------------------
     #running all the experiements for the diamond card
-    #activity_one_harris_rotated(imgList[0])
-    #activity_one_harris_scaled(imgList[0])
-    #activity_one_SIFT_rotated(imgList[0])
-    #activity_one_SIFT_scaled(imgList[0])
+    #activity_one_harris_rotated(imList[0])
+    #activity_one_harris_scaled(imList[0])
+    #activity_one_SIFT_rotated(imList[0])
+    #activity_one_SIFT_scaled(imList[0])
 
     #---------------------------------------------------------------------------
     #TASK ONE: Dugong image
     #---------------------------------------------------------------------------
-    activity_one_harris_rotated(imgList[1], 2, color=[0,0,255], thresh=0.06)
-    activity_one_harris_scaled(imgList[1], 2, color=[0,0,255], thresh=0.06)
-    activity_one_SIFT_rotated(imgList[1])
-    activity_one_SIFT_scaled(imgList[1])
+#    activity_one_harris_rotated(imList[1], 2, color=[0,0,255], thresh=0.06)
+#    activity_one_harris_scaled(imList[1], 2, color=[0,0,255], thresh=0.06)
+#    activity_one_SIFT_rotated(imList[1])
+#    activity_one_SIFT_scaled(imList[1])
+
+    #---------------------------------------------------------------------------
+    #TASK TWO: Diamond
+    #---------------------------------------------------------------------------
+    #activity_two_hog(imList[0])
+    #activity_two_rotated(imList[0])
+    #activity_three(imList[0], im_name='Diamond')
+    activity_three(imList[1], im_name='dugong')
+
+
     cv.waitKey(0)
