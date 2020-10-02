@@ -3,6 +3,8 @@ import numpy as np
 from myUtils import *
 import csv
 import argparse
+import random as rng
+rng.seed(12345)
 
 para_one = 'tawana'
 para_two = 'kwararamba'
@@ -74,19 +76,66 @@ def image_properties():
     padded = np.pad(white_img, [2, 1], mode='constant')
     print('padded \n{}'.format(padded))
 
-if __name__ == '__main__':
-    #write_file()
-    #image_properties()
-    #playing_tuples()
-#    ap = argparse.ArgumentParser()
-#    ap.add_argument("-i", "--images", required=True, help='path to imageas directory')
-#    args = vars(ap.parse_args())
-    #I wonder, what the hell this does aye
+def finding_contours_play(im):
+    im = cv.imread(im)
+    im_copy = im.copy()
 
-    #write_file_two()
-#some_func(para_one, para_two, list_one, list_two, list_three)
-    #I am curious if you can double format a string
 
-    name = 'Tawana'
-    print('hello {}, my name is also {}'.format(name, name))
-    print('hello %s my name is also %s ' % (name, name))
+    im_gray = cv.cvtColor(im_copy, cv.COLOR_BGR2GRAY)
+    cv.imshow('gray-scale image', im_gray)
+
+    cv.waitKey()
+
+
+def play_flatten():
+    some_array = np.arange(100)
+    nw_array = some_array.reshape((10,10))
+    print(nw_array)
+    print(nw_array.flatten())
+
+def play_v_stack():
+    arr_one = [1,2,3,4]
+    arr_two = [5,6,7,8]
+    arr_three = [9,10,11,12]
+
+    res = np.vstack((arr_one, arr_two, arr_three))
+    print(res)
+
+play_v_stack()
+#def thresh_callback(val):
+#    threshold = val
+#
+#    #detecting the edges in the image using canny
+#
+#    canny_output = cv.Canny(src_gray, threshold, threshold*2)
+#    #finding the countours of the image
+#    _, contours, heierarchy = cv.findContours(canny_output, cv.RETR_TREE, cv.CHAIN_APPROX_SIMPLE)
+#
+#    #drawing the contours onto the image
+#    drawing  = np.zeros((canny_output.shape[0], canny_output.shape[1], 3), dtype=np.uint8)
+#
+#    for ii in range(len(contours)):
+#        color = (rng.randint(0,256), rng.randint(0,256), rng.randint(0,256))
+#        cv.drawContours(drawing, contours, ii, color, 2, cv.LINE_8, heierarchy,0)
+#
+#    cv.imshow('Contours found', drawing)
+#
+#src = cv.imread('imgs/diamond2.png')
+#
+##converting the image to a grayscale image, and blurring it
+#src_gray = cv.cvtColor(src, cv.COLOR_BGR2GRAY)
+#src_gray = cv.blur(src_gray, (3,3))
+#
+#
+##creating my window
+#source_window = 'Source'
+#cv.namedWindow(source_window)
+#cv.imshow(source_window, src)
+#
+#max_thresh = 255
+#thresh = 100 #setting the initila threshold of the image
+#
+#cv.createTrackbar('canny thresh:', source_window, thresh, max_thresh, thresh_callback)
+#thresh_callback(thresh)
+#
+#cv.waitKey()

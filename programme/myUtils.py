@@ -11,6 +11,7 @@ TOL = 0.00001
 
 def map_colors(number):
     return {
+            0: '#ee7b06',
             1: '#d3d3d3',
             2: '#2f4f4f',
             3: '#556b2f',
@@ -41,6 +42,13 @@ def map_colors(number):
             28: '#90ee90',
             29: '#ff1493',
             30: '#7b68ee'}[number]
+
+def map_hex2RBG(hex_num):
+    """
+    CODE ADAPTED FROM: https://stackoverflow.com/questions/29643352/converting-hex-to-rgb-value-in-python
+    """
+    hex_num = hex_num.lstrip('#')
+    return tuple(int(hex_num[ii:ii+2], 16) for ii in (0,2,4))
 
 def show_img_ls(img_ls):
     for ii, mat in enumerate(img_ls):
@@ -269,6 +277,7 @@ def hog_descriptor(im, **kwargs):
     """
 
     win_size = im.shape[:2]
+    print(win_size)
     #using the convention to set the block size which is typically going to be
     # 2 x cell size
     return cv.HOGDescriptor(win_size,

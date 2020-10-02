@@ -195,11 +195,12 @@
 SIFT	myUtils.py	/^def SIFT(img):$/;"	f
 SessionLoad	Session.vim	/^let SessionLoad = 1$/;"	v
 TOL	myUtils.py	/^TOL = 0.00001$/;"	v
+activity_four	main.py	/^def activity_four(im, thresh):$/;"	f
 activity_one_SIFT_rotated	main.py	/^def activity_one_SIFT_rotated(im):$/;"	f
 activity_one_SIFT_scaled	main.py	/^def activity_one_SIFT_scaled(im):$/;"	f
 activity_one_harris_rotated	main.py	/^def activity_one_harris_rotated(im, channel, **kwargs):$/;"	f
 activity_one_harris_scaled	main.py	/^def activity_one_harris_scaled(im, channel, **kwargs):$/;"	f
-activity_three	main.py	/^def activity_three(im, **kwargs):$/;"	f
+activity_three	main.py	/^def activity_three(im, invert_threshold=False, **kwargs):$/;"	f
 activity_two_hog	main.py	/^def activity_two_hog(im):$/;"	f
 activity_two_rotated	main.py	/^def activity_two_rotated(im):$/;"	f
 bd	Session.vim	/^nnoremap bd :bdelete $/;"	m
@@ -218,6 +219,7 @@ display_image	debug.py	/^def display_image(im):$/;"	f
 display_kp_ls	main.py	/^def display_kp_ls(in_ls):$/;"	f
 display_ls	debug.py	/^def display_ls(in_ls):$/;"	f
 ds	Session.vim	/^nmap ds <Plug>Dsurround$/;"	m
+finding_contours_play	play.py	/^def finding_contours_play(im):$/;"	f
 gc	Session.vim	/^nmap gc <Plug>Commentary$/;"	m
 gc	Session.vim	/^omap gc <Plug>Commentary$/;"	m
 gcc	Session.vim	/^nmap gcc <Plug>CommentaryLine$/;"	m
@@ -236,6 +238,8 @@ list_three	play.py	/^list_three = [ii * 2 for ii in range(10)]$/;"	v
 list_two	play.py	/^list_two = [ii + 2 for ii in range(10)]$/;"	v
 log	debug.py	/^def log(item=''):$/;"	f
 map_colors	myUtils.py	/^def map_colors(number):$/;"	f
+map_hex2RBG	myUtils.py	/^def map_hex2RBG(hex_num):$/;"	f
+max_thresh	play.py	/^max_thresh = 255$/;"	v
 open_file	myUtils.py	/^def open_file(fileName):$/;"	f
 pad_image	myUtils.py	/^def pad_image(im, row_pad, col_pad):$/;"	f
 para_one	play.py	/^para_one = 'tawana'$/;"	v
@@ -254,14 +258,20 @@ s:so_save	Session.vim	/^let s:so_save = &so | let s:siso_save = &siso | set so=0
 s:sx	Session.vim	/^let s:sx = expand("<sfile>:p:r")."x.vim"$/;"	v
 s:wipebuf	Session.vim	/^  let s:wipebuf = bufnr('%')$/;"	v
 save_comparisons	myUtils.py	/^def save_comparisons(labels, raw_pixels, diff_frm_og, fileName):$/;"	f
-save_stats	myUtils.py	/^def save_stats(fileName, tol_labels, area_label_ls, num_labels):$/;"	f
+save_stats	myUtils.py	/^def save_stats(fileName, area_label_ls, num_labels):$/;"	f
 select_key_point	myUtils.py	/^def select_key_point(im, **kwargs):$/;"	f
 show_diff_dist	myUtils.py	/^def show_diff_dist(distance, **kwargs):$/;"	f
 show_diff_hists	myUtils.py	/^def show_diff_hists(base_hist, op_base_hist, op_hists, xLim):$/;"	f
 show_histograms	myUtils.py	/^def show_histograms(image):$/;"	f
 show_img_ls	myUtils.py	/^def show_img_ls(img_ls):$/;"	f
 some_func	play.py	/^def some_func(para_one, para_two, *args):$/;"	f
+source_window	play.py	/^source_window = 'Source'$/;"	v
+src	play.py	/^src = cv.imread('imgs\/diamond2.png')$/;"	v
+src_gray	play.py	/^src_gray = cv.blur(src_gray, (3,3))$/;"	v
+src_gray	play.py	/^src_gray = cv.cvtColor(src, cv.COLOR_BGR2GRAY)$/;"	v
 th	Session.vim	/^nnoremap th :tabfirst$/;"	m
+thresh	play.py	/^thresh = 100 #setting the initila threshold of the image$/;"	v
+thresh_callback	play.py	/^def thresh_callback(val):$/;"	f
 tj	Session.vim	/^nnoremap tj :tabprev$/;"	m
 tk	Session.vim	/^nnoremap tk :tabnext$/;"	m
 tl	Session.vim	/^nnoremap tl :tablast$/;"	m
