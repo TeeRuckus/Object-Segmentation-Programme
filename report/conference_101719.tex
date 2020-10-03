@@ -37,18 +37,77 @@ Histograms, \textbf{I don't know what this is tbh...}
 \textbf{do this are the end}
 
 \section{Task One: Image histogram, Harris corners and scale-invariant feature transform (SIFT) key points}\label{one}
+The Harris corner detection algorithm, and the SIFT algorithm can be thought of algorithms which will pick the key features of an image with the pre-dominate implementations of these algorithms detect the corners of the image \cite{b2} \cite{b3}. Corners can be thought of as regions in an image with large variation of intensities in all directions \cite{b2}. Therefore, the SIFT and the Harris algorithm, are algorithms for detecting the corners in an image the key differences is the invariance and variance to certain image transformations \cite{b3}. Harris corner detection algorithm is mainly invariant to rotation, and the SIFT algorithm is mainly invariant to scaling and is also invariant to rotations due the orientation assignment stage of the SIFT algorithm \cite{b3}, which is explored in greater detail in section \ref{two} subsection \ref{two ii}.
 
-\subsection{Harris corner detection}
-Harris corner detection is an algorithm which can be mainly thought as a rotation invariant algorithm
+\subsection{Harris corner detection} \label{one-theory}
+The Harris corner detection is an algorithm whereby a window function will scan through the image to locate local maximums, these local maximums can be thought as potential candidates for key features detected by the Harris corner detection algorithm \cite{b4} \cite{b2}. This following behaviour can be modelled by the following equation:
+\begin{equation}
+	E(u,v) = \sum\limits_{(x,y)} w(x,y) [I(x + u, y+v) - I(x,y)]^2
+\end{equation}
+
+Whereby:
+\begin{itemize}
+	\item $w(x,y)$ represents the window which is scanning over each section of the image,
+	\item $I(x + u, y + v)$ represents the intensity neighbouring pixels, and
+	\item $I(x,y)$ represents the intensity of the current pixel.
+\end{itemize}
+
+Thereafter, the function is through taylor expansion to form the following system of equaitons
+
+\begin{equation}
+	E(u,v) \approx [u\ v] M 
+	\begin{bmatrix}
+	u \\ v
+	\end{bmatrix}
+\end{equation}
+
+Whereby, M is represented by the following equation
+
+\begin{equation}
+	M = \sum\limits_{(x,y)} w(x,y) 
+	
+	\begin{bmatrix}
+		I_{x} I_{x} & I_{x} I_{y} \\
+		I_{x} I_{y} & I_{y} I_{y}
+	\end{bmatrix}
+\end{equation}
+
+Thereafter, a plethora of potential corners are found in the image matrices, the Harris algorithm will then go through each window function to determine if the found corner is most likely going to be an actual corner, this process is determined by the following equation \cite{b2}:
+
+\begin{equation}
+	R = det(M) - k(trace(M))^{2}
+\end{equation} 
+
+Where by $det(M)$ is the multiplication of eigen values of the matrice M, and $trace(M)$ is the addition of the eigen values of the matrice M \cite{b2}. Therefore, if one of the eigen values is significanly greater than the other eigen value those found points are most likely to be an edge, and if the eigen vales are large and approximatily the same value that point is a corner otherwise, that point is a flat region \cite{b2}.\par
+
+Harris corner detection is an algorithm which can be mainly thought of as a rotation invariant algorithm meaning, no matter the angles you rotate a given image, the algorithm is going to detect the same key-features \cite{b2} \cite{b4}. This is due to that an corner will always going to remain a corner no matter what orientation the image because a corner is just a high intensity pixel, and the algorithm only looks at a pixel and it's neighbouring pixels thus, no matter what orientation the image the pixels will still have the same neighbouring pixels\cite{b2}. Albeit, if you scale the image, a pixels neighbouring pixels will be transformed hence, the window function may determine those clusters of pixels as a non-corner when it's a corner, or as a corner when it's a non-corner. Therefore, the conducted ecperiments should show consistencies through the set of rotate images, and inconsistencies throught the scaled images.
+
+\subsection{Harris Corner detection: Results - Diamond}\label{one-results}
+\subsubsection{Rotational Results}
+
+
+\subsubsection{Scaling Results}
+
+\subsection{Harris Corner detection: Results - Dugong}
+
+\subsubsection{Rotational Results}
+
+\subsubsection{Scaling Results}
+
+
 \subsection{SIFT}
 %----------------------------------------------------------------------------------------
-%things whihc came with the conference paper, and I think they're useful so I am going to
+%things which came with the conference paper, and I think they're useful so I am going to
 %leave them here for the time being
 %----------------------------------------------------------------------------------------
-\section{Task Two} \label{two}
+\section{Task Two: Image Features} \label{two}
 an example on how to refernce other sections \ref{three}
-\section{three} \label{three}
-\subsection{\LaTeX-Specific Advice}
+
+\subsection{part ii} \label{two ii}
+
+\section{Task Three} \label{three}
+
+\section{Task Four} \label{four}
 
 Please use ``soft'' (e.g., \verb|\eqref{Eq}|) cross references instead
 of ``hard'' references (e.g., \verb|(1)|). That will make it possible
@@ -200,6 +259,11 @@ acknowledgments in the unnumbered footnote on the first page. How is this going 
 \bibitem{b1} Dr. S. An. 2020. Machine Perception Lecture 03 [PowerPoint slides] Available:https://learn-ap-southeast-2-prod-fleet01-xythos.s3.ap-southeast-2.amazonaws.com/5dc3e34515a0e/4348643?response-cache-control=private\%2C\%20max-age\%3D21600\&response-content-disposition=inline\%3B\%20filename\%2A\%3DUTF-8\%27\%27lecture03\_feature\_detection.pdf\&response-content-type=application\%2Fpdf\&X-Amz-Algorithm=AWS4-HMAC-SHA256\&X-Amz-Date=20200927T060000Z\&X-Amz-SignedHeaders=host\&X-Amz-Expires=21600\&X-Amz-Credential=AKIAYDKQORRYZBCCQFY5\%2F20200927\%2Fap-southeast-2\%2Fs3\%2Faws4\_request\&X-Amz-Signature=bcf107d5e76759efe45687b516ac725158189de0af558d0a7a798df1723f4299
 
 \bibitem{b2} A. Mordvinstev and K. Abid. "Harris Corner detection". OpenCV-Python Tutorials. https://opencv-python-tutroals.readthedocs.io/en/latest/py\_tutorials/py\_feature2d/py\_features\_harris/py\_features\_harris.html (retrieved Sept. 27, 2020).
+
+\bibitem{b3}. OpenCV. "Introduction to SIFT (Scale-Invariant Feature Transform)". OpenCV-Open source Computer vision. https://docs.opencv.org/3.4/da/df5/tutorial\_py\_sift\_intro.html
+
+\bibitem{b4}. C. Harris and M. Stephens. 1988. A Combined Corner And Edge Detector. Plessey Reasearch Roke Manor, UK. [Online]. Available: https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.434.4816\&rep=rep1\&type=pdf
+
 
 %\bibitem{b1} G. Eason, B. Noble, and I. N. Sneddon, ``On certain integrals of Lipschitz-Hankel type involving products of Bessel functions,'' Phil. Trans. Roy. Soc. London, vol. A247, pp. 529--551, April 1955.
 %\bibitem{b2} J. Clerk Maxwell, A Treatise on Electricity and Magnetism, 3rd ed., vol. 2. Oxford: Clarendon, 1892, pp.68--73.
