@@ -4,6 +4,7 @@ from myUtils import *
 import csv
 import argparse
 import random as rng
+import matplotlib.pyplot as plt
 rng.seed(12345)
 
 para_one = 'tawana'
@@ -11,6 +12,14 @@ para_two = 'kwararamba'
 list_one = [ii+1 for ii in range(10)]
 list_two = [ii + 2 for ii in range(10)]
 list_three = [ii * 2 for ii in range(10)]
+
+def plot_something():
+    plt.plot([1,2,3,4])
+    plt.ylabel('some numbers')
+    plt.show()
+
+
+plot_something()
 
 def some_func(para_one, para_two, *args):
     print("%s" % para_one )
@@ -101,7 +110,7 @@ def play_v_stack():
     res = np.vstack((arr_one, arr_two, arr_three))
     print(res)
 
-play_v_stack()
+#play_v_stack()
 #def thresh_callback(val):
 #    threshold = val
 #

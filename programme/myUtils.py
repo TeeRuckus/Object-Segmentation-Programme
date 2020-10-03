@@ -231,11 +231,12 @@ def show_diff_hists(base_hist, op_base_hist, op_hists, xLim, **kwargs):
 
 def show_diff_dist(distance, **kwargs):
     #getting the distances of the rotated image relative to the orginal image
+    ret = plt.figure(kwargs['title'])
     labels = ['img: %s' % ii for ii in range(len(distance))]
     labels = tuple(labels)
     y_pos = np.arange(len(labels))
     #distances = [0, 20, 30]
-    ret = plt.figure(kwargs['title'])
+
     plt.bar(y_pos, distance, align='center', alpha=0.25)
     plt.xticks(y_pos, labels)
     plt.ylabel('Distance from orginal Harris image')

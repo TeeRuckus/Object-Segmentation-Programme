@@ -1,5 +1,6 @@
 from myUtils import *
 import numpy as np
+import matplotlib
 from matplotlib import pyplot as plt
 from debug import *
 import random as rng
@@ -109,11 +110,25 @@ def activity_one_harris_rotated(im, channel, **kwargs):
     harris_s_rotated.insert(0, og_harris)
     show_img_ls(harris_s_rotated)
 
+    #telling the figure manager to display all the figures as max size, and
+    #save them that way aswell
+
+    manager = plt.get_current_fig_manager()
+    #uncomment this to check what backend you're using
+    #print(matplotlib.get_backend())
+    #depening on the back end of matplot lib, will determine which function
+    #you're going to use to maximise your window size
+
+    manager.window.maximize()
     #showing all the produced plots at once
     exp_one.show()
+    plt.savefig('test1.png')
     exp_two.show()
+    plt.savefig('test2.png')
     exp_three.show()
+    plt.savefig('test3.png')
     #n is equal to the value of 110
+    cv.waitKey()
     clean()
 
 def activity_one_harris_scaled(im, channel, **kwargs):
