@@ -9,6 +9,15 @@ import os
 
 TOL = 0.00001
 
+def clean():
+    valid = False
+    while not valid:
+        proceed = input('Press [N]ext to go onto the next experiment: ')
+        if proceed.upper().strip() == 'N':
+            valid = True
+            cv.destroyAllWindows()
+            plt.close('all')
+
 def map_colors(number):
     return {
             0: '#ee7b06',
@@ -198,8 +207,10 @@ def save_comparisons(labels, raw_pixels, diff_frm_og, fileName):
 def open_file(fileName):
     os.system('xdg-open %s' % fileName)
 
-def show_diff_hists(base_hist, op_base_hist, op_hists, xLim):
+def show_diff_hists(base_hist, op_base_hist, op_hists, xLim, **kwargs):
     #showing all the rotated histograms
+
+    ret = plt.figure(kwargs['name'])
     plt.plot(base_hist, color=map_colors(1), label='original image')
     plt.plot(op_base_hist, color=map_colors(2), label='harris orignal image')
 
@@ -213,8 +224,10 @@ def show_diff_hists(base_hist, op_base_hist, op_hists, xLim):
     plt.legend(loc='upper center')
     plt.ylabel('Frequency')
     plt.xlabel('intensity value')
-    plt.title('Rotated Diamonds harris comparison')
-    plt.show()
+    plt.title(kwargs['name'])
+    #plt.show()
+
+    return ret
 
 def show_diff_dist(distance, **kwargs):
     #getting the distances of the rotated image relative to the orginal image
@@ -222,13 +235,15 @@ def show_diff_dist(distance, **kwargs):
     labels = tuple(labels)
     y_pos = np.arange(len(labels))
     #distances = [0, 20, 30]
+    ret = plt.figure(kwargs['title'])
     plt.bar(y_pos, distance, align='center', alpha=0.25)
     plt.xticks(y_pos, labels)
     plt.ylabel('Distance from orginal Harris image')
     plt.xlabel('Distances (units)')
     plt.title(kwargs['title'])
 
-    plt.show()
+    #plt.show()
+    return ret
 
 def crop_img(img, pt1, pt2):
     x_l = int(pt1[0])

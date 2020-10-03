@@ -3,6 +3,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 from debug import *
 import random as rng
+import argparse
 
 #intializing the randon number generator, and initialising the beginning number
 rng.seed(1000)
@@ -26,9 +27,20 @@ TO DO:
 def activity_one_harris_rotated(im, channel, **kwargs):
     """
     IMPORTS:
-    EXPORTS:
-    PURPOSE:
+        - im (String): the name of the imag
+        - channel (integer): the channel were you wan to calculate your histograms on
+        - kwargs (directionary mapping): importing settings for the harris corner detector
+        regardless of the order of the impor. These settings inlcude the following
+            - threshold
+            - color of the harris corner detector corners in the resultant image
+
+    EXPORTS: None
+    PURPOSE: to perform the experiemnts relative to task one of the machine
+    percpetion assignment one. Hence, to see if the harris corner detection is
+    actually rotation invariant, and to see if the SIFT is scale and rotation
+    invariant
     """
+    print('-'*20 + 'PERFORMING ROTATIONAL EXPERIEMENTS: %s' % kwargs['name'] + '-'*20)
     img = cv.imread(im)
     #-------------------------------------------------------------------------------
     #SET UP
@@ -36,6 +48,9 @@ def activity_one_harris_rotated(im, channel, **kwargs):
     #creating copies, as you want to do calculations and manipulations based on
     #copies. Just as an extra  precautious step
     img_copy = img.copy()
+
+    #the path where all the results of this experiment is kept
+    path = 'results/Task_1/rotated_experiements/Harris/%s/' % kwargs['name']
 
     #creating a list of rotated images with angles of 15 degrees between each image
     rotated_s = [rotate_image_b(img_copy, angle) for angle in range(15,360,15)]
@@ -68,29 +83,38 @@ def activity_one_harris_rotated(im, channel, **kwargs):
     #---------------------------------------------------------------------------
     #EXPERIMENT ONE: checking if the harris corner detection picked up the same
     #poins
-    fileName = 'results/Task_1/rotated_experiements/Harris/playing_card/comparison.csv'
+    fileName = path + 'comparison.csv'
     diff_frm_og = get_diff_pixels(num_kp_og_rotated[0],num_kp_rotated)
     labels = generate_labels(len(num_kp_rotated))
-    #save_comparisons(labels, num_kp_rotated,diff_frm_og, fileName)
-    show_diff_dist(diff_frm_og, title='Difference between key points')
+    save_comparisons(labels, num_kp_rotated,diff_frm_og, fileName)
+    exp_one = show_diff_dist(diff_frm_og, title='Eperiment One: Difference between key points: %s' % kwargs['name'])
     #open_file(fileName)
 
     #EXPERIMENT TWO: plotting the histograms of the image, to see if they is a
     #change in the count of green pixels found in the image
-    show_diff_hists(og_hist, og_hist_harris, hists_s_rotated, bin_size)
+    exp_two = show_diff_hists(og_hist, og_hist_harris, hists_s_rotated, bin_size,
+            name='Experiment two: comparing histograms: %s' % kwargs['name'])
 
 
     #EXPERIMENT THREE: calculating the distances between the produced histograms
     #taking advantage of the image, the only thing green on the image is the
     #detected points
     distance = calc_hist_dist(og_hist, hists_s_rotated)
-    show_diff_dist(distance, title='Diffetences between histograms')
+    exp_three = show_diff_dist(distance, title='Experiment three: Differences between histograms %s'
+            % kwargs['name'])
 
     #EXPERIMENT FOUR: a visual inspection to ensure that the same points
     #were found across the generated images relative to the first image
     #produced
     harris_s_rotated.insert(0, og_harris)
     show_img_ls(harris_s_rotated)
+
+    #showing all the produced plots at once
+    exp_one.show()
+    exp_two.show()
+    exp_three.show()
+    #n is equal to the value of 110
+    clean()
 
 def activity_one_harris_scaled(im, channel, **kwargs):
     """
@@ -320,6 +344,20 @@ def activity_two_hog(im, pt1, pt2):
             signed_grad=True )
 
     og_des = og_hog.compute(feature)
+
+def hog_play(im, pt1, pt2):
+    im = cv.imread(im)
+    im_copy = im.copy()
+    cv.imshow('orginal image', im_copy)
+
+    feature = crop_img(im_copy, pt1, pt2)
+    feature = pad_image(feature, 4, 1)
+    print(feature.shape)
+    cv.imshow('feature', feature)
+
+    hog = cv.HOGDescriptor()
+    des = hog.compute(im_copy)
+
 
 def activity_two_rotated(im):
     im = cv.imread(im)
@@ -749,28 +787,49 @@ def activity_four_watershed(im, invert_threshold=False):
 
 if __name__ == '__main__':
     imList = ['imgs/diamond2.png', 'imgs/Dugong.jpg']
+
+    parser = argparse.ArgumentParser(description='''A tool which will run
+            experiments on some pre-defined images relative to the machine
+            perception assignment one''')
+
+    parser.add_argument('task_num', metavar='Task number:', type=int,
+    help='please select which task to run experiments for')
+
+    parser.add_argument('im', metavar='Image', type=str,
+            help='Please enter [Di]amond [Du]gong to run experiments on either\
+            the diamond image or the dugong image')
+
+
+    args = parser.parse_args()
+
+    task_num = args.task_num
+    image = args.im.upper().strip()
     #---------------------------------------------------------------------------
     #TASK ONE: Diamond playing card
     #---------------------------------------------------------------------------
+
     #running all the experiements for the diamond card
-    #activity_one_harris_rotated(imList[0])
-    #activity_one_harris_scaled(imList[0])
-    #activity_one_SIFT_rotated(imList[0])
-    #activity_one_SIFT_scaled(imList[0])
+    if task_num == 1 and image == 'DI':
+        activity_one_harris_rotated(imList[0], 1, color=[0,255,0], thresh=0.04, name='diamond')
+#        activity_one_harris_scaled(imList[0], 1, color=[0,255,0], thresh=0.04)
+#        activity_one_SIFT_rotated(imList[0])
+#        activity_one_SIFT_scaled(imList[0])
 
     #---------------------------------------------------------------------------
     #TASK ONE: Dugong image
     #---------------------------------------------------------------------------
-#    activity_one_harris_rotated(imList[1], 2, color=[0,0,255], thresh=0.06)
-#    activity_one_harris_scaled(imList[1], 2, color=[0,0,255], thresh=0.06)
-#    activity_one_SIFT_rotated(imList[1])
-#    activity_one_SIFT_scaled(imList[1])
+    if task_num == 1 and image == 'DU':
+        activity_one_harris_rotated(imList[1], 2, color=[0,0,255], thresh=0.06, name='dugong')
+        activity_one_harris_scaled(imList[1], 2, color=[0,0,255], thresh=0.06)
+        activity_one_SIFT_rotated(imList[1])
+        activity_one_SIFT_scaled(imList[1])
 
     #---------------------------------------------------------------------------
     #TASK TWO: Diamond
     #---------------------------------------------------------------------------
-    activity_two_hog(imList[0], (8,1), (28,46))
+    #activity_two_hog(imList[0], (8,1), (28,46))
     #activity_two_rotated(imList[0])
+    #hog_play(imList[0], (8,1), (28,46))
 
     #---------------------------------------------------------------------------
     #TASK Three:
