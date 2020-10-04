@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.10.3)  3 OCT 2020 16:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.10.3)  4 OCT 2020 17:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -324,42 +324,119 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
-(./conference_101719.aux)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen137
+\captionmargin@=\dimen138
+\captionwidth=\dimen139
+\caption@tempdima=\dimen140
+\caption@indent=\dimen141
+\caption@parindent=\dimen142
+\caption@hangindent=\dimen143
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
+)
+
+Package caption Warning: Unsupported document class (or package) detected,
+(caption)                usage of the caption package is not recommended.
+See the caption package documentation for explanation.
+
+Package caption Info: \@makecaption = \long macro:#1#2->\ifx \@captype \@IEEEta
+blestring \footnotesize \bgroup \par \centering \@IEEEtabletopskipstrut {\norma
+lfont \footnotesize #1}\\{\normalfont \footnotesize \scshape #2}\par \addvspace
+ {0.5\baselineskip }\egroup \@IEEEtablecaptionsepspace \else \@IEEEfigurecaptio
+nsepspace \setbox \@tempboxa \hbox {\normalfont \footnotesize {#1.}\nobreakspac
+e \nobreakspace #2}\ifdim \wd \@tempboxa >\hsize \setbox \@tempboxa \hbox {\nor
+malfont \footnotesize {#1.}\nobreakspace \nobreakspace }\parbox [t]{\hsize }{\n
+ormalfont \footnotesize \noindent \unhbox \@tempboxa #2}\else \ifCLASSOPTIONcon
+ference \hbox to\hsize {\normalfont \footnotesize \hfil \box \@tempboxa \hfil }
+\else \hbox to\hsize {\normalfont \footnotesize \box \@tempboxa \hfil }\fi \fi 
+\fi .
+\c@ContinuedFloat=\count110
+) (./conference_101719.aux
+
+LaTeX Warning: Label `Difference of distances between histograms relative to or
+ignal: Harris, Rotated, Diamond' multiply defined.
+
+
+LaTeX Warning: Label `Diamond harris rotated orignal produced image' multiply d
+efined.
+
+
+LaTeX Warning: Label `Diamond harris image 1 rotated produced image' multiply d
+efined.
+
+
+LaTeX Warning: Label `Diamond harris image 2 rotated produced image' multiply d
+efined.
+
+
+LaTeX Warning: Label `Diamond harris image 3 rotated produced image' multiply d
+efined.
+
+
+LaTeX Warning: Label `Difference of keypoitns found relative to first image: Ha
+rris, Rotated, Diamond' multiply defined.
+
+
+LaTeX Warning: Label `Comparison of histograms for each transformed image: Harr
+is, Roateted, Diamond' multiply defined.
+
+
+LaTeX Warning: Label `Difference of keypoitns found relative to first image: Ha
+rris, Rotated, Diamond' multiply defined.
+
+
+LaTeX Warning: Label `Diamond harris image 1 scaled produced image' multiply de
+fined.
+
+
+LaTeX Warning: Label `Diamond harris image 2 scaled produced image' multiply de
+fined.
+
+
+LaTeX Warning: Label `Diamond harris image 3 scaled produced image' multiply de
+fined.
+
+)
 \openout1 = `conference_101719.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 12.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 12.
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 13.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 13.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    ... okay on input line 13.
 
 -- Lines per column: 56 (exact).
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count110
-\scratchdimen=\dimen137
+\scratchcounter=\count111
+\scratchdimen=\dimen144
 \scratchbox=\box30
-\nofMPsegments=\count111
-\nofMParguments=\count112
+\nofMPsegments=\count112
+\nofMParguments=\count113
 \everyMPshowfont=\toks21
-\MPscratchCnt=\count113
-\MPscratchDim=\dimen138
-\MPnumerator=\count114
-\makeMPintoPDFobject=\count115
+\MPscratchCnt=\count114
+\MPscratchDim=\dimen145
+\MPnumerator=\count115
+\makeMPintoPDFobject=\count116
 \everyMPtoPDFconversion=\toks22
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -417,124 +494,521 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for U+msa on input line 44.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Try loading font information for U+msa on input line 45.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 44.
+LaTeX Font Info:    Try loading font information for U+msb on input line 45.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 81.
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
-File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 ) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
+<../programme/results/Task_1/rotated_experiements/Harris/diamond/experiement-on
+e-diff-kp-detected.png, id=17, 1885.0425pt x 997.7275pt>
+File: ../programme/results/Task_1/rotated_experiements/Harris/diamond/experieme
+nt-one-diff-kp-detected.png Graphic file (type png)
+<use ../programme/results/Task_1/rotated_experiements/Harris/diamond/experiemen
+t-one-diff-kp-detected.png>
+Package pdftex.def Info: ../programme/results/Task_1/rotated_experiements/Harri
+s/diamond/experiement-one-diff-kp-detected.png  used on input line 92.
+(pdftex.def)             Requested size: 232.19843pt x 122.88873pt.
+<../programme/results/Task_1/rotated_experiements/Harris/diamond/experiment_two
+_raw_hists.png, id=19, 1905.1175pt x 999.735pt>
+File: ../programme/results/Task_1/rotated_experiements/Harris/diamond/experimen
+t_two_raw_hists.png Graphic file (type png)
+<use ../programme/results/Task_1/rotated_experiements/Harris/diamond/experiment
+_two_raw_hists.png>
+Package pdftex.def Info: ../programme/results/Task_1/rotated_experiements/Harri
+s/diamond/experiment_two_raw_hists.png  used on input line 98.
+(pdftex.def)             Requested size: 232.19843pt x 121.83934pt.
+<../programme/results/Task_1/rotated_experiements/Harris/diamond/experiment_thr
+ee_distance_between_hists.png, id=20, 1914.15125pt x 1018.80624pt>
+File: ../programme/results/Task_1/rotated_experiements/Harris/diamond/experimen
+t_three_distance_between_hists.png Graphic file (type png)
+<use ../programme/results/Task_1/rotated_experiements/Harris/diamond/experiment
+_three_distance_between_hists.png>
+Package pdftex.def Info: ../programme/results/Task_1/rotated_experiements/Harri
+s/diamond/experiment_three_distance_between_hists.png  used on input line 105.
+(pdftex.def)             Requested size: 309.60315pt x 164.78453pt.
+<../programme/results/Task_1/rotated_experiements/Harris/diamond/image_0.jpg, i
+d=21, 182.6825pt x 279.0425pt>
+File: ../programme/results/Task_1/rotated_experiements/Harris/diamond/image_0.j
+pg Graphic file (type jpg)
+<use ../programme/results/Task_1/rotated_experiements/Harris/diamond/image_0.jp
+g>
+Package pdftex.def Info: ../programme/results/Task_1/rotated_experiements/Harri
+s/diamond/image_0.jpg  used on input line 114.
+(pdftex.def)             Requested size: 103.19843pt x 157.63374pt.
+<../programme/results/Task_1/rotated_experiements/Harris/diamond/image_1.jpg, i
+d=22, 247.92625pt x 316.18124pt>
+File: ../programme/results/Task_1/rotated_experiements/Harris/diamond/image_1.j
+pg Graphic file (type jpg)
+<use ../programme/results/Task_1/rotated_experiements/Harris/diamond/image_1.jp
+g>
+Package pdftex.def Info: ../programme/results/Task_1/rotated_experiements/Harri
+s/diamond/image_1.jpg  used on input line 120.
+(pdftex.def)             Requested size: 103.19843pt x 131.60837pt.
+<../programme/results/Task_1/rotated_experiements/Harris/diamond/image_2.jpg, i
+d=23, 297.11pt x 332.24126pt>
+File: ../programme/results/Task_1/rotated_experiements/Harris/diamond/image_2.j
+pg Graphic file (type jpg)
+<use ../programme/results/Task_1/rotated_experiements/Harris/diamond/image_2.jp
+g>
+Package pdftex.def Info: ../programme/results/Task_1/rotated_experiements/Harri
+s/diamond/image_2.jpg  used on input line 126.
+(pdftex.def)             Requested size: 103.19843pt x 115.39899pt.
+<../programme/results/Task_1/rotated_experiements/Harris/diamond/image_3.jpg, i
+d=24, 326.21875pt x 326.21875pt>
+File: ../programme/results/Task_1/rotated_experiements/Harris/diamond/image_3.j
+pg Graphic file (type jpg)
+<use ../programme/results/Task_1/rotated_experiements/Harris/diamond/image_3.jp
+g>
+Package pdftex.def Info: ../programme/results/Task_1/rotated_experiements/Harri
+s/diamond/image_3.jpg  used on input line 132.
+(pdftex.def)             Requested size: 103.19843pt x 103.19748pt.
+<../programme/results/Task_1/scaled_experiements/Harris/diamond/experiment_one_
+diff_kp.png, id=25, 1931.215pt x 1053.9375pt>
+File: ../programme/results/Task_1/scaled_experiements/Harris/diamond/experiment
+_one_diff_kp.png Graphic file (type png)
+<use ../programme/results/Task_1/scaled_experiements/Harris/diamond/experiment_
+one_diff_kp.png>
+Package pdftex.def Info: ../programme/results/Task_1/scaled_experiements/Harris
+/diamond/experiment_one_diff_kp.png  used on input line 143.
+(pdftex.def)             Requested size: 232.19843pt x 126.70827pt.
+<../programme/results/Task_1/scaled_experiements/Harris/diamond/exp_three_diff_
+between_hists.png, id=26, 1907.125pt x 1051.93pt>
+File: ../programme/results/Task_1/scaled_experiements/Harris/diamond/exp_three_
+diff_between_hists.png Graphic file (type png)
+<use ../programme/results/Task_1/scaled_experiements/Harris/diamond/exp_three_d
+iff_between_hists.png>
+Package pdftex.def Info: ../programme/results/Task_1/scaled_experiements/Harris
+/diamond/exp_three_diff_between_hists.png  used on input line 149.
+(pdftex.def)             Requested size: 232.19843pt x 128.07202pt.
+<../programme/results/Task_1/scaled_experiements/Harris/diamond/exp_two_comarin
+g_histograms.png, id=27, 1944.26375pt x 1043.9pt>
+File: ../programme/results/Task_1/scaled_experiements/Harris/diamond/exp_two_co
+maring_histograms.png Graphic file (type png)
+<use ../programme/results/Task_1/scaled_experiements/Harris/diamond/exp_two_com
+aring_histograms.png>
+Package pdftex.def Info: ../programme/results/Task_1/scaled_experiements/Harris
+/diamond/exp_two_comaring_histograms.png  used on input line 156.
+(pdftex.def)             Requested size: 232.19843pt x 124.6573pt.
+<../programme/results/Task_1/scaled_experiements/Harris/diamond/image_0.jpg, id
+=28, 182.6825pt x 279.0425pt>
+File: ../programme/results/Task_1/scaled_experiements/Harris/diamond/image_0.jp
+g Graphic file (type jpg)
+<use ../programme/results/Task_1/scaled_experiements/Harris/diamond/image_0.jpg
+>
+Package pdftex.def Info: ../programme/results/Task_1/scaled_experiements/Harris
+/diamond/image_0.jpg  used on input line 165.
+(pdftex.def)             Requested size: 103.19843pt x 157.63374pt.
 
-LaTeX Warning: Citation `b7' on page 2 undefined on input line 130.
+Underfull \hbox (badness 3068) in paragraph at lines 166--166
+[]\OT1/ptm/m/n/10 Fig. 11: |Har-ris scaled
+ []
 
-<fig1.png, id=18, 82.1469pt x 71.5473pt>
-File: fig1.png Graphic file (type png)
-<use fig1.png>
-Package pdftex.def Info: fig1.png  used on input line 186.
-(pdftex.def)             Requested size: 82.14668pt x 71.5471pt.
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 197.
+<../programme/results/Task_1/scaled_experiements/Harris/diamond/image_1.jpg, id
+=29, 91.34125pt x 139.52126pt>
+File: ../programme/results/Task_1/scaled_experiements/Harris/diamond/image_1.jp
+g Graphic file (type jpg)
+<use ../programme/results/Task_1/scaled_experiements/Harris/diamond/image_1.jpg
+>
+Package pdftex.def Info: ../programme/results/Task_1/scaled_experiements/Harris
+/diamond/image_1.jpg  used on input line 171.
+(pdftex.def)             Requested size: 103.19843pt x 157.64014pt.
+<../programme/results/Task_1/scaled_experiements/Harris/diamond/image_2.jpg, id
+=30, 98.3675pt x 150.5625pt>
+File: ../programme/results/Task_1/scaled_experiements/Harris/diamond/image_2.jp
+g Graphic file (type jpg)
+<use ../programme/results/Task_1/scaled_experiements/Harris/diamond/image_2.jpg
+>
+Package pdftex.def Info: ../programme/results/Task_1/scaled_experiements/Harris
+/diamond/image_2.jpg  used on input line 177.
+(pdftex.def)             Requested size: 103.19843pt x 157.95512pt.
+<../programme/results/Task_1/scaled_experiements/Harris/diamond/image_3.jpg, id
+=31, 106.3975pt x 162.6075pt>
+File: ../programme/results/Task_1/scaled_experiements/Harris/diamond/image_3.jp
+g Graphic file (type jpg)
+<use ../programme/results/Task_1/scaled_experiements/Harris/diamond/image_3.jpg
+>
+Package pdftex.def Info: ../programme/results/Task_1/scaled_experiements/Harris
+/diamond/image_3.jpg  used on input line 183.
+(pdftex.def)             Requested size: 103.19843pt x 157.7266pt.
+<../programme/results/Task_1/rotated_experiements/SIFT/diamond/experiment_one_d
+ifference_found_kp.png, id=32, 1930.21124pt x 1018.80624pt>
+File: ../programme/results/Task_1/rotated_experiements/SIFT/diamond/experiment_
+one_difference_found_kp.png Graphic file (type png)
+<use ../programme/results/Task_1/rotated_experiements/SIFT/diamond/experiment_o
+ne_difference_found_kp.png>
+Package pdftex.def Info: ../programme/results/Task_1/rotated_experiements/SIFT/
+diamond/experiment_one_difference_found_kp.png  used on input line 196.
+(pdftex.def)             Requested size: 232.19843pt x 122.54684pt.
+<../programme/results/Task_1/rotated_experiements/SIFT/diamond/experiment_two_p
+lotting_histograms.png, id=33, 1935.23pt x 1030.85126pt>
+File: ../programme/results/Task_1/rotated_experiements/SIFT/diamond/experiment_
+two_plotting_histograms.png Graphic file (type png)
+<use ../programme/results/Task_1/rotated_experiements/SIFT/diamond/experiment_t
+wo_plotting_histograms.png>
+Package pdftex.def Info: ../programme/results/Task_1/rotated_experiements/SIFT/
+diamond/experiment_two_plotting_histograms.png  used on input line 203.
+(pdftex.def)             Requested size: 232.19843pt x 123.68108pt.
 
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
-File: omsptm.fd 
-)
-LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 197.
- [2 <./fig1.png (PNG copy)>]
-Underfull \hbox (badness 3240) in paragraph at lines 228--229
+LaTeX Warning: File `../programme/results/Task_1/rotated_experiements/SIFT/diam
+ond/experiment_three_comparing differnces between histograms.png' not found on 
+input line 210.
+
+<../programme/results/Task_1/rotated_experiements/SIFT/diamond/experiment_three
+_comparing differnces between histograms.png, id=34, 1917.1625pt x 1057.9525pt>
+
+File: ../programme/results/Task_1/rotated_experiements/SIFT/diamond/experiment_
+three_comparing differnces between histograms.png Graphic file (type png)
+<use ../programme/results/Task_1/rotated_experiements/SIFT/diamond/experiment_t
+hree_comparing differnces between histograms.png>
+Package pdftex.def Info: ../programme/results/Task_1/rotated_experiements/SIFT/
+diamond/experiment_three_comparing differnces between histograms.png  used on i
+nput line 210.
+(pdftex.def)             Requested size: 309.60315pt x 170.84174pt.
+<../programme/results/Task_1/rotated_experiements/SIFT/diamond/image_0.jpg, id=
+35, 182.6825pt x 279.0425pt>
+File: ../programme/results/Task_1/rotated_experiements/SIFT/diamond/image_0.jpg
+ Graphic file (type jpg)
+<use ../programme/results/Task_1/rotated_experiements/SIFT/diamond/image_0.jpg>
+
+Package pdftex.def Info: ../programme/results/Task_1/rotated_experiements/SIFT/
+diamond/image_0.jpg  used on input line 219.
+(pdftex.def)             Requested size: 103.19843pt x 157.63374pt.
+<../programme/results/Task_1/rotated_experiements/SIFT/diamond/image_1.jpg, id=
+36, 247.92625pt x 316.18124pt>
+File: ../programme/results/Task_1/rotated_experiements/SIFT/diamond/image_1.jpg
+ Graphic file (type jpg)
+<use ../programme/results/Task_1/rotated_experiements/SIFT/diamond/image_1.jpg>
+
+Package pdftex.def Info: ../programme/results/Task_1/rotated_experiements/SIFT/
+diamond/image_1.jpg  used on input line 225.
+(pdftex.def)             Requested size: 103.19843pt x 131.60837pt.
+<../programme/results/Task_1/rotated_experiements/SIFT/diamond/image_2.jpg, id=
+37, 297.11pt x 332.24126pt>
+File: ../programme/results/Task_1/rotated_experiements/SIFT/diamond/image_2.jpg
+ Graphic file (type jpg)
+<use ../programme/results/Task_1/rotated_experiements/SIFT/diamond/image_2.jpg>
+
+Package pdftex.def Info: ../programme/results/Task_1/rotated_experiements/SIFT/
+diamond/image_2.jpg  used on input line 231.
+(pdftex.def)             Requested size: 103.19843pt x 115.39899pt.
+<../programme/results/Task_1/rotated_experiements/SIFT/diamond/image_3.jpg, id=
+38, 326.21875pt x 326.21875pt>
+File: ../programme/results/Task_1/rotated_experiements/SIFT/diamond/image_3.jpg
+ Graphic file (type jpg)
+<use ../programme/results/Task_1/rotated_experiements/SIFT/diamond/image_3.jpg>
+
+Package pdftex.def Info: ../programme/results/Task_1/rotated_experiements/SIFT/
+diamond/image_3.jpg  used on input line 237.
+(pdftex.def)             Requested size: 103.19843pt x 103.19748pt.
+<../programme/results/Task_1/scaled_experiements/SIFT/diamond/diff_hists.png, i
+d=39, 1905.1175pt x 1034.86626pt>
+File: ../programme/results/Task_1/scaled_experiements/SIFT/diamond/diff_hists.p
+ng Graphic file (type png)
+<use ../programme/results/Task_1/scaled_experiements/SIFT/diamond/diff_hists.pn
+g>
+Package pdftex.def Info: ../programme/results/Task_1/scaled_experiements/SIFT/d
+iamond/diff_hists.png  used on input line 249.
+(pdftex.def)             Requested size: 232.19843pt x 126.12085pt.
+File: ../programme/results/Task_1/scaled_experiements/SIFT/diamond/diff_hists.p
+ng Graphic file (type png)
+<use ../programme/results/Task_1/scaled_experiements/SIFT/diamond/diff_hists.pn
+g>
+Package pdftex.def Info: ../programme/results/Task_1/scaled_experiements/SIFT/d
+iamond/diff_hists.png  used on input line 255.
+(pdftex.def)             Requested size: 232.19843pt x 126.12085pt.
+<../programme/results/Task_1/scaled_experiements/SIFT/diamond/keypoints_found.p
+ng, id=40, 1905.1175pt x 1012.78375pt>
+File: ../programme/results/Task_1/scaled_experiements/SIFT/diamond/keypoints_fo
+und.png Graphic file (type png)
+<use ../programme/results/Task_1/scaled_experiements/SIFT/diamond/keypoints_fou
+nd.png>
+Package pdftex.def Info: ../programme/results/Task_1/scaled_experiements/SIFT/d
+iamond/keypoints_found.png  used on input line 262.
+(pdftex.def)             Requested size: 232.19843pt x 123.42963pt.
+<../programme/results/Task_1/scaled_experiements/SIFT/diamond/image_0.jpg, id=4
+1, 182.6825pt x 279.0425pt>
+File: ../programme/results/Task_1/scaled_experiements/SIFT/diamond/image_0.jpg 
+Graphic file (type jpg)
+<use ../programme/results/Task_1/scaled_experiements/SIFT/diamond/image_0.jpg>
+Package pdftex.def Info: ../programme/results/Task_1/scaled_experiements/SIFT/d
+iamond/image_0.jpg  used on input line 271.
+(pdftex.def)             Requested size: 103.19843pt x 157.63374pt.
+
+Underfull \hbox (badness 3068) in paragraph at lines 272--272
+[]\OT1/ptm/m/n/10 Fig. 25: |Har-ris scaled
+ []
+
+<../programme/results/Task_1/scaled_experiements/SIFT/diamond/image_1.jpg, id=4
+2, 91.34125pt x 139.52126pt>
+File: ../programme/results/Task_1/scaled_experiements/SIFT/diamond/image_1.jpg 
+Graphic file (type jpg)
+<use ../programme/results/Task_1/scaled_experiements/SIFT/diamond/image_1.jpg>
+Package pdftex.def Info: ../programme/results/Task_1/scaled_experiements/SIFT/d
+iamond/image_1.jpg  used on input line 277.
+(pdftex.def)             Requested size: 103.19843pt x 157.64014pt.
+<../programme/results/Task_1/scaled_experiements/SIFT/diamond/image_2.jpg, id=4
+3, 98.3675pt x 150.5625pt>
+File: ../programme/results/Task_1/scaled_experiements/SIFT/diamond/image_2.jpg 
+Graphic file (type jpg)
+<use ../programme/results/Task_1/scaled_experiements/SIFT/diamond/image_2.jpg>
+Package pdftex.def Info: ../programme/results/Task_1/scaled_experiements/SIFT/d
+iamond/image_2.jpg  used on input line 283.
+(pdftex.def)             Requested size: 103.19843pt x 157.95512pt.
+<../programme/results/Task_1/scaled_experiements/SIFT/diamond/image_3.jpg, id=4
+4, 106.3975pt x 162.6075pt>
+File: ../programme/results/Task_1/scaled_experiements/SIFT/diamond/image_3.jpg 
+Graphic file (type jpg)
+<use ../programme/results/Task_1/scaled_experiements/SIFT/diamond/image_3.jpg>
+Package pdftex.def Info: ../programme/results/Task_1/scaled_experiements/SIFT/d
+iamond/image_3.jpg  used on input line 289.
+(pdftex.def)             Requested size: 103.19843pt x 157.7266pt.
+<../programme/results/Task_1/rotated_experiements/Harris/dugong/num_corners.png
+, id=45, 1896.08376pt x 1002.74625pt>
+File: ../programme/results/Task_1/rotated_experiements/Harris/dugong/num_corner
+s.png Graphic file (type png)
+<use ../programme/results/Task_1/rotated_experiements/Harris/dugong/num_corners
+.png>
+Package pdftex.def Info: ../programme/results/Task_1/rotated_experiements/Harri
+s/dugong/num_corners.png  used on input line 301.
+(pdftex.def)             Requested size: 232.19843pt x 122.78777pt.
+<../programme/results/Task_1/rotated_experiements/Harris/dugong/diff_hists.png,
+ id=46, 1921.1775pt x 997.7275pt>
+File: ../programme/results/Task_1/rotated_experiements/Harris/dugong/diff_hists
+.png Graphic file (type png)
+<use ../programme/results/Task_1/rotated_experiements/Harris/dugong/diff_hists.
+png>
+Package pdftex.def Info: ../programme/results/Task_1/rotated_experiements/Harri
+s/dugong/diff_hists.png  used on input line 307.
+(pdftex.def)             Requested size: 232.19843pt x 120.57468pt.
+<../programme/results/Task_1/rotated_experiements/Harris/dugong/hists.png, id=4
+7, 1914.15125pt x 990.70125pt>
+File: ../programme/results/Task_1/rotated_experiements/Harris/dugong/hists.png 
+Graphic file (type png)
+<use ../programme/results/Task_1/rotated_experiements/Harris/dugong/hists.png>
+Package pdftex.def Info: ../programme/results/Task_1/rotated_experiements/Harri
+s/dugong/hists.png  used on input line 314.
+(pdftex.def)             Requested size: 232.19843pt x 120.16396pt.
+<../programme/results/Task_1/rotated_experiements/Harris/dugong/image_0.jpg, id
+=48, 863.225pt x 481.8pt>
+File: ../programme/results/Task_1/rotated_experiements/Harris/dugong/image_0.jp
+g Graphic file (type jpg)
+<use ../programme/results/Task_1/rotated_experiements/Harris/dugong/image_0.jpg
+>
+Package pdftex.def Info: ../programme/results/Task_1/rotated_experiements/Harri
+s/dugong/image_0.jpg  used on input line 323.
+(pdftex.def)             Requested size: 103.19843pt x 57.59294pt.
+<../programme/results/Task_1/rotated_experiements/Harris/dugong/image_1.jpg, id
+=49, 957.5775pt x 688.5725pt>
+File: ../programme/results/Task_1/rotated_experiements/Harris/dugong/image_1.jp
+g Graphic file (type jpg)
+<use ../programme/results/Task_1/rotated_experiements/Harris/dugong/image_1.jpg
+>
+Package pdftex.def Info: ../programme/results/Task_1/rotated_experiements/Harri
+s/dugong/image_1.jpg  used on input line 329.
+(pdftex.def)             Requested size: 103.19843pt x 74.1987pt.
+<../programme/results/Task_1/rotated_experiements/Harris/dugong/image_2.jpg, id
+=50, 987.69pt x 848.16875pt>
+File: ../programme/results/Task_1/rotated_experiements/Harris/dugong/image_2.jp
+g Graphic file (type jpg)
+<use ../programme/results/Task_1/rotated_experiements/Harris/dugong/image_2.jpg
+>
+Package pdftex.def Info: ../programme/results/Task_1/rotated_experiements/Harri
+s/dugong/image_2.jpg  used on input line 335.
+(pdftex.def)             Requested size: 103.19843pt x 88.61385pt.
+<../programme/results/Task_1/rotated_experiements/Harris/dugong/image_3.jpg, id
+=51, 950.55125pt x 950.55125pt>
+File: ../programme/results/Task_1/rotated_experiements/Harris/dugong/image_3.jp
+g Graphic file (type jpg)
+<use ../programme/results/Task_1/rotated_experiements/Harris/dugong/image_3.jpg
+>
+Package pdftex.def Info: ../programme/results/Task_1/rotated_experiements/Harri
+s/dugong/image_3.jpg  used on input line 341.
+(pdftex.def)             Requested size: 103.19843pt x 103.19756pt.
+
+LaTeX Warning: File `../programme/results/Task_1/scaled_experiements/Harris/dug
+ong/diff between keypoints found.png' not found on input line 353.
+
+<../programme/results/Task_1/scaled_experiements/Harris/dugong/diff between key
+points found.png, id=52, 1924.18875pt x 1000.73875pt>
+File: ../programme/results/Task_1/scaled_experiements/Harris/dugong/diff betwee
+n keypoints found.png Graphic file (type png)
+<use ../programme/results/Task_1/scaled_experiements/Harris/dugong/diff between
+ keypoints found.png>
+Package pdftex.def Info: ../programme/results/Task_1/scaled_experiements/Harris
+/dugong/diff between keypoints found.png  used on input line 353.
+(pdftex.def)             Requested size: 232.19843pt x 120.75534pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 353--354
+[]\OT1/ptm/m/n/10 between key-points found.png
+ []
+
+<../programme/results/Task_1/scaled_experiements/Harris/dugong/hists.png, id=53
+, 1920.17375pt x 1056.94875pt>
+File: ../programme/results/Task_1/scaled_experiements/Harris/dugong/hists.png G
+raphic file (type png)
+<use ../programme/results/Task_1/scaled_experiements/Harris/dugong/hists.png>
+Package pdftex.def Info: ../programme/results/Task_1/scaled_experiements/Harris
+/dugong/hists.png  used on input line 359.
+(pdftex.def)             Requested size: 232.19843pt x 127.81216pt.
+<../programme/results/Task_1/scaled_experiements/Harris/dugong/diff_hists.png, 
+id=54, 1927.2pt x 1016.79875pt>
+File: ../programme/results/Task_1/scaled_experiements/Harris/dugong/diff_hists.
+png Graphic file (type png)
+<use ../programme/results/Task_1/scaled_experiements/Harris/dugong/diff_hists.p
+ng>
+Package pdftex.def Info: ../programme/results/Task_1/scaled_experiements/Harris
+/dugong/diff_hists.png  used on input line 366.
+(pdftex.def)             Requested size: 232.19843pt x 122.50706pt.
+<../programme/results/Task_1/scaled_experiements/Harris/dugong/image_0.jpg, id=
+55, 863.225pt x 481.8pt>
+File: ../programme/results/Task_1/scaled_experiements/Harris/dugong/image_0.jpg
+ Graphic file (type jpg)
+<use ../programme/results/Task_1/scaled_experiements/Harris/dugong/image_0.jpg>
+
+Package pdftex.def Info: ../programme/results/Task_1/scaled_experiements/Harris
+/dugong/image_0.jpg  used on input line 375.
+(pdftex.def)             Requested size: 103.19843pt x 57.59294pt.
+<../programme/results/Task_1/scaled_experiements/Harris/dugong/image_1.jpg, id=
+56, 431.6125pt x 240.9pt>
+File: ../programme/results/Task_1/scaled_experiements/Harris/dugong/image_1.jpg
+ Graphic file (type jpg)
+<use ../programme/results/Task_1/scaled_experiements/Harris/dugong/image_1.jpg>
+
+Package pdftex.def Info: ../programme/results/Task_1/scaled_experiements/Harris
+/dugong/image_1.jpg  used on input line 381.
+(pdftex.def)             Requested size: 103.19843pt x 57.59662pt.
+<../programme/results/Task_1/scaled_experiements/Harris/dugong/image_2.jpg, id=
+57, 466.74374pt x 260.975pt>
+File: ../programme/results/Task_1/scaled_experiements/Harris/dugong/image_2.jpg
+ Graphic file (type jpg)
+<use ../programme/results/Task_1/scaled_experiements/Harris/dugong/image_2.jpg>
+
+Package pdftex.def Info: ../programme/results/Task_1/scaled_experiements/Harris
+/dugong/image_2.jpg  used on input line 387.
+(pdftex.def)             Requested size: 103.19843pt x 57.70139pt.
+<../programme/results/Task_1/scaled_experiements/Harris/dugong/image_3.jpg, id=
+58, 502.87875pt x 281.05pt>
+File: ../programme/results/Task_1/scaled_experiements/Harris/dugong/image_3.jpg
+ Graphic file (type jpg)
+<use ../programme/results/Task_1/scaled_experiements/Harris/dugong/image_3.jpg>
+
+Package pdftex.def Info: ../programme/results/Task_1/scaled_experiements/Harris
+/dugong/image_3.jpg  used on input line 393.
+(pdftex.def)             Requested size: 103.19843pt x 57.67566pt.
+
+LaTeX Warning: Reference `the dugong images' on page 2 undefined on input line 
+403.
+
+
+Underfull \hbox (badness 3240) in paragraph at lines 425--426
 []\OT1/ptm/m/n/8 Dr. S. An. 2020. Ma-chine Per-cep-tion Lec-ture 03 [Pow-er-Poi
 nt
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 228--229
+Underfull \hbox (badness 10000) in paragraph at lines 425--426
 \OT1/ptm/m/n/8 southeast-2.amazonaws.com/5dc3e34515a0e/4348643?response-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 228--229
+Underfull \hbox (badness 10000) in paragraph at lines 425--426
 \OT1/ptm/m/n/8 cache-control=private%2C%20max-age%3D21600&response-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 228--229
+Underfull \hbox (badness 10000) in paragraph at lines 425--426
 \OT1/ptm/m/n/8 content-disposition=inline%3B%20filename%2A%3DUTF-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 228--229
+Underfull \hbox (badness 10000) in paragraph at lines 425--426
 \OT1/ptm/m/n/8 8%27%27lecture03[]feature[]detection.pdf&response-content-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 228--229
+Underfull \hbox (badness 10000) in paragraph at lines 425--426
 \OT1/ptm/m/n/8 type=application%2Fpdf&X-Amz-Algorithm=AWS4-HMAC-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 228--229
+Underfull \hbox (badness 10000) in paragraph at lines 425--426
 \OT1/ptm/m/n/8 SHA256&X-Amz-Date=20200927T060000Z&X-Amz-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 228--229
+Underfull \hbox (badness 10000) in paragraph at lines 425--426
 \OT1/ptm/m/n/8 SignedHeaders=host&X-Amz-Expires=21600&X-Amz-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 228--229
+Underfull \hbox (badness 10000) in paragraph at lines 425--426
 \OT1/ptm/m/n/8 Credential=AKIAYDKQORRYZBCCQFY5%2F20200927%2Fap-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 228--229
+Underfull \hbox (badness 10000) in paragraph at lines 425--426
 \OT1/ptm/m/n/8 southeast-2%2Fs3%2Faws4[]request&X-Amz-
  []
 
 
-Overfull \hbox (46.34296pt too wide) in paragraph at lines 228--229
+Overfull \hbox (46.34296pt too wide) in paragraph at lines 425--426
 \OT1/ptm/m/n/8 Signature=bcf107d5e76759efe45687b516ac725158189de0af558d0a7a798d
 f1723f4299 
  []
 
+[2
 
-Underfull \hbox (badness 10000) in paragraph at lines 230--231
+]
+Underfull \hbox (badness 10000) in paragraph at lines 427--428
 []\OT1/ptm/m/n/8 A. Mord-vin-stev and K. Abid. "Har-ris Cor-ner de-tec-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 230--231
+Underfull \hbox (badness 10000) in paragraph at lines 427--428
 \OT1/ptm/m/n/8 tion". OpenCV-Python Tu-to-ri-als. https://opencv-python-
  []
 
 
-Overfull \hbox (92.39612pt too wide) in paragraph at lines 230--231
+Overfull \hbox (92.39612pt too wide) in paragraph at lines 427--428
 \OT1/ptm/m/n/8 tutroals.readthedocs.io/en/latest/py[]tutorials/py[]feature2d/py
 []features[]harris/py[]features[]harris.html
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--233
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 429--430
 []\OT1/ptm/m/n/8 . OpenCV. "In-tro-duc-tion to SIFT (Scale-Invariant Fea-ture
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--233
+Underfull \hbox (badness 10000) in paragraph at lines 429--430
 \OT1/ptm/m/n/8 Trans-form)". OpenCV-Open source Com-puter vi-sion.
  []
 
 
-Overfull \hbox (56.54938pt too wide) in paragraph at lines 234--235
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3 <../programme/results/Task_1/rotated_experiements/Harris/diamond/experiemen
+t-one-diff-kp-detected.png> <../programme/results/Task_1/rotated_experiements/H
+arris/diamond/experiment_two_raw_hists.png> <../programme/results/Task_1/rotate
+d_experiements/Harris/diamond/experiment_three_distance_between_hists.png> <../
+programme/results/Task_1/rotated_experiements/Harris/diamond/image_0.jpg> <../p
+rogramme/results/Task_1/rotated_experiements/Harris/diamond/image_1.jpg> <../pr
+ogramme/results/Task_1/rotated_experiements/Harris/diamond/image_2.jpg> <../pro
+gramme/results/Task_1/rotated_experiements/Harris/diamond/image_3.jpg>]
+Overfull \hbox (56.54938pt too wide) in paragraph at lines 431--432
 \OT1/ptm/m/n/8 https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.434.48
 16&rep=rep1&type=pdf 
  []
@@ -550,38 +1024,75 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[3
 
-] (./conference_101719.aux)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [4 <../programme/results/Task_1/scaled_experiements/Harris/diamond/experiment_
+one_diff_kp.png> <../programme/results/Task_1/scaled_experiements/Harris/diamon
+d/exp_three_diff_between_hists.png> <../programme/results/Task_1/scaled_experie
+ments/Harris/diamond/exp_two_comaring_histograms.png> <../programme/results/Tas
+k_1/scaled_experiements/Harris/diamond/image_0.jpg> <../programme/results/Task_
+1/scaled_experiements/Harris/diamond/image_1.jpg> <../programme/results/Task_1/
+scaled_experiements/Harris/diamond/image_2.jpg> <../programme/results/Task_1/sc
+aled_experiements/Harris/diamond/image_3.jpg>] [5 <../programme/results/Task_1/
+rotated_experiements/SIFT/diamond/experiment_one_difference_found_kp.png> <../p
+rogramme/results/Task_1/rotated_experiements/SIFT/diamond/experiment_two_plotti
+ng_histograms.png> <../programme/results/Task_1/rotated_experiements/SIFT/diamo
+nd/experiment_three_comparing differnces between histograms.png> <../programme/
+results/Task_1/rotated_experiements/SIFT/diamond/image_0.jpg> <../programme/res
+ults/Task_1/rotated_experiements/SIFT/diamond/image_1.jpg> <../programme/result
+s/Task_1/rotated_experiements/SIFT/diamond/image_2.jpg> <../programme/results/T
+ask_1/rotated_experiements/SIFT/diamond/image_3.jpg>] [6 <../programme/results/
+Task_1/scaled_experiements/SIFT/diamond/diff_hists.png> <../programme/results/T
+ask_1/scaled_experiements/SIFT/diamond/keypoints_found.png> <../programme/resul
+ts/Task_1/scaled_experiements/SIFT/diamond/image_0.jpg> <../programme/results/T
+ask_1/scaled_experiements/SIFT/diamond/image_1.jpg> <../programme/results/Task_
+1/scaled_experiements/SIFT/diamond/image_2.jpg> <../programme/results/Task_1/sc
+aled_experiements/SIFT/diamond/image_3.jpg>] [7 <../programme/results/Task_1/ro
+tated_experiements/Harris/dugong/num_corners.png> <../programme/results/Task_1/
+rotated_experiements/Harris/dugong/diff_hists.png> <../programme/results/Task_1
+/rotated_experiements/Harris/dugong/hists.png> <../programme/results/Task_1/rot
+ated_experiements/Harris/dugong/image_0.jpg> <../programme/results/Task_1/rotat
+ed_experiements/Harris/dugong/image_1.jpg> <../programme/results/Task_1/rotated
+_experiements/Harris/dugong/image_2.jpg> <../programme/results/Task_1/rotated_e
+xperiements/Harris/dugong/image_3.jpg>] [8 <../programme/results/Task_1/scaled_
+experiements/Harris/dugong/diff between keypoints found.png> <../programme/resu
+lts/Task_1/scaled_experiements/Harris/dugong/hists.png> <../programme/results/T
+ask_1/scaled_experiements/Harris/dugong/diff_hists.png> <../programme/results/T
+ask_1/scaled_experiements/Harris/dugong/image_0.jpg> <../programme/results/Task
+_1/scaled_experiements/Harris/dugong/image_1.jpg> <../programme/results/Task_1/
+scaled_experiements/Harris/dugong/image_2.jpg> <../programme/results/Task_1/sca
+led_experiements/Harris/dugong/image_3.jpg>] (./conference_101719.aux)
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 4409 strings out of 494805
- 63825 string characters out of 6178000
- 127384 words of memory out of 5000000
- 7666 multiletter control sequences out of 15000+600000
- 44433 words of font info for 90 fonts, out of 8000000 for 9000
+ 5608 strings out of 494805
+ 98675 string characters out of 6178000
+ 164529 words of memory out of 5000000
+ 8853 multiletter control sequences out of 15000+600000
+ 36920 words of font info for 72 fonts, out of 8000000 for 9000
  81 hyphenation exceptions out of 8191
- 41i,11n,35p,895b,277s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,8n,39p,2162b,322s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
-7.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/time
-s/utmri8a.pfb>
-Output written on conference_101719.pdf (3 pages, 142641 bytes).
+ublic/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/urw/times/utmri8a.pfb>
+Output written on conference_101719.pdf (8 pages, 1981912 bytes).
 PDF statistics:
- 68 PDF objects out of 1000 (max. 8388607)
- 48 compressed objects within 1 object stream
+ 135 PDF objects out of 1000 (max. 8388607)
+ 55 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 206 words of extra memory for PDF output out of 10000 (max. 10000000)
 

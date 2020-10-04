@@ -59,9 +59,10 @@ def map_hex2RBG(hex_num):
     hex_num = hex_num.lstrip('#')
     return tuple(int(hex_num[ii:ii+2], 16) for ii in (0,2,4))
 
-def show_img_ls(img_ls):
+def show_img_ls(img_ls, fileName):
     for ii, mat in enumerate(img_ls):
         cv.imshow('image: %s' % ii, mat)
+        cv.imwrite(fileName + 'image_%s.jpg' % ii,mat)
 
 def calc_histograms(img, channel=0, hist_size=256, hist_range=(0,256)):
     return cv.calcHist([img], [channel], None, [hist_size], hist_range)

@@ -5,6 +5,7 @@ from matplotlib import pyplot as plt
 from debug import *
 import random as rng
 import argparse
+#any matplot lib figures which are opened, will be opened in full size
 
 #intializing the randon number generator, and initialising the beginning number
 rng.seed(1000)
@@ -41,7 +42,7 @@ def activity_one_harris_rotated(im, channel, **kwargs):
     actually rotation invariant, and to see if the SIFT is scale and rotation
     invariant
     """
-    print('-'*20 + 'PERFORMING ROTATIONAL EXPERIEMENTS: %s' % kwargs['name'] + '-'*20)
+    print('-'*20 + 'PERFORMING ROTATIONAL HARRIS EXPERIEMENTS: %s' % kwargs['name'] + '-'*20)
     img = cv.imread(im)
     #-------------------------------------------------------------------------------
     #SET UP
@@ -88,14 +89,13 @@ def activity_one_harris_rotated(im, channel, **kwargs):
     diff_frm_og = get_diff_pixels(num_kp_og_rotated[0],num_kp_rotated)
     labels = generate_labels(len(num_kp_rotated))
     save_comparisons(labels, num_kp_rotated,diff_frm_og, fileName)
-    exp_one = show_diff_dist(diff_frm_og, title='Eperiment One: Difference between key points: %s' % kwargs['name'])
-    #open_file(fileName)
+    exp_one = show_diff_dist(diff_frm_og, title='Experiment One: Difference between key points: %s' % kwargs['name'])
 
+    open_file(fileName)
     #EXPERIMENT TWO: plotting the histograms of the image, to see if they is a
     #change in the count of green pixels found in the image
     exp_two = show_diff_hists(og_hist, og_hist_harris, hists_s_rotated, bin_size,
             name='Experiment two: comparing histograms: %s' % kwargs['name'])
-
 
     #EXPERIMENT THREE: calculating the distances between the produced histograms
     #taking advantage of the image, the only thing green on the image is the
@@ -108,26 +108,12 @@ def activity_one_harris_rotated(im, channel, **kwargs):
     #were found across the generated images relative to the first image
     #produced
     harris_s_rotated.insert(0, og_harris)
-    show_img_ls(harris_s_rotated)
+    show_img_ls(harris_s_rotated, path)
 
-    #telling the figure manager to display all the figures as max size, and
-    #save them that way aswell
-
-    manager = plt.get_current_fig_manager()
-    #uncomment this to check what backend you're using
-    #print(matplotlib.get_backend())
-    #depening on the back end of matplot lib, will determine which function
-    #you're going to use to maximise your window size
-
-    manager.window.maximize()
     #showing all the produced plots at once
     exp_one.show()
-    plt.savefig('test1.png')
     exp_two.show()
-    plt.savefig('test2.png')
     exp_three.show()
-    plt.savefig('test3.png')
-    #n is equal to the value of 110
     cv.waitKey()
     clean()
 
@@ -137,6 +123,8 @@ def activity_one_harris_scaled(im, channel, **kwargs):
     EXPORTS:
     PURPOSE:
     """
+    print('-'*20 + 'PERFORMING SCALING HARRIS EXPERIEMENTS: %s' % kwargs['name'] + '-'*20)
+    path = 'results/Task_1/scaled_experiements/Harris/%s/' % kwargs['name']
     img = cv.imread(im)
     #-------------------------------------------------------------------------------
     #SET UP
@@ -175,35 +163,46 @@ def activity_one_harris_scaled(im, channel, **kwargs):
     #EXPERIMENT ONE: checking if the harris corner detection picked up the same
     #poins
     #fileName = 'results/Task_1/scaled_experiements/Harris/playing_card/comparison.csv'
+    fileName = path + 'comparison.csv'
     diff_frm_og = get_diff_pixels(num_kp_og_scaled[0],num_kp_scaled)
     labels = generate_labels(len(num_kp_scaled))
-    show_diff_dist(diff_frm_og, title='Difference between key points')
-    #open_file(fileName)
+    save_comparisons(labels,  num_kp_scaled, diff_frm_og, fileName)
+    exp_one = show_diff_dist(diff_frm_og, title='Difference between key points')
+    open_file(fileName)
 
     #EXPERIMENT TWO: plotting the histograms of the image, to see if they is a
     #change in the count of green pixels found in the image
-    show_diff_hists(og_hist, og_hist_harris, hists_s_scaled, bin_size)
+    exp_two = show_diff_hists(og_hist, og_hist_harris, hists_s_scaled, bin_size,
+            name='Experiment two: comparing histograms: %s' % kwargs['name'])
 
 
     #EXPERIMENT THREE: calculating the distances between the produced histograms
     #taking advantage of the image, the only thing green on the image is the
     #detected points
     distance = calc_hist_dist(og_hist, hists_s_scaled)
-    show_diff_dist(distance, title='Diffetences between histograms')
+    exp_three = show_diff_dist(distance, title='Diffetences between histograms')
 
     #EXPERIMENT FOUR: a visual inspection to ensure that the same points
     #were found across the generated images relative to the first image
     #produced
     scaled_s.insert(0, og_harris)
-    show_img_ls(scaled_s)
+    show_img_ls(scaled_s, path)
 
-def activity_one_SIFT_rotated(im):
+    exp_one.show()
+    exp_two.show()
+    exp_three.show()
+    cv.waitKey()
+    clean()
+
+def activity_one_SIFT_rotated(im, **kwargs):
     """
     IMPORT:
     EXPORT:
 
     Purpose:
     """
+    print('-'*20 + 'PERFORMING ROTATED SIFT EXPERIEMENTS: %s' % kwargs['name'] + '-'*20)
+    path = 'results/Task_1/rotated_experiements/SIFT/%s/' % kwargs['name']
     img = cv.imread(im)
     #-------------------------------------------------------------------------------
     #SET UP
@@ -228,7 +227,6 @@ def activity_one_SIFT_rotated(im):
     #---------------------------------------------------------------------------
     #Experiments for rotated  images
     #---------------------------------------------------------------------------
-    #save_file = 'results/Task_1/rotated_experiements/SIFT/%s/%s' % (image, fileName)
     #EXPERIMENT ONE: checking if the harris corner detection picked up the same
     #poins
 
@@ -241,31 +239,40 @@ def activity_one_SIFT_rotated(im):
     labels = generate_labels(len(kp_lens))
     #you need to re-factor this so it works for here
     #save_comparisons(labels, num_kp_rotated,diff_frm_og, fileName)
-    show_diff_dist(diff_frm_og, title='the difference of keypoints found relative to first image')
+    exp_one = show_diff_dist(diff_frm_og, title='the difference of keypoints found relative to first image')
     #EXPERIMENT TWO: plotting the histograms of the image, to see if they is a
     #to see how the intensities of the descriptors are changing throughout the experiment
     #placing a zero in the first parameter, as we don't have a base image, as
     #we're going to be caclulating the histograms of the descriptors
-    show_diff_hists(0, og_hist_des, rotated_hist_des, bin_size)
+    exp_two = show_diff_hists(0, og_hist_des, rotated_hist_des, bin_size,
+            name='Showing the difference between the obtained descriptors')
 
     #EXPERIMENT THREE: calculating the distances between the produced histograms
     #taking advantage of the image, the only thing green on the image is the
     #detected points
     distance = calc_hist_dist(og_hist_des, rotated_hist_des)
-    show_diff_dist(distance, title='Differences between the histograms')
+    exp_three = show_diff_dist(distance, title='Differences between the histograms')
 
     #EXPERIMENT FOUR: a visual inspection to ensure that the same points
     #were found across the generated images relative to the first image
     #produced
     rotated_SIFT_imgs.insert(0, og_SIFT[2])
-    show_img_ls(rotated_SIFT_imgs)
+    show_img_ls(rotated_SIFT_imgs, path)
 
-def activity_one_SIFT_scaled(im):
+    exp_one.show()
+    exp_two.show()
+    exp_three.show()
+
+    cv.waitKey()
+    clean()
+
+def activity_one_SIFT_scaled(im, **kwargs):
     """
     IMPORTS:
     EXPORTS:
     PURPOSE:
     """
+    print('-'*20 + 'PERFORMING SCALING SIFT EXPERIEMENTS: %s' % kwargs['name'] + '-'*20)
     img = cv.imread(im)
     #-------------------------------------------------------------------------------
     #SET UP
@@ -275,6 +282,7 @@ def activity_one_SIFT_scaled(im):
     img_copy = img.copy()
     og_SIFT = SIFT(img_copy)
 
+    path = 'results/Task_1/scaled_experiements/SIFT/%s/' % kwargs['name']
     channel = 0
     bin_size = 16
 
@@ -298,25 +306,32 @@ def activity_one_SIFT_scaled(im):
     kp_lens = [len(ii) for ii in scaled_kp]
     diff_frm_og = get_diff_pixels(kp_len_og, kp_lens)
     labels = generate_labels(len(kp_lens))
-    show_diff_dist(diff_frm_og, title='the difference of keypoints found relative to first image')
+    exp_one = show_diff_dist(diff_frm_og, title='the difference of keypoints found relative to first image')
 
     #EXPERIMENT TWO: plotting the histograms of the image, to see if they is a
     #to see how the intensities of the descriptors are changing throughout the experiment
     #placing a zero in the first parameter, as we don't have a base image, as
     #we're going to be caclulating the histograms of the descriptors
-    show_diff_hists(0, og_hist_des, scaled_des_hists, bin_size)
+    exp_two = show_diff_hists(0, og_hist_des, scaled_des_hists, bin_size,
+            name='Showing the difference on the obtained descriptors')
 
     #EXPERIMENT THREE: calculating the distances between the produced histograms
     #taking advantage of the image, the only thing green on the image is the
     #detected points
     distance = calc_hist_dist(og_hist_des, scaled_des_hists)
-    show_diff_dist(distance, title='Differences between the histograms')
+    exp_three = show_diff_dist(distance, title='Differences between the histograms')
 
     #EXPERIMENT FOUR: a visual inspection to ensure that the same points
     #were found across the generated images relative to the first image
     #produced
     scaled_SIFT_imgs.insert(0, og_SIFT[2])
-    show_img_ls(scaled_SIFT_imgs)
+    show_img_ls(scaled_SIFT_imgs, path)
+
+    exp_one.show()
+    exp_two.show()
+    exp_three.show()
+    cv.waitKey()
+    clean()
 
 def activity_two_hog(im, pt1, pt2):
     im = cv.imread(im)
@@ -416,7 +431,9 @@ def activity_three(im, invert_threshold=False, **kwargs):
     """
     Adapted from: #https://iq.opengenus.org/connected-component-labeling/#:~:text=Connected%20Component%20Labeling%20can%20be,connectedComponents()%20function%20in%20OpenCV.&text=The%20function%20is%20defined%20so,path%20to%20the%20original%20image.
     """
-
+    name = kwargs['im_name']
+    path ='results/Task_3/%s/' % name.lower()
+    imgs = []
     #task i
     im = cv.imread(im)
     im_copy = im.copy()
@@ -432,7 +449,8 @@ def activity_three(im, invert_threshold=False, **kwargs):
     if invert_threshold:
         thresh = thresh.max() - thresh
 
-    cv.imshow('threshold', thresh)
+    #cv.imshow('threshold', thresh)
+    imgs.append(thresh)
 
     #applyting the connected component labelling algorithm
     connectivity=8
@@ -450,29 +468,32 @@ def activity_three(im, invert_threshold=False, **kwargs):
     contours  = cv.findContours(thresh, cv.RETR_TREE, cv.CHAIN_APPROX_SIMPLE)
     cv.drawContours(im_copy, contours[1], -1, (0,255,0), 3)
 
-    cv.imshow('after component labelling: %s' % kwargs['im_name'], labeled_img)
+    #cv.imshow('after component labelling: %s' % kwargs['im_name'], labeled_img)
+    imgs.append(labeled_img)
 
     #task ii)
-    name = kwargs['im_name']
-    fileName ='results/Task_3/%s/results_for_%s.csv' % (name.lower(), name)
+    #fileName ='results/Task_3/%s/results_for_%s.csv' % (name.lower(), name)
+    fileName = path + 'resutls_for_%s.csv' % name
     area_of_all_labels = [stats[ii][cv.CC_STAT_AREA] for ii in range(num_labels)]
-
     save_stats(fileName, area_of_all_labels, labels.max())
     open_file(fileName)
 
+    show_img_ls(imgs, path)
+    cv.waitKey()
+    clean()
+
     return labels, area_of_all_labels, centroids
 
-def activity_four(im, thresh):
+def activity_four_contours(im, thresh, **kwargs):
     """
     CODE ADAPTED FROM: https://docs.opencv.org/master/d2/dbd/tutorial_distance_transform.html
     """
+    imgs = []
+    path = 'results/Task_4/%s/contours/' % (kwargs['name'].lower().strip())
     im = cv.imread(im)
     im_copy = im.copy()
     im_gray =  cv.cvtColor(im_copy, cv.COLOR_BGR2GRAY)
 
-    #METHOD ONE: K-means
-
-    #METHOD TWO: WATERSHED
     canny_trans = cv.Canny(im_gray, thresh, thresh * 2)
 
     contours, hierarchy = cv.findContours(canny_trans, cv.RETR_TREE, cv.CHAIN_APPROX_SIMPLE)[1:]
@@ -488,8 +509,10 @@ def activity_four(im, thresh):
         color  = (rng.randint(0,256), rng.randint(0,256), rng.randint(0,256))
         cv.drawContours(drawing_canvas, contours, ii, color, 1, cv.LINE_AA, hierarchy,0)
 
-    cv.imshow('Contours found: %s' % thresh, drawing_canvas)
-
+    imgs.append(drawing_canvas)
+    show_img_ls(imgs, path)
+    cv.waitKey()
+    clean()
     #cv.watershed(im_res, markers)
 
 
@@ -535,6 +558,7 @@ def activity_four_kMeans_edges(im):
     sobel_x = np.array([[-1, 0, 1],
                         [-2, 0, 2],
                         [-1, 0, 1]])
+    #n is equal to the value of 110
 
     filtered_img_x = cv.filter2D(im_gray, -1, sobel_x)
     filtered_img_y = cv.filter2D(im_gray, -1, sobel_y)
@@ -705,13 +729,16 @@ def activity_four_kMeans_RGB(im, **kwargs):
 
 #apparently the HSV color scheme is better for image detection
 def activity_four_kMeans(raw_im, im, **kwargs):
+    imgs = []
+    path = 'results/Task_4/%s/%s/' % (kwargs['name'].lower().strip(), kwargs['color_space'].upper().strip())
+
     im_flat = im.reshape((-1,3))
     im_flat = np.float32(im_flat)
 
     criteria = (cv.TERM_CRITERIA_EPS + cv.TERM_CRITERIA_MAX_ITER, kwargs['num_iter'] , kwargs['eplison'])
 
     K = kwargs['K']
-    attempts = 10
+    attempts = kwargs['num_iter']
 
     #flags  = cv.KMEANS_RANDOM_CENTERS
     flags = cv.KMEANS_PP_CENTERS
@@ -727,7 +754,9 @@ def activity_four_kMeans(raw_im, im, **kwargs):
     #converting it back to the original image shape
     seg_im = seg_im.reshape(im.shape)
 
-    cv.imshow('the segmented image', seg_im)
+
+    #cv.imshow('the segmented image', seg_im)
+    imgs.append(seg_im)
 
     #showing each of the segments individually
 
@@ -741,8 +770,13 @@ def activity_four_kMeans(raw_im, im, **kwargs):
         #converting the flattened pixle matrices into the original image
         im_mask = im_mask.reshape(im.shape)
 
-        cv.imshow('cluster %s: %s' % (ii, kwargs['color_space']), im_mask)
+        #cv.imshow('cluster %s: %s' % (ii, kwargs['color_space']), im_mask)
+        imgs.append(im_mask)
 
+    #a quick way for me to save the images
+    show_img_ls(imgs, path)
+    cv.waitKey()
+    clean()
 
 #I AM GOING TO COME BACK TO THIS, IT'S CAUSING ME A HEADACHE
 def activity_four_watershed(im, invert_threshold=False):
@@ -826,37 +860,71 @@ if __name__ == '__main__':
     #running all the experiements for the diamond card
     if task_num == 1 and image == 'DI':
         activity_one_harris_rotated(imList[0], 1, color=[0,255,0], thresh=0.04, name='diamond')
-#        activity_one_harris_scaled(imList[0], 1, color=[0,255,0], thresh=0.04)
-#        activity_one_SIFT_rotated(imList[0])
-#        activity_one_SIFT_scaled(imList[0])
+        activity_one_harris_scaled(imList[0], 1, color=[0,255,0], thresh=0.04, name='diamond')
+        activity_one_SIFT_rotated(imList[0], name='diamond')
+        activity_one_SIFT_scaled(imList[0], name='diamond')
 
     #---------------------------------------------------------------------------
     #TASK ONE: Dugong image
     #---------------------------------------------------------------------------
     if task_num == 1 and image == 'DU':
         activity_one_harris_rotated(imList[1], 2, color=[0,0,255], thresh=0.06, name='dugong')
-        activity_one_harris_scaled(imList[1], 2, color=[0,0,255], thresh=0.06)
-        activity_one_SIFT_rotated(imList[1])
-        activity_one_SIFT_scaled(imList[1])
+        activity_one_harris_scaled(imList[1], 2, color=[0,0,255], thresh=0.06, name='dugong')
+        activity_one_SIFT_rotated(imList[1], name='dugong')
+        activity_one_SIFT_scaled(imList[1], name='dugong')
 
     #---------------------------------------------------------------------------
     #TASK TWO: Diamond
     #---------------------------------------------------------------------------
-    #activity_two_hog(imList[0], (8,1), (28,46))
-    #activity_two_rotated(imList[0])
-    #hog_play(imList[0], (8,1), (28,46))
+    if task_num == 2 and image == 'DI':
+        activity_two_hog(imList[0], (8,1), (28,46))
+        activity_two_rotated(imList[0])
+        hog_play(imList[0], (8,1), (28,46))
 
     #---------------------------------------------------------------------------
     #TASK Three:
     #---------------------------------------------------------------------------
-    #labels, areas, centroids = activity_three(imList[0],True, im_name='Diamond')
-    #activity_three(imList[1], im_name='dugong')
+    if task_num == 3 and image == 'DI':
+        labels, areas, centroids = activity_three(imList[0],True, im_name='Diamond')
+
+    if task_num == 3 and image == 'DU':
+        activity_three(imList[1], im_name='dugong')
 
     #---------------------------------------------------------------------------
-    #TASK Four:
+    #TASK Four: Diamond
     #---------------------------------------------------------------------------
-    #activity_four(imList[0], 200)
-    #activity_four(imList[1], 100)
+    if task_num == 4 and image == 'DI':
+        #activity_four(imList[0], 200)
+        im_og = cv.imread(imList[0])
+        im = cv.cvtColor(im_og.copy(), cv.COLOR_BGR2HSV)
+        activity_four_kMeans(im_og.copy(), im, color_space='HSV',name='diamond',eplison=0.01, K=14, num_iter=200)
+        im = cv.cvtColor(im_og.copy(), cv.COLOR_BGR2Luv)
+        activity_four_kMeans(im_og.copy(), im, eplison=0.01, K=14, num_iter=200, name='diamond', color_space = 'LUV')
+        im = cv.cvtColor(im_og.copy(), cv.COLOR_BGR2Lab)
+        activity_four_kMeans(im_og.copy(), im, eplison=0.01, K=14, color_space='LAB',name='diamond', num_iter=200)
+        activity_four_kMeans(im_og.copy(), im_og.copy(), eplison=0.01,name='diamond', K=14, color_space='BGR', num_iter=200)
+        activity_four_contours(imList[0], 0.1, name='diamond')
+#        activity_four_kMeans_edges(imList[0])
+#        activity_four_kMeans_corners(imList[0])
+#        activity_four_kmeans_area(imList[0], areas, labels, centroids)
+
+    #---------------------------------------------------------------------------
+    #TASK Four: Dugong
+    #---------------------------------------------------------------------------
+    if task_num == 4 and image == 'DU':
+        #activity_four(imList[1], 100)
+        im_og = cv.imread(imList[1])
+        im = cv.cvtColor(im_og.copy(), cv.COLOR_BGR2HSV)
+        activity_four_kMeans(im_og.copy(), im, color_space='HSV',eplison=0.01, K=14,name='dugong', num_iter=100)
+        im = cv.cvtColor(im_og.copy(), cv.COLOR_BGR2Luv)
+        activity_four_kMeans(im_og.copy(), im, eplison=0.01, K=14, num_iter=100, color_space = 'LUV', name='dugong')
+        im = cv.cvtColor(im_og.copy(), cv.COLOR_BGR2Lab)
+        activity_four_kMeans(im_og.copy(), im, eplison=0.01, K=14, color_space='LAB', num_iter=100, name='dugong')
+        activity_four_kMeans(im_og.copy(), im_og.copy(), eplison=0.01, K=14, color_space='BGR', num_iter=100, name='dugong')
+        activity_four_contours(imList[1], 80, name='dugong')
+#        activity_four_kMeans_edges(imList[1])
+#        activity_four_kMeans_corners(imList[1])
+#        activity_four_kmeans_area(imList[1], areas, labels, centroids)
 
     #experiments for the water shed algorithm
     #activity_four_watershed(imList[0], True)
@@ -866,23 +934,5 @@ if __name__ == '__main__':
 
     #setting the clusters to 3 as I am counting the right side up, and the
     #upside down two's in the image, as two different clusters
-    #activity_four_kMeans_RGB(imList[0], num_iter=100, eplison=0.01, K=7)
-    #activity_four_kMeans_RGB(imList[1], eplison=0.01, K=14, num_iter=200)
 
-#    im_og = cv.imread(imList[0])
-#    im = cv.cvtColor(im_og.copy(), cv.COLOR_BGR2HSV)
-#    activity_four_kMeans(im_og.copy(), im, color_space='HSV',eplison=0.01, K=14, num_iter=200)
-#
-#    im = cv.cvtColor(im_og.copy(), cv.COLOR_BGR2Luv)
-#    activity_four_kMeans(im_og.copy(), im, eplison=0.01, K=14, num_iter=200, color_space = 'LLUV')
-#
-#    im = cv.cvtColor(im_og.copy(), cv.COLOR_BGR2Lab)
-#    activity_four_kMeans(im_og.copy(), im, eplison=0.01, K=14, color_space='LAB', num_iter=200)
-#
-#    activity_four_kMeans(im_og.copy(), im_og.copy(), eplison=0.01, K=14, color_space='BGR', num_iter=200)
-#
-    #activity_four_kMeans_edges(imList[0])
-    #activity_four_kMeans_corners(imList[0])
-
-    #activity_four_kmeans_area(imList[0], areas, labels, centroids)
-    cv.waitKey(0)
+    #cv.waitKey(0)
