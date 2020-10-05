@@ -79,9 +79,9 @@ Thereafter, a plethora of potential corners are found in the image matrices, the
 	R = det(M) - k(trace(M))^{2}
 \end{equation}
 
-Where by $det(M)$ is the multiplication of eigen values of the matrice M, and $trace(M)$ is the addition of the eigen values of the matrice M \cite{b2}. Therefore, if one of the eigen values is significanly greater than the other eigen value those found points are most likely to be an edge, and if the eigen vales are large and approximatily the same value that point is a corner otherwise, that point is a flat region \cite{b2}.\par
+Where by $det(M)$ is the multiplication of eigenvalue values of the matrices M, and $trace(M)$ is the addition of the eigenvalue values of the matrices M \cite{b2}. Therefore, if one of the eigenvalue values is significantly greater than the other eigenvalue value those found points are most likely to be an edge, and if the eigenvalue vales are large and approximately the same value that point is a corner otherwise, that point is a flat region \cite{b2}.\par
 
-Harris corner detection is an algorithm which can be mainly thought of as a rotation invariant algorithm meaning, no matter the angles you rotate a given image, the algorithm is going to detect the same key-features \cite{b2} \cite{b4}. This is due to that an corner will always going to remain a corner no matter what orientation the image because a corner is just a high intensity pixel, and the algorithm only looks at a pixel and it's neighbouring pixels thus, no matter what orientation the image the pixels will still have the same neighbouring pixels\cite{b2}. Albeit, if you scale the image, a pixels neighbouring pixels will be transformed hence, the window function may determine those clusters of pixels as a non-corner when it's a corner, or as a corner when it's a non-corner. Therefore, the conducted ecperiments should show consistencies through the set of rotate images, and inconsistencies throught the scaled images.
+Harris corner detection is an algorithm which can be mainly thought of as a rotation invariant algorithm meaning, no matter the angles you rotate a given image, the algorithm is going to detect the same key-features \cite{b2} \cite{b4}. This is due to that an corner will always going to remain a corner no matter what orientation the image because a corner is just a high intensity pixel, and the algorithm only looks at a pixel and it's neighbouring pixels thus, no matter what orientation the image the pixels will still have the same neighbouring pixels\cite{b2}. Albeit, if you scale the image, a pixels neighbouring pixels will be transformed hence, the window function may determine those clusters of pixels as a non-corner when it's a corner, or as a corner when it's a non-corner. Therefore, the conducted experiments should show consistencies through the set of rotate images, and inconsistencies through-out the scaled images.
 
 \newpage
 \clearpage
@@ -195,7 +195,7 @@ Harris corner detection is an algorithm which can be mainly thought of as a rota
   \centering
   \begin{minipage}[t]{0.45\textwidth}
     \includegraphics[width=\textwidth]{../programme/results/Task_1/rotated_experiements/SIFT/diamond/experiment_one_difference_found_kp.png}
-    
+
     \caption{Difference of keypoitns found relative to first image: SIFT, Rotated, Diamond}
     \label{Difference of keypoitns found relative to first image: SIFT, Rotated, Diamond}
   \end{minipage}
@@ -398,16 +398,16 @@ Harris corner detection is an algorithm which can be mainly thought of as a rota
   {\caption*{A set of 24 experimental images were produced. Only four displayed in report as displaying all 24 doesn't add great benefit to the reader. To re-view all 24 experimental images please implement the algorithms found in the appendixes.}}
 \end{figure*}
 
-\subsection{Discussion about produced resutls}
-To determine if an image is invariant to a certian transform we have to determine how many corners that image is detecting relative to the performed corners. Hence, the first experiment is to get the returned corners from the Harris corner detector, and the SIFT transform and find the difference relative to the orignal image for each transform. Therefore, for perfect resutls we would assume that the difference should be 0 for invariant feature as they should've picked up the same number of corners in the image. Although, to greater consolidate this claim, we must determine if the corners are been picked up in the same region hence, we calculate the histograms of the image in the same channel as the corners, and theoritically for invariant features the histograms must follow perfectly after each other as the detected pixels should lay in the same region. Finally, to determine how well the histograms follow each other we calculate the distance between each transformed histogram relative to the orignal histogram of the image.\par
+\subsection{Discussion about produced results}
+To determine if an image is invariant to a certain transform we have to determine how many corners that image is detecting relative to the performed corners. Hence, the first experiment is to get the returned corners from the Harris corner detector, and the SIFT transform and find the difference relative to the original image for each transform. Therefore, for perfect results we would assume that the difference should be 0 for invariant feature as they should have picked up the same number of corners in the image. Although, to greater consolidate this claim, we must determine if the corners are been picked up in the same region hence, we calculate the histograms of the image in the same channel as the corners, and theoretically for invariant features the histograms must follow perfectly after each other as the detected pixels should lay in the same region. Finally, to determine how well the histograms follow each other we calculate the distance between each transformed histogram relative to the original histogram of the image.\par
 
-Look at figure \ref{Difference of distances between histograms relative to orignal: Harris, Rotated, Diamond} we can see that through each rotated image, they is irregularities in the number of keypoints found in each transformed image. It's natrual to conclude that this experiment dis-prove harris corner detection invariance to rotatin. Albiet, we have to consider the manner the image is rotated. As can be seen in figures \ref{Diamond harris rotated orignal produced image}, \ref{Diamond harris image 1 rotated produced image}, \ref{Diamond harris image 2 rotated produced image}, and \ref{Diamond harris image 3 rotated produced image} you can see when you rotate the image they is an increase of black space around the iamge, and the boarders of the image may have been picked up as a corner. In figure \ref{Diamond harris rotated orignal produced image} you see the boarders of the image are detected as a corner but, in the other images the boarders are not detected as a corner. Therefore, with this observation we should expect irregularties in the data produced. Furthermore, revisting figure \ref{Difference of distances between histograms relative to orignal: Harris, Rotated, Diamond} we can see the produced histograms follow a clear sinusoidal pattern implying that although they is irregularty between the number of corners found in each transformed image but atleast they is consistency of the number of corners found relative to the angle of rotation of the image. Therefore, we can infer that the harris corner detection algorithm would produce the same number of corners if each rotated image had a tightly bounded box around the image thus removing the corners picked up by the boarders of the image. Therefore, encounting for the extra corners found due to the boarders of the image we can infer that the number of corners found for each transformed image will be very similiar to the original transformed image. This same concepts will apply for the images found in the dugong images in section\ref{the dugong images}.\par
+Look at figure \ref{Difference of distances between histograms relative to orignal: Harris, Rotated, Diamond} we can see that through each rotated image, they is irregularities in the number of key points found in each transformed image. It's natural to conclude that this experiment dis-prove Harris corner detection invariance to rotation. Albeit, we have to consider the manner the image is rotated. As can be seen in figures \ref{Diamond Harris rotated original produced image}, \ref{Diamond harris image 1 rotated produced image}, \ref{Diamond harris image 2 rotated produced image}, and \ref{Diamond harris image 3 rotated produced image} you can see when you rotate the image they is an increase of black space around the image, and the boarders of the image may have been picked up as a corner. In figure \ref{Diamond harris rotated orignal produced image} you see the boarders of the image are detected as a corner but, in the other images the boarders are not detected as a corner. Therefore, with this observation we should expect irregularities in the data produced. Furthermore, revisiting figure \ref{Difference of distances between histograms relative to orignal: Harris, Rotated, Diamond} we can see the produced histograms follow a clear sinusoidal pattern implying that although they is irregularity between the number of corners found in each transformed image but atleast they is consistency of the number of corners found relative to the angle of rotation of the image. Therefore, we can infer that the Harris corner detection algorithm would produce the same number of corners if each rotated image had a tightly bounded box around the image thus removing the corners picked up by the boarders of the image. Therefore, en-counting for the extra corners found due to the boarders of the image we can infer that the number of corners found for each transformed image will be very similar to the original transformed image. This same concepts will apply for the images found in the dugong images in section\ref{the dugong images}.\par
 
-Looking, at the scaled results of the experiment we will expect the same to hold for invarinat properties for the image, and the opposite to be true for variance to a specific image transform. Therefore, we should be expecting no clear pattern in the produced histograms for the first experiement, we should see great irregulariy in the produced histograms, and we should see great irregularity in the distances betweeen the produced histograms. Therefore, as seen in figures \textbf{the key point figures in the report} they is great irregularity in the produced histograms hence implying variance to scaling transfromations. The same can be said for SIFT.
+Looking, at the scaled results of the experiment we will expect the same to hold for invariant properties for the image, and the opposite to be true for variance to a specific image transform. Therefore, we should be expecting no clear pattern in the produced histograms for the first experiment, we should see great irregularity in the produced histograms, and we should see great irregularity in the distances between the produced histograms. Therefore, as seen in figures \textbf{the key point figures in the report} they is great irregularity in the produced histograms hence implying variance to scaling transformations. The same can be said for SIFT.
 
-Encounting only for the numbers of corners found by the harris corner detection is not enough to proove the invariance of the algorihm. For the diamond playing card the only two visible colors are white, and red hence we can use the cards characterisitic to our advantage by drawing the found corners in the green channel, the same can be said about the dugong image by drawing the found corners onto the red channel as seen in section \ref{one-results}. The aim of this experiment to see if the found corners are going to be laying in the same color space as the original image hence, for the playing card we should get a spike of green pixels around the cluster of red pixels. Referring, to figure \ref{Comparison of histograms for each transformed image: Harris, Roateted, Diamond} we can see that the histograms overlay over each other for the mid intensities, and they is some deviation in the lower intensities. Divation in the lower intensities of the image is expected as in some transformed images we're introducing more black pixels into the image because of the method we're using to rotate the image as seen \ref{Diamond harris rotated orignal produced image}, \ref{Diamond harris image 1 rotated produced image}, \ref{Diamond harris image 2 rotated produced image}, and \ref{Diamond harris image 3 rotated produced image}. Therefore, as we can see the produced histogramms in figure \ref{Comparison of histograms for each transformed image: Harris, Roateted, Diamond} support the invariance of the harris corner detection.\par
+En-counting only for the numbers of corners found by the Harris corner detection is not enough to prove the invariance of the algorithm. For the diamond playing card the only two visible colors are white, and red hence we can use the cards characteristic to our advantage by drawing the found corners in the green channel, the same can be said about the dugong image by drawing the found corners onto the red channel as seen in section \ref{one-results}. The aim of this experiment to see if the found corners are going to be laying in the same color space as the original image hence, for the playing card we should get a spike of green pixels around the cluster of red pixels. Referring, to figure \ref{Comparison of histograms for each transformed image: Harris, Roateted, Diamond} we can see that the histograms overlay over each other for the mid intensities, and they is some deviation in the lower intensities. Deviation in the lower intensities of the image is expected as in some transformed images we're introducing more black pixels into the image because of the method we're using to rotate the image as seen \ref{Diamond harris rotated orignal produced image}, \ref{Diamond harris image 1 rotated produced image}, \ref{Diamond harris image 2 rotated produced image}, and \ref{Diamond harris image 3 rotated produced image}. Therefore, as we can see the produced histograms in figure \ref{Comparison of histograms for each transformed image: Harris, Roateted, Diamond} support the invariance of the Harris corner detection.\par
 
-Furthermore, this is further considolated through the caclulated distances between the transformed image, and the original image. As we can see in figure \ref{Difference of distances between histograms relative to orignal: Harris, Rotated, Diamond} the distances found in each transformed image is the same. Given, the introduction of greater quantity of black pixels due to the manner of rotation of the image we would expect the histograms to be a fixed distance away from eah other which, is demonstrated through figure \ref{Difference of distances between histograms relative to orignal: Harris, Rotated, Diamond}. Therefore, as demonstratd the harris corner detection rotationall invariant as show through the diamond card.
+Furthermore, this is further consolidated through the calculated distances between the transformed image, and the original image. As we can see in figure \ref{Difference of distances between histograms relative to orignal: Harris, Rotated, Diamond} the distances found in each transformed image is the same. Given, the introduction of greater quantity of black pixels due to the manner of rotation of the image we would expect the histograms to be a fixed distance away from each other which, is demonstrated through figure \ref{Difference of distances between histograms relative to orignal: Harris, Rotated, Diamond}. Therefore, as demonstrated the Harris corner detection rotationally invariant as show through the diamond card.
 %----------------------------------------------------------------------------------------
 %things which came with the conference paper, and I think they're useful so I am going to
 %leave them here for the time being
@@ -416,19 +416,50 @@ Furthermore, this is further considolated through the caclulated distances betwe
 \section{Task Two: Image Features} \label{two}
 an example on how to refernce other sections \ref{three}
 \subsection{part i: the main steps in Liner Binary Pattern}
-The linear binary pattern (LBP) algorithm is an algorith which is mainly used for feature extraction in relation to image textures \cite{b5}. \par
+The linear binary pattern (LBP) algorithm is an algorithm which is mainly used for feature extraction in relation to image textures \cite{b5}. \par
 
-The main steps of the LBP algorithm can be summarized as the following:
-\section{HERE}
+The main pipeline steps of the LBP algorithm can be summarized as the following:
 \begin{itemize}
 	\item Convert the image into a gray-scale image
 	\item Calculate the LBP for each pixel in the image
-	\item Calculate the histograms 
+	\item analyse the produced LBP's
+	\item Calculate the histograms
 \end{itemize}
 
-\subsection{part i: the main steps in histogram of gradients}
+Before the linear binary pattern can be performed on an image the image the image has to be converted into a gray-scale image \cite{b5}. The main reason for this step is because all the color channels are unnecessary because LBP is mainly comparing the intensity of pixels relative to a neighbourhood\cite{b5}, and including all the color channels will be an extra processing over-head and algorithm complexity as it contains two extra dimensions in image processing \cite{b7}. \par
 
-\subsection{part i: the main steps in SIFT} 
+The next step in the algorithm is to calculate the LBP for each neighbouring cell. The algorithm will initialise a function window of $nxn$ size which will scan through the image, and at each group of cells the linear binary pattern will compare the pixel value with the surrounding pixel values \cite{b5}. The algorithm will start at any set point inside the function window and label the pixels  in a clock-wise or a counter clockwise direction \cite{b5} \cite{b8}. If the current pixel is greater than the middle pixel the pixel would be labelled 1, otherwise it will be labelled 0 the labelling is also applicable in the other way thus for greater pixels label the pixel 1 otherwise, label the pixel 0. \cite{b8} \cite{b5}. \par
+
+Thereafter the algorithm will determine decimal representation of the produced binary pattern for the centre pixel. The algorithm will start from the same position as the labelling had began, transverse the window in the same direction as the labelling had done \cite{b5}. This number is stored in an output LBP matrix \cite{b5}. This process is repeated indefinitely till all the pixels of the original image are mapped to an output LBP matrix \cite{b5}. Consequently, the process will form a replica image of the original image although, this outputted matrix will be more descriptive about the textures found in the image \cite{b5}. \par
+
+Finally, the computation of histograms is done to the output matrix array in relation to the size of the window function hence if a 3 by 3 neighbourhood with 8 surrounding pixels this will yield 256 patterns ($2^{8} = 256$) thus, being able to form a histogram with a minimum value of 0, and a maximum value of 255 \cite{b5}. Therefore, forming a final feature vector of the image \cite{b5}. This is the main steps of the LBP algorithm, although they exists other implementations of the LBP algorithm such as the one proposed by Ojala elt al \cite{b5}
+
+\subsection{part i: Benefits of LBP}
+\begin{itemize}
+	\item The ability to capture fine grained details in an image \cite{b5}. Thus making it suitable to accurately identifying the location of a cell \cite{b6}.
+	\item Computationally fast, as it's operations are done on a gray-scale image \cite{b7} \cite{b8} \cite{b10}.
+	\item few algorithms which gives you information about the texture of an image, as most algorithms give your information about corners and edges \cite{b8}.
+\end{itemize}
+
+
+\subsection{part i: Disadvantages of LBP}
+\begin{itemize}
+	\item cannot capture fine grained details at varying scales, this is only possible for a 3 by 3 function window \cite{b5} \cite{b10}. Although, they has been an LBP implementation algorithm proposed by Ojala et al which overcomes this problem \cite{b5}.
+	\item For the case of cell identification, it greatly identifies many regions incorrectly relative to other feature detection algorithms  \cite{b6}.
+	\item Due to that the algorithm's performs calculations based on a gray-scale image, the algorithm is susceptible to lighting variation \cite{b9}.
+	\item the algorithm is variant to image rotation \cite{b10}.
+	\item the algorithm is sensitive to noise \cite{b10}
+	\item the algorithm is good for offering textual information of the whole image although, it lacks the ability to provide local textural information \cite{b10}.
+	
+\end{itemize}
+
+\subsection{part i: the main steps in histogram of gradients (HOG)}
+
+\subsection{part i: the advantage of HOG}
+
+\subsection{part i: the disadvantages of HOG}
+
+\subsection{part i: the main steps in SIFT}
 \subsection{part ii} \label{two ii}
 
 \section{Task Three} \label{three}
@@ -514,8 +545,6 @@ The main steps of the LBP algorithm can be summarized as the following:
 \label{Image segmentation done by contouring}
 \end{figure*}
 
-\section{SEPERATE HERE}
-
 \subsection{Dugong: Image Segmentation: with HSV color space}
 
 \begin{figure*}[!htb]
@@ -585,6 +614,15 @@ The main steps of the LBP algorithm can be summarized as the following:
 \bibitem{b5}A. Rosebrock. December, 7, 2015. "Local Binary Patterns with Python \& OpenCV". pyimagesearch. https://www.pyimagesearch.com/2015/12/07/local-binary-patterns-with-python-opencv/
 
 \bibitem{b6} S. Ozturk, and B.Akdemir. "Comparison of HOG, MSER, SIFT, FAST, LBP and CANNY features for cell detection in histopathological images " in Helix the scientfic Explorer. Feb 2018. [Online]. Available: http://helix.dnares.in/wp-content/uploads/2018/05/3321-3325.pdf
+
+\bibitem{b7} Kanan C, Cottrell GW (2012) Color-to-Grayscale: Does the Method Matter in Image Recognition? PLoS ONE 7(1): e29740. doi:10.1371/journal.pone.0029740
+
+\bibitem{b8} Dr. S. An. 2020. Machine Perception Lecture 04 [PowerPoint slides] Available: https://learn-ap-southeast-2-prod-fleet01-xythos.s3.ap-southeast-2.amazonaws.com/5dc3e34515a0e/6301343?response-cache-control=private\%2C\%20max-age\%3D21600\&response-content-disposition=inline\%3B\%20filename\%2A\%3DUTF-8\%27\%27lecture04\_feature\_extraction\_2019\%25281\%2529.pdf\&response-content-type=application\%2Fpdf\&X-Amz-Algorithm=AWS4-HMAC-SHA256\&X-Amz-Date=20201005T060000Z\&X-Amz-SignedHeaders=host\&X-Amz-Expires=21600\&X-Amz-Credential=AKIAYDKQORRYZBCCQFY5\%2F20201005\%2Fap-southeast-2\%2Fs3\%2Faws4\_request\&X-Amz-Signature=c3d82f1e880c0787db8eb858336ae4e82df4d25ad29ea5a9563494a6f57cc6d4
+
+
+\bibitem{b9} C. H. Chan. "Multi-scale Local Binary Pattern Histogram for Face Recognition". The Universtiy of Surrey. Surrey, Guildford, U.K. gu27xh. September 2008. [Online]. Available: https://www.researchgate.net/profile/Chi-Ho\_Chan/publication/224936218\_Multi-scale\_Local\_Binary\_Pattern\_Histograms\_for\_Face\_Recognition/links/00b495225c98186d23000000/Multi-scale-Local-Binary-Pattern-Histograms-for-Face-Recognition.pdf
+
+\bibitem{b10}. Z. Tang, Y. SU, M. J. Er, F. Qi, L. Zhang, and J. Zhou. "A local Binary pattern based texture descriptors for classification of tea leaves." in Neurocomputing. December 2014. [Online]. Available: https://reader.elsevier.com/reader/sd/pii/S0925231215006475?token=53A42C9FF9C438422CB044F70C414EA9C464364C8C5A90D9A510E9D71B152E4E0ABB5302BAA3EB4C035E9A77008BC0CC
 
 
 \end{thebibliography}
