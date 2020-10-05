@@ -8,6 +8,7 @@
 \usepackage{textcomp}
 \usepackage{xcolor}
 \usepackage{caption}
+\usepackage{csvsimple}
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
@@ -141,13 +142,13 @@ Harris corner detection is an algorithm which can be mainly thought of as a rota
   \centering
   \begin{minipage}[t]{0.45\textwidth}
     \includegraphics[width=\textwidth]{../programme/results/Task_1/scaled_experiements/Harris/diamond/experiment_one_diff_kp.png}
-    \caption{Difference of keypoitns found relative to first image: Harris, Rotated, Diamond}
+    \caption{Difference of keypoitns found relative to first image: Harris, Scaled, Diamond}
     \label{Difference of keypoints found relative to first image: Harris, Scaled, Diamond}
   \end{minipage}
   \hfill
   \begin{minipage}[t]{0.45\textwidth}
     \includegraphics[width=\textwidth]{../programme/results/Task_1/scaled_experiements/Harris/diamond/exp_three_diff_between_hists.png}
-    \caption{Difference between the distances of histograms}
+    \caption{Difference between the distances of histograms: Harris, scaled, Diamond}
     \label{Difference between the distances of histograms: Harris, scaled, Diamond}
   \end{minipage}
 \end{figure*}
@@ -402,7 +403,7 @@ To determine if an image is invariant to a certian transform we have to determin
 
 Look at figure \ref{Difference of distances between histograms relative to orignal: Harris, Rotated, Diamond} we can see that through each rotated image, they is irregularities in the number of keypoints found in each transformed image. It's natrual to conclude that this experiment dis-prove harris corner detection invariance to rotatin. Albiet, we have to consider the manner the image is rotated. As can be seen in figures \ref{Diamond harris rotated orignal produced image}, \ref{Diamond harris image 1 rotated produced image}, \ref{Diamond harris image 2 rotated produced image}, and \ref{Diamond harris image 3 rotated produced image} you can see when you rotate the image they is an increase of black space around the iamge, and the boarders of the image may have been picked up as a corner. In figure \ref{Diamond harris rotated orignal produced image} you see the boarders of the image are detected as a corner but, in the other images the boarders are not detected as a corner. Therefore, with this observation we should expect irregularties in the data produced. Furthermore, revisting figure \ref{Difference of distances between histograms relative to orignal: Harris, Rotated, Diamond} we can see the produced histograms follow a clear sinusoidal pattern implying that although they is irregularty between the number of corners found in each transformed image but atleast they is consistency of the number of corners found relative to the angle of rotation of the image. Therefore, we can infer that the harris corner detection algorithm would produce the same number of corners if each rotated image had a tightly bounded box around the image thus removing the corners picked up by the boarders of the image. Therefore, encounting for the extra corners found due to the boarders of the image we can infer that the number of corners found for each transformed image will be very similiar to the original transformed image. This same concepts will apply for the images found in the dugong images in section\ref{the dugong images}.\par
 
-Looking, at the scaled results of the experiment we will expect the same to hold for invarinat properties for the image, and the opposite to be true for variance to a specific image transform. Therefore, we should be expecting no clear pattern in the produced histograms for the first experiement, we should see great irregulariy in the produced histograms, and we should see great irregularity in the distances betweeen the produced histograms. Therefore, as seen in figures \section{I am editing here, for the report}
+Looking, at the scaled results of the experiment we will expect the same to hold for invarinat properties for the image, and the opposite to be true for variance to a specific image transform. Therefore, we should be expecting no clear pattern in the produced histograms for the first experiement, we should see great irregulariy in the produced histograms, and we should see great irregularity in the distances betweeen the produced histograms. Therefore, as seen in figures \textbf{the key point figures in the report} they is great irregularity in the produced histograms hence implying variance to scaling transfromations. The same can be said for SIFT.
 
 Encounting only for the numbers of corners found by the harris corner detection is not enough to proove the invariance of the algorihm. For the diamond playing card the only two visible colors are white, and red hence we can use the cards characterisitic to our advantage by drawing the found corners in the green channel, the same can be said about the dugong image by drawing the found corners onto the red channel as seen in section \ref{one-results}. The aim of this experiment to see if the found corners are going to be laying in the same color space as the original image hence, for the playing card we should get a spike of green pixels around the cluster of red pixels. Referring, to figure \ref{Comparison of histograms for each transformed image: Harris, Roateted, Diamond} we can see that the histograms overlay over each other for the mid intensities, and they is some deviation in the lower intensities. Divation in the lower intensities of the image is expected as in some transformed images we're introducing more black pixels into the image because of the method we're using to rotate the image as seen \ref{Diamond harris rotated orignal produced image}, \ref{Diamond harris image 1 rotated produced image}, \ref{Diamond harris image 2 rotated produced image}, and \ref{Diamond harris image 3 rotated produced image}. Therefore, as we can see the produced histogramms in figure \ref{Comparison of histograms for each transformed image: Harris, Roateted, Diamond} support the invariance of the harris corner detection.\par
 
@@ -414,7 +415,20 @@ Furthermore, this is further considolated through the caclulated distances betwe
 
 \section{Task Two: Image Features} \label{two}
 an example on how to refernce other sections \ref{three}
+\subsection{part i: the main steps in Liner Binary Pattern}
+The linear binary pattern (LBP) algorithm is an algorith which is mainly used for feature extraction in relation to image textures \cite{b5}. \par
 
+The main steps of the LBP algorithm can be summarized as the following:
+\section{HERE}
+\begin{itemize}
+	\item Convert the image into a gray-scale image
+	\item Calculate the LBP for each pixel in the image
+	\item Calculate the histograms 
+\end{itemize}
+
+\subsection{part i: the main steps in histogram of gradients}
+
+\subsection{part i: the main steps in SIFT} 
 \subsection{part ii} \label{two ii}
 
 \section{Task Three} \label{three}
@@ -424,42 +438,154 @@ an example on how to refernce other sections \ref{three}
 
 \begin{figure*}[!htb]
   \centering
-  \begin{minipage}[b]{0.45\textwidth}
+  \begin{minipage}[b]{0.2\textwidth}
     \includegraphics[width=\textwidth]{../programme/results/Task_3/diamond/image_0.jpg}
     \caption{Diamond: Seperated fore-ground and background}
     \label{Diamond: Seperated fore-ground and background}
   \end{minipage}
   \hfill
-  \begin{minipage}[b]{0.45\textwidth}
+  \begin{minipage}[b]{0.2\textwidth}
     \includegraphics[width=\textwidth]{../programme/results/Task_3/diamond/image_1.jpg}
     \caption{Diamond: the labelling of each object found in the image}
     \label{Diamond: the labelling of each object found in the image}
   \end{minipage}
 \end{figure*}
 
+\textbf{Don't forget to insert the tables for the area found for each object in here as well}
+%\begin{table*}[!h]
+%\csvautotabular{../programme/results/Task_3/diamond/resutls_for_Diamond.csv}
+%\caption{Diamond: the area for each object found by the connecting components labelling algorithm}
+%\label{Diamond: the area for each object found by the connecting components labelling algorithm}
+%\end{table*}
+
+
 \subsection{Results for Dugong}
+\textbf{don't forget to insert the results for the area found by the algorithm}
+\begin{figure*}[!htb]
+  \centering
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{../programme/results/Task_3/dugong/image_0.jpg}
+    \caption{Dugong: Seperated fore-ground and background}
+    \label{Dugong: Seperated fore-ground and background}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{../programme/results/Task_3/dugong/image_1.jpg}
+    \caption{Dugong: the labelling of each object found in the image}
+    \label{Dugong: the labelling of each object found in the image}
+  \end{minipage}
+\end{figure*}
+
+\textbf{don't forget to insert to insert the resutls for the area found by the algorithm here}
+
+
 \section{Task Four: Image Segmentation with K-means} \label{four}
 
-\subsection{Image Segmentation: with HSV color space}
+\subsection{Diamond: Image Segmentation: with HSV color space}
 
-\subsection{Image Segmentation: with BGR color space}
+\begin{figure*}[!htb]
+  \centering
+  \begin{minipage}[b]{0.2\textwidth}
+    \includegraphics[width=\textwidth]{../programme/results/Task_4/diamond/HSV/image_1.jpg}
+    \caption{Diamond: 1st cluster found by k-means}
+    \label{Diamond: 1st cluster found by k-means}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.2\textwidth}
+    \includegraphics[width=\textwidth]{../programme/results/Task_4/diamond/HSV/image_2.jpg}
+    \caption{Diamond: 2nd cluster found by k-means}
+    \label{Diamond: 2nd cluster found by k-means}
+  \end{minipage}
+\end{figure*}
 
-\subsection{Image Segmentation: with contouring}
+\subsection{Diamond: Image Segmentation: with BGR color space}
+\begin{figure*}[htp]
+\includegraphics[width=0.2\linewidth]{../programme/results/Task_4/diamond/BGR/image_2.jpg}
+\centering
+\caption{Cluster found by the BGR color space}
+\label{Cluster found by the BGR color space}
+\end{figure*}
 
-\subsection{Image segmentation: with watershed}
+\subsection{Diamond: Image Segmentation: with contouring}
+\begin{figure*}[htp]
+\includegraphics[width=0.2\linewidth]{../programme/results/Task_4/diamond/contours/image_0.jpg}
+\centering
+\caption{Image segmentation done by contouring}
+\label{Image segmentation done by contouring}
+\end{figure*}
 
-\subsection{Image Segmentation: with thresholding}
+\section{SEPERATE HERE}
+
+\subsection{Dugong: Image Segmentation: with HSV color space}
+
+\begin{figure*}[!htb]
+  \centering
+  \begin{minipage}[b]{0.2\textwidth}
+    \includegraphics[width=\textwidth]{../programme/results/Task_4/dugong/HSV/image_1.jpg}
+    \caption{Dugong: 1st cluster found by k-means}
+    \label{Dugong: 1st cluster found by k-means}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.2\textwidth}
+    \includegraphics[width=\textwidth]{../programme/results/Task_4/dugong/HSV/image_2.jpg}
+    \caption{Dugong: 2nd cluster found by k-means}
+    \label{Dugong: 2nd cluster found by k-means}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.2\textwidth}
+    \includegraphics[width=\textwidth]{../programme/results/Task_4/dugong/HSV/image_3.jpg}
+    \caption{Dugong: 3rd cluster found by k-means}
+    \label{Dugong: 3rd cluster found by k-means}
+  \end{minipage}
+\end{figure*}
+
+\subsection{Dugong: Image Segmentation: with BGR color space}
+\begin{figure*}[!htb]
+  \centering
+  \begin{minipage}[b]{0.2\textwidth}
+    \includegraphics[width=\textwidth]{../programme/results/Task_4/dugong/BGR/image_1.jpg}
+    \caption{Dugong: 1st cluster found by k-means}
+    \label{Dugong: 1st cluster found by k-means}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.2\textwidth}
+    \includegraphics[width=\textwidth]{../programme/results/Task_4/dugong/BGR/image_2.jpg}
+    \caption{Dugong: 2nd cluster found by k-means}
+    \label{Dugong: 2nd cluster found by k-means}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.2\textwidth}
+    \includegraphics[width=\textwidth]{../programme/results/Task_4/dugong/BGR/image_3.jpg}
+    \caption{Dugong: 3rd cluster found by k-means}
+    \label{Dugong: 3rd cluster found by k-means}
+  \end{minipage}
+\end{figure*}
+
+\subsection{Dugong: Image Segmentation: with contouring}
+
+\begin{figure*}[htp]
+\includegraphics[width=0.5\linewidth]{../programme/results/Task_4/dugong/contours/image_0.jpg}
+\centering
+\caption{Dugong: Image segmentation done by contouring}
+\label{Dugong Image segmentation done by contouring}
+\end{figure*}
+
 
 \newpage
 \clearpage
 \begin{thebibliography}{00}
 \bibitem{b1} Dr. S. An. 2020. Machine Perception Lecture 03 [PowerPoint slides] Available:https://learn-ap-southeast-2-prod-fleet01-xythos.s3.ap-southeast-2.amazonaws.com/5dc3e34515a0e/4348643?response-cache-control=private\%2C\%20max-age\%3D21600\&response-content-disposition=inline\%3B\%20filename\%2A\%3DUTF-8\%27\%27lecture03\_feature\_detection.pdf\&response-content-type=application\%2Fpdf\&X-Amz-Algorithm=AWS4-HMAC-SHA256\&X-Amz-Date=20200927T060000Z\&X-Amz-SignedHeaders=host\&X-Amz-Expires=21600\&X-Amz-Credential=AKIAYDKQORRYZBCCQFY5\%2F20200927\%2Fap-southeast-2\%2Fs3\%2Faws4\_request\&X-Amz-Signature=bcf107d5e76759efe45687b516ac725158189de0af558d0a7a798df1723f4299
 
-\bibitem{b2} A. Mordvinstev and K. Abid. "Harris Corner detection". OpenCV-Python Tutorials. https://opencv-python-tutroals.readthedocs.io/en/latest/py\_tutorials/py\_feature2d/py\_features\_harris/py\_features\_harris.html (retrieved Sept. 27, 2020).
+\bibitem{b2}A. Mordvinstev and K. Abid. "Harris Corner detection". OpenCV-Python Tutorials. https://opencv-python-tutroals.readthedocs.io/en/latest/py\_tutorials/py\_feature2d/py\_features\_harris/py\_features\_harris.html (retrieved Sept. 27, 2020).
 
-\bibitem{b3}. OpenCV. "Introduction to SIFT (Scale-Invariant Feature Transform)". OpenCV-Open source Computer vision. https://docs.opencv.org/3.4/da/df5/tutorial\_py\_sift\_intro.html
+\bibitem{b3}OpenCV. "Introduction to SIFT (Scale-Invariant Feature Transform)". OpenCV-Open source Computer vision. https://docs.opencv.org/3.4/da/df5/tutorial\_py\_sift\_intro.html
 
-\bibitem{b4}. C. Harris and M. Stephens. 1988. A Combined Corner And Edge Detector. Plessey Reasearch Roke Manor, UK. [Online]. Available: https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.434.4816\&rep=rep1\&type=pdf
+\bibitem{b4}C. Harris and M. Stephens. 1988. A Combined Corner And Edge Detector. Plessey Reasearch Roke Manor, UK. [Online]. Available: https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.434.4816\&rep=rep1\&type=pdf
+
+\bibitem{b5}A. Rosebrock. December, 7, 2015. "Local Binary Patterns with Python \& OpenCV". pyimagesearch. https://www.pyimagesearch.com/2015/12/07/local-binary-patterns-with-python-opencv/
+
+\bibitem{b6} S. Ozturk, and B.Akdemir. "Comparison of HOG, MSER, SIFT, FAST, LBP and CANNY features for cell detection in histopathological images " in Helix the scientfic Explorer. Feb 2018. [Online]. Available: http://helix.dnares.in/wp-content/uploads/2018/05/3321-3325.pdf
+
 
 \end{thebibliography}
 
