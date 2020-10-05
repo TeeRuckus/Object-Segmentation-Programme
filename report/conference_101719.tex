@@ -545,13 +545,47 @@ The disadvantages of SIFT are the following:
 \subsection{Common  and different components between SIFT, HOG, and LBP}
 
 The LBP algorithm is the only algorithm out of the three algorithms which describes texture of the image, as SIFT looks for corners in an image, and HOG finds the outlines of  the object. LBP is relative simple algorithm, and does its calculations on a gray-scale image hence, it's computationally fast while SIFT, and HOG are slower. SIFT will be the slowest algorithm out of the three because of the extra calculations done in each octave, and the performance of LoG/DoG. SIFT is the only algorithm which is a feature detector, and feature descriptor. The LBP, HOG, and SIFT algorithm are all features descriptors with different implementations. SIFT's descriptor is a descriptor is for orientation, LBP's descriptors is for the binary pattern, and HOG's descriptor is for the gradients of the image. All algorithm's perform calculations on neighbouring pixels. HOG and LBP are typically used in conjunction with other algorithms to boost the performance of other algorithms while SIFT is typically a stand alone algorithm. SIFT is the only algorithm which does comparisons with images of different scales. HOG and SIFT require the scaling of their images to initialise their algorithm.\par
-
-\section{Task Three} \label{three}
-
 \subsection{Results for Diamond playing card}
+\begin{figure*}[!htb]
+  \centering
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{../programme/results/Task_2/diamond/rotation/norm.png}
+    \caption{Diamond: comparioson between the descriptors found for original image, and rotated images}
+    \label{Diamond: comparioson between the descriptors found for original image, and rotated images}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{../programme/results/Task_2/diamond/scaling/norm.png}
+    \caption{Diamond: comparioson between the descriptors found for original image, and scaled images}
+    \label{Diamond: comparioson between the descriptors found for original image, and scaled images}
+  \end{minipage}
+\end{figure*}
 
-\textbf{Don't forget to include the areas found by each object extracted}
+\subsection{Results for Dugong} \hfill\\ \\
 
+\begin{figure*}[!htb]
+  \centering
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{../programme/results/Task_2/dugong/rotation/norm.png}
+    \caption{Diamond: comparioson between the descriptors found for original image, and rotated images}
+    \label{Dugong: comparioson between the descriptors found for original image, and rotated images}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{../programme/results/Task_2/dugong/scaling/norm.png}
+    \caption{Diamond: comparioson between the descriptors found for original image, and scaled images}
+    \label{Dugong: comparioson between the descriptors found for original image, and scaled images}
+  \end{minipage}
+\end{figure*}
+
+\subsection{Discussion about results}
+The process this algorithm patakes, is that the hog descriptor is obtained for the orignal image and the transformed image, and then the descriptors are compared to each other through cv.norm. If cv.norm returns a small value this signifies that the Hog descriptor is invariant to that feature transform, if Hog returns a large value this signfies that Hog is invariant to that specific feature transform. \par
+
+As can be seen in the results produced in figures \ref{Diamond: comparioson between the descriptors found for original image, and rotated images}, \ref{Diamond: comparioson between the descriptors found for original image, and scaled images}, \ref{Dugong: comparioson between the descriptors found for original image, and rotated images}, and \ref{Dugong: comparioson between the descriptors found for original image, and scaled images} the returned values from the cv.norm function are all greater than the value 1 hence, implying that the hog descriptor is variant to image roation, and image scaling. Albeit, the test data may have been spoiled due to that when the image was roated some  parts of the image were cropped off, as for hog to work the dimensions of the all images have to be exactly the same. Furthermore, when scaling the image some iterations of the image new features were been introduced in testing patch hence, potentiall skewing the results one way.\par
+
+\section{Task Three} \label{three} 
+
+\textbf{Don't forget to include the areas found by each object extracted}\subsection{Results for diamond playing card}
 \begin{figure*}[!htb]
   \centering
   \begin{minipage}[b]{0.2\textwidth}
@@ -687,6 +721,7 @@ The LBP algorithm is the only algorithm out of the three algorithms which descri
 
 \newpage
 \clearpage
+\begin{figure*}[!htb]
 \begin{thebibliography}{00}
 
 \bibitem{b1} Dr. S. An. 2020. Machine Perception Lecture 03 [PowerPoint slides] Available:https://learn-ap-southeast-2-prod-fleet01-xythos.s3.ap-southeast-2.amazonaws.com/5dc3e34515a0e/4348643?response-cache-control=private\%2C\%20max-age\%3D21600\&response-content-disposition=inline\%3B\%20filename\%2A\%3DUTF-8\%27\%27lecture03\_feature\_detection.pdf\&response-content-type=application\%2Fpdf\&X-Amz-Algorithm=AWS4-HMAC-SHA256\&X-Amz-Date=20200927T060000Z\&X-Amz-SignedHeaders=host\&X-Amz-Expires=21600\&X-Amz-Credential=AKIAYDKQORRYZBCCQFY5\%2F20200927\%2Fap-southeast-2\%2Fs3\%2Faws4\_request\&X-Amz-Signature=bcf107d5e76759efe45687b516ac725158189de0af558d0a7a798df1723f4299
@@ -717,7 +752,7 @@ The LBP algorithm is the only algorithm out of the three algorithms which descri
 
 \bibitem{b13} D. G. Lowe. "Distinictive Image Features form Scale-Invariant Keypoints". The University of British Columbia. Vancouver . B.C. Canada. January 2004. [Online]. Available: https://www.cs.ubc.ca/~lowe/papers/ijcv04.pdf
 \end{thebibliography}
-
+\end{figure*}
 \appendix
 
 \begin{appendices}
@@ -727,8 +762,6 @@ The LBP algorithm is the only algorithm out of the three algorithms which descri
 	
 	\section{Full Code print out with supporting functions}
 	\subsection{Main.py}
-	\lstinputlisting*[language=python]{../programme/main.py}
-	\lstinputlisting*[language=python]{../programme/myUtils.py}
 \end{appendices}
 
 %import cv2

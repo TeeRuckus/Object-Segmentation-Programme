@@ -665,16 +665,15 @@ if __name__ == '__main__':
     #TASK TWO: Diamond
     #---------------------------------------------------------------------------
     if task_num == 2 and image == 'DI':
-        #activity_two_hog_rotated(imList[0], (8,1), (69,128))
-        #activity_two_hog_scaled(imList[0], (8,1), (72, 129))
-
-        #activity_two_SIFT_rotated(imList[0], (8,1), (69, 128), name='diamond')
+        activity_two_hog_rotated(imList[0], (8,1), (69,128))
+        activity_two_hog_scaled(imList[0], (8,1), (72, 129))
+        activity_two_SIFT_rotated(imList[0], (8,1), (69, 128), name='diamond')
         activity_two_SIFT_scaled(imList[0], (8,1), (69,128), name='diamond')
 
 
     if task_num == 2 and image == 'DU':
-        #activity_two_hog_rotated(imList[1], (393,237), (457, 365))
-        #activity_two_hog_scaled(imList[1], (393,237), (457,365))
+        activity_two_hog_rotated(imList[1], (393,237), (457, 365))
+        activity_two_hog_scaled(imList[1], (393,237), (457,365))
         activity_two_SIFT_rotated(imList[1], (392, 237), (457, 365), name='dugong')
         activity_two_SIFT_scaled(imList[1], (392,237), (457,365), name='dugong')
 
@@ -693,17 +692,17 @@ if __name__ == '__main__':
     #---------------------------------------------------------------------------
     if task_num == 4 and image == 'DI':
         #activity_four(imList[0], 200)
-#        im_og = cv.imread(imList[0])
-#        im = cv.cvtColor(im_og.copy(), cv.COLOR_BGR2HSV)
-#        activity_four_kMeans(im_og.copy(), im, color_space='HSV',name='diamond',eplison=0.01, K=14, num_iter=200)
-#        im = cv.cvtColor(im_og.copy(), cv.COLOR_BGR2Luv)
-#        activity_four_kMeans(im_og.copy(), im, eplison=0.01, K=14, num_iter=200, name='diamond', color_space = 'LUV')
-#        im = cv.cvtColor(im_og.copy(), cv.COLOR_BGR2Lab)
-#        activity_four_kMeans(im_og.copy(), im, eplison=0.01, K=14, color_space='LAB',name='diamond', num_iter=200)
-#        activity_four_kMeans(im_og.copy(), im_og.copy(), eplison=0.01,name='diamond', K=14, color_space='BGR', num_iter=200)
-#
-#        #CONTOURS FOR ACTIVITY FOUR
-#        activity_four_contours(imList[0], 0.1, name='diamond')
+        im_og = cv.imread(imList[0])
+        im = cv.cvtColor(im_og.copy(), cv.COLOR_BGR2HSV)
+        activity_four_kMeans(im_og.copy(), im, color_space='HSV',name='diamond',eplison=0.01, K=14, num_iter=200)
+        im = cv.cvtColor(im_og.copy(), cv.COLOR_BGR2Luv)
+        activity_four_kMeans(im_og.copy(), im, eplison=0.01, K=14, num_iter=200, name='diamond', color_space = 'LUV')
+        im = cv.cvtColor(im_og.copy(), cv.COLOR_BGR2Lab)
+        activity_four_kMeans(im_og.copy(), im, eplison=0.01, K=14, color_space='LAB',name='diamond', num_iter=200)
+        activity_four_kMeans(im_og.copy(), im_og.copy(), eplison=0.01,name='diamond', K=14, color_space='BGR', num_iter=200)
+
+        #CONTOURS FOR ACTIVITY FOUR
+        activity_four_contours(imList[0], 0.1, name='diamond')
 
         #APPLYING THE WATERSHED
         activity_four_watershed(imList[0], True)
@@ -713,17 +712,17 @@ if __name__ == '__main__':
     #---------------------------------------------------------------------------
     if task_num == 4 and image == 'DU':
         #activity_four(imList[1], 100)
-#        im_og = cv.imread(imList[1])
-#        im = cv.cvtColor(im_og.copy(), cv.COLOR_BGR2HSV)
-#        activity_four_kMeans(im_og.copy(), im, color_space='HSV',eplison=0.01, K=14,name='dugong', num_iter=100)
-#        im = cv.cvtColor(im_og.copy(), cv.COLOR_BGR2Luv)
-#        activity_four_kMeans(im_og.copy(), im, eplison=0.01, K=14, num_iter=100, color_space = 'LUV', name='dugong')
-#        im = cv.cvtColor(im_og.copy(), cv.COLOR_BGR2Lab)
-#        activity_four_kMeans(im_og.copy(), im, eplison=0.01, K=14, color_space='LAB', num_iter=100, name='dugong')
-#        activity_four_kMeans(im_og.copy(), im_og.copy(), eplison=0.01, K=14, color_space='BGR', num_iter=100, name='dugong')
+        im_og = cv.imread(imList[1])
+        im = cv.cvtColor(im_og.copy(), cv.COLOR_BGR2HSV)
+        activity_four_kMeans(im_og.copy(), im, color_space='HSV',eplison=0.01, K=14,name='dugong', num_iter=100)
+        im = cv.cvtColor(im_og.copy(), cv.COLOR_BGR2Luv)
+        activity_four_kMeans(im_og.copy(), im, eplison=0.01, K=14, num_iter=100, color_space = 'LUV', name='dugong')
+        im = cv.cvtColor(im_og.copy(), cv.COLOR_BGR2Lab)
+        activity_four_kMeans(im_og.copy(), im, eplison=0.01, K=14, color_space='LAB', num_iter=100, name='dugong')
+        activity_four_kMeans(im_og.copy(), im_og.copy(), eplison=0.01, K=14, color_space='BGR', num_iter=100, name='dugong')
 
-#        #CONTOURS FOR ACTIVITY FOUR
-#        activity_four_contours(imList[1], 80, name='dugong')
+        #CONTOURS FOR ACTIVITY FOUR
+        activity_four_contours(imList[1], 80, name='dugong')
 
         activity_four_watershed(imList[1], True)
 
