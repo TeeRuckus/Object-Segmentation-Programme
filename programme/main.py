@@ -333,43 +333,43 @@ def activity_one_SIFT_scaled(im, **kwargs):
     cv.waitKey()
     clean()
 
-def activity_two_SIFT_rotated(im, pt1, pt2):
+def activity_two_SIFT_rotated(im, pt1, pt2, **kwargs):
     im = cv.imread(im)
     im_copy = im.copy()
 
     feature  = crop_img(im_copy, pt1, pt2)
     cv.imshow('original image', im_copy)
     rotated_features = [rotate_image(feature, ii) for ii in range(15,360,15)]
-    og_sift  = SIFT(im_copy)[0]
-    sift_des = [SIFT(ii)[0] for ii in rotated_features]
+    og_sift  = SIFT(im_copy)[2]
+    sift_des = [SIFT(ii)[2] for ii in rotated_features]
 
     print(og_sift.shape)
     check_sizes(sift_des)
 
-    comp = [cv.norm(og_sift - ii) for ii in sift_des]
-    exp_one = show_diff_dist(comp, title='the difference between rotated sift descriptors')
+    sift_des.insert(0, og_sift)
+    #comp = [cv.norm(og_sift - ii) for ii in sift_des]
 
-    exp_one.show()
+    show_img_ls(sift_des,"results/Task_2/%s/rotation/" %kwargs['name'])
     cv.waitKey()
     clean()
 
-def activity_two_SIFT_scaled(im, pt1, pt2):
+def activity_two_SIFT_scaled(im, pt1, pt2, **kwargs):
     im = cv.imread(im)
     im_copy = im.copy()
 
-    scaled_features = [resize_im(im_copy, factor/24 ) for factor in range(12,36,1)]
+    scaled_features = [resize_img(im_copy, factor/24 ) for factor in range(12,36,1)]
     cropped_features = [crop_img(ii, pt1, pt2) for ii in scaled_features]
 
     feature = crop_img(im, pt1, pt2)
-    cv.imshow('featrue', featur)
 
-    og_sift = SIFT(im_copy)[0]
-    sift_des = [SIFT(ii)[0] for ii in cropped_features]
+    og_sift = SIFT(im_copy)[2]
+    sift_des = [SIFT(ii)[2] for ii in cropped_features]
 
-    comp = [cv.norm(og_sift - ii) for ii in sift_des]
-    exp_one = show_diff_dist(comp, title='the difference between sift scaled descrptors')
+    sift_des.insert(0, og_sift)
+    show_img_ls(sift_des, "results/Task_2/%s/scaling/" %kwargs['name'])
+    #comp = [cv.norm(og_sift - ii) for ii in sift_des]
+    #exp_one = show_diff_dist(comp, title='the difference between sift scaled descrptors')
 
-    exp_one.show()
     cv.waitKey()
     clean()
 
@@ -522,217 +522,6 @@ def activity_four_contours(im, thresh, **kwargs):
     #cv.watershed(im_res, markers)
 
 
-def activity_four_kmeans_area(im, total_area, in_labels, in_centroids, **kwargs):
-    """
-    IMPORT:
-    EXPORT:
-
-    PURPOSE:
-    """
-    print(total_area)
-    im = cv.imread(im)
-    im_copy = im.copy()
-    data = total_area
-
-    #converting the np.float32
-    data = np.float32(data)
-
-    #defining the criteria in which we're going to apply k-means tooo
-    criteria = (cv.TERM_CRITERIA_EPS + cv.TERM_CRITERIA_MAX_ITER, 10, 1.0)
-    attempts = 10
-    K = 3
-    flags = cv.KMEANS_PP_CENTERS
-    label, center, = cv.kmeans(data, K, None, criteria, attempts, flags)[1:]
-
-
-    center  = np.uint8(center)
-
-    print(label)
-    cv.imshow('woooo', im_copy)
-    cv.imshow('huh', center)
-
-#this shit doesn't work too well
-def activity_four_kMeans_edges(im):
-    im = cv.imread(im)
-    im_copy = im.copy()
-    im_gray = cv.cvtColor(im, cv.COLOR_BGR2GRAY)
-
-    sobel_y = np.array([[-1, -2, -1],
-                        [0,0,0],
-                        [1,2,1]])
-
-    sobel_x = np.array([[-1, 0, 1],
-                        [-2, 0, 2],
-                        [-1, 0, 1]])
-    #n is equal to the value of 110
-
-    filtered_img_x = cv.filter2D(im_gray, -1, sobel_x)
-    filtered_img_y = cv.filter2D(im_gray, -1, sobel_y)
-
-    #getting rid of negative values out of the matrice, so it doesn't affect
-    #the image colour later on
-    filtered_img_x_abs = cv.convertScaleAbs(filtered_img_x)
-    filtered_img_y_abs = cv.convertScaleAbs(filtered_img_y)
-
-
-    combined_trans = cv.addWeighted(filtered_img_x_abs, 0.5, \
-            filtered_img_y_abs, 0.5, 0)
-    #im_flat = combined_trans.reshape((-1,3))
-    im_flat = combined_trans
-    #the k-means algorithm will accept the data type of float32 not uint8
-    im_flat = np.float32(im_flat)
-    #import the number of attempts, adn the eplison value for the image
-    attempts = 200
-    eplison = 0.1
-    criteria = (cv.TERM_CRITERIA_EPS + cv.TERM_CRITERIA_MAX_ITER,attempts, 0.1)
-
-    K = 15
-    flags = cv.KMEANS_PP_CENTERS
-    labels, centers = cv.kmeans(im_flat, K, None, criteria, attempts, flags)[1:]
-
-    centers = np.uint8(centers)
-    labels = labels.flatten()
-
-    #puttin  together the segmented image
-    seg_im = centers[labels.flatten()]
-
-    #converting it back to the orginal image shape
-    seg_im = seg_im.reshape(combined_trans.shape)
-
-    cv.imshow('the segmented image', seg_im)
-
-    #showing each of the segments individually
-    for ii in range(labels.max()):
-        #making a copy, so the mask is only applied once onto the image
-        im_mask = combined_trans.copy()
-        #im_mask = im_mask.reshape((-1,3))
-        #setting any segment in the image which corresponds to that cluster to blue
-        print(ii)
-        im_mask[labels == ii] = 125
-        #converting the flattened pixle matrices into the original image
-        im_mask = im_mask.reshape(combined_trans.shape)
-
-        cv.imshow('cluster: %s' % ii, im_mask)
-
-    cv.imshow('sobel transform', combined_trans)
-
-
-def activity_four_kMeans_corners(im):
-    im = cv.imread(im)
-    im_copy = im.copy()
-
-    im_gray = cv.cvtColor(im_copy, cv.COLOR_BGR2GRAY)
-    im_gray = np.float32(im_gray)
-
-    #using the default values of 0.04 - 0.06
-    detected_im = cv.cornerHarris(im_gray, 2, 3, 0.04)
-    #this is a matrices of the corners found in the image, and each corner found
-    #in the image is emphasised more
-    detected_im = cv.dilate(detected_im, None)
-    print(detected_im.shape)
-    cv.imshow('detecte image', detected_im)
-    detected_im = np.float32(detected_im)
-
-    #stopping the kmeans clustering either if the algorithm reaches a specified
-    #number of iterations or when the labels change less than a given epilson
-    stop_runs = 200
-    eplison = 0.01
-    criteria = (cv.TERM_CRITERIA_EPS + cv.TERM_CRITERIA_MAX_ITER, stop_runs, eplison)
-
-    K = 10
-    attempts = 10
-    #flags  = cv.KMEANS_RANDOM_CENTERS
-    flags = cv.KMEANS_PP_CENTERS
-    labels, (centers) = cv.kmeans(detected_im, K, None, criteria, attempts, flags)[1:]
-
-    centers = np.uint8(centers)
-
-    labels = labels.flatten()
-
-    #putting together the segmented image
-    seg_im = centers[labels.flatten()]
-
-    #converting it back to the original image shape
-    seg_im = seg_im.reshape(detected_im.shape)
-
-    cv.imshow('the segmented image', seg_im)
-
-    im[seg_im > 0.01 * seg_im.max()] = [255,0,0]
-    cv.imshow('the image', im)
-
-    for ii in range(labels.max()):
-        #making a copy, so the mask is only applied once onto the image
-        im_mask = detected_im.copy()
-        #setting any segment in the image which corresponds to that cluster to blue
-        im_mask[labels == ii] = [125]
-        #converting the flattened pixle matrices into the original image
-        im_mask = im_mask.reshape(detected_im.shape)
-
-        cv.imshow('cluster: %s' % ii, im_mask)
-
-def activity_four_kMeans_RGB(im, **kwargs):
-    """
-    IMPORT:
-    EXPORT:
-
-    PURPOSE:
-    """
-    im = cv.imread(im)
-    im_copy = im.copy()
-
-
-    #the k-means functions takes in as an input a 2-D matrice but our image is
-    #a 3-D image hence, we need to reshape the image into 2-D
-
-    #I found if I did the blurring on the green channel only, for the
-    #dugong image. I produced better segementation results
-    im_copy = cv.cvtColor(im_copy, cv.COLOR_BGR2GRAY)
-    im_copy = cv.GaussianBlur(im_copy, (5,5), 0)
-
-    im_copy = cv.cvtColor(im_copy, cv .COLOR_GRAY2BGR)
-    cv.imshow('blurred image', im_copy)
-    im_flat = im_copy.reshape((-1,3))
-
-    #the k-means algorithm will accept the data type of float32 not uint8
-    im_flat = np.float32(im_flat)
-    #stopping the kmeans clustering either if the algorithm reaches a specified
-    #number of iterations or when the labels change less than a given epilson
-    criteria = (cv.TERM_CRITERIA_EPS + cv.TERM_CRITERIA_MAX_ITER, kwargs['num_iter'] , kwargs['eplison'])
-
-    K = kwargs['K']
-    #CHANGE THIS AND SEE WHAT HAPPENS
-    #attempts = kwargs['num_iter']
-    attempts = 10
-
-    #flags  = cv.KMEANS_RANDOM_CENTERS
-    flags = cv.KMEANS_PP_CENTERS
-    labels, (centers) = cv.kmeans(im_flat, K, None, criteria, attempts, flags)[1:]
-
-    centers = np.uint8(centers)
-
-    labels = labels.flatten()
-
-    #putting together the segmented image
-    seg_im = centers[labels.flatten()]
-
-    #converting it back to the original image shape
-    seg_im = seg_im.reshape(im.shape)
-
-    cv.imshow('the segmented image', seg_im)
-
-    #showing each of the segments individually
-
-    for ii in range(labels.max()):
-        #making a copy, so the mask is only applied once onto the image
-        im_mask = im.copy()
-        im_mask = im_mask.reshape((-1,3))
-        #setting any segment in the image which corresponds to that cluster to blue
-        im_mask[labels == ii] = [255,0,0]
-        #converting the flattened pixle matrices into the original image
-        im_mask = im_mask.reshape(im.shape)
-
-        cv.imshow('cluster: %s' % ii, im_mask)
-
 #apparently the HSV color scheme is better for image detection
 def activity_four_kMeans(raw_im, im, **kwargs):
     imgs = []
@@ -802,43 +591,36 @@ def activity_four_watershed(im, invert_threshold=False):
 
     cv.imshow('threshold image %s' % invert_threshold, thresh)
 
-#    #removing noise from the image by performing morphological operations
-#    #kernel = np.ones((3,3), np.uint8)
-#    #performaing erosion to remove the fore-ground and background in the image
-#    kernel = cv.getStructuringElement(cv.MORPH_RECT, (3,3))
-#    im_eroded = cv.erode(thresh, kernel, iterations=1)
-#    cv.imshow('eroded image', im_eroded)
-#
-#
-#    opening = cv.morphologyEx(thresh, cv.MORPH_OPEN, kernel, iterations=2)
-#    #cv.imshow('opening image', opening)
-#
-#    #what we can determine is definetly the background
-#    #you want to remove small objects i.e. noise in the image
-#    sure_bg = cv.dilate(opening, kernel, iterations=1)
-#    cv.imshow("sure background", sure_bg)
-#
-#    #finding the sure foreground area in the image
-#    #calculates the distance from a coloured pixel to a black pixel
-#    dist = cv.distanceTransform(opening, cv.DIST_L2, 5)
-#    sure_fg = cv.threshold(dist, 0.7 * dist.max(), 255, 0)[1]
-#    cv.imshow('sure foreground image', sure_fg)
-#
-#    #finding the unknown region: this region will be later classfied with the
-#    sure_fg = np.uint8(sure_fg)
-#    unkown_region = cv.subtract(sure_bg, sure_fg)
-#
-    #labelling the markers for the watershed algorithm
-    markers = cv.connectedComponents(sure_fg)[1]
-    cv.imshow('markers', markers)
+    #noise removal
+    kernel = np.ones((3,3), np.uint8)
+    opening = cv.morphologyEx(thresh , cv.MORPH_OPEN, kernel, iterations = 2)
 
-    #adding 1 to all the labels so the background can be numbered as 1
+    #sure background area
+    sure_bg = cv.dilate(opening, kernel, iterations=3)
+
+    #finding sure foreground area
+    dist = cv.distanceTransform(opening, cv.DIST_L2,5)
+    sure_fg = cv.threshold(dist, 0.7 * dist.max(), 255,0)[1]
+
+    #finding the unknown region
+    sure_fg = np.uint8(sure_fg)
+    unknown = cv.subtract(sure_bg, sure_fg)
+
+    #marker labelling
+    markers  = cv.connectedComponents(sure_fg)[1]
+
+    #adding 1 to labels to ensure that background is not 0 but 1
     markers += 1
 
-    #performing the watershed algorithm on the provided images
-    #markers = cv.watershed(thresh, markers)
+    #marking the unkown region with zero
+    markers[unknown==255] = 0
 
-    cv.imshow('resultant image', thresh)
+    markers = cv.watershed(im_copy, markers)
+    im_copy[markers == - 1] = [255,0,0]
+
+    cv.imshow('resultant', im_copy)
+    cv.waitKey()
+    clean()
 
 if __name__ == '__main__':
     imList = ['imgs/diamond2.png', 'imgs/Dugong.jpg']
@@ -886,13 +668,16 @@ if __name__ == '__main__':
         #activity_two_hog_rotated(imList[0], (8,1), (69,128))
         #activity_two_hog_scaled(imList[0], (8,1), (72, 129))
 
-        activity_two_SIFT_rotated(imList[0], (8,1), (69, 128))
+        #activity_two_SIFT_rotated(imList[0], (8,1), (69, 128), name='diamond')
+        activity_two_SIFT_scaled(imList[0], (8,1), (69,128), name='diamond')
 
 
     if task_num == 2 and image == 'DU':
         #activity_two_hog_rotated(imList[1], (393,237), (457, 365))
         #activity_two_hog_scaled(imList[1], (393,237), (457,365))
-        activity_two_SIFT_rotated(imList[1], (392, 237), (457, 365))
+        activity_two_SIFT_rotated(imList[1], (392, 237), (457, 365), name='dugong')
+        activity_two_SIFT_scaled(imList[1], (392,237), (457,365), name='dugong')
+
 
     #---------------------------------------------------------------------------
     #TASK Three:
@@ -908,44 +693,38 @@ if __name__ == '__main__':
     #---------------------------------------------------------------------------
     if task_num == 4 and image == 'DI':
         #activity_four(imList[0], 200)
-        im_og = cv.imread(imList[0])
-        im = cv.cvtColor(im_og.copy(), cv.COLOR_BGR2HSV)
-        activity_four_kMeans(im_og.copy(), im, color_space='HSV',name='diamond',eplison=0.01, K=14, num_iter=200)
-        im = cv.cvtColor(im_og.copy(), cv.COLOR_BGR2Luv)
-        activity_four_kMeans(im_og.copy(), im, eplison=0.01, K=14, num_iter=200, name='diamond', color_space = 'LUV')
-        im = cv.cvtColor(im_og.copy(), cv.COLOR_BGR2Lab)
-        activity_four_kMeans(im_og.copy(), im, eplison=0.01, K=14, color_space='LAB',name='diamond', num_iter=200)
-        activity_four_kMeans(im_og.copy(), im_og.copy(), eplison=0.01,name='diamond', K=14, color_space='BGR', num_iter=200)
-        activity_four_contours(imList[0], 0.1, name='diamond')
-#        activity_four_kMeans_edges(imList[0])
-#        activity_four_kMeans_corners(imList[0])
-#        activity_four_kmeans_area(imList[0], areas, labels, centroids)
+#        im_og = cv.imread(imList[0])
+#        im = cv.cvtColor(im_og.copy(), cv.COLOR_BGR2HSV)
+#        activity_four_kMeans(im_og.copy(), im, color_space='HSV',name='diamond',eplison=0.01, K=14, num_iter=200)
+#        im = cv.cvtColor(im_og.copy(), cv.COLOR_BGR2Luv)
+#        activity_four_kMeans(im_og.copy(), im, eplison=0.01, K=14, num_iter=200, name='diamond', color_space = 'LUV')
+#        im = cv.cvtColor(im_og.copy(), cv.COLOR_BGR2Lab)
+#        activity_four_kMeans(im_og.copy(), im, eplison=0.01, K=14, color_space='LAB',name='diamond', num_iter=200)
+#        activity_four_kMeans(im_og.copy(), im_og.copy(), eplison=0.01,name='diamond', K=14, color_space='BGR', num_iter=200)
+#
+#        #CONTOURS FOR ACTIVITY FOUR
+#        activity_four_contours(imList[0], 0.1, name='diamond')
+
+        #APPLYING THE WATERSHED
+        activity_four_watershed(imList[0], True)
 
     #---------------------------------------------------------------------------
     #TASK Four: Dugong
     #---------------------------------------------------------------------------
     if task_num == 4 and image == 'DU':
         #activity_four(imList[1], 100)
-        im_og = cv.imread(imList[1])
-        im = cv.cvtColor(im_og.copy(), cv.COLOR_BGR2HSV)
-        activity_four_kMeans(im_og.copy(), im, color_space='HSV',eplison=0.01, K=14,name='dugong', num_iter=100)
-        im = cv.cvtColor(im_og.copy(), cv.COLOR_BGR2Luv)
-        activity_four_kMeans(im_og.copy(), im, eplison=0.01, K=14, num_iter=100, color_space = 'LUV', name='dugong')
-        im = cv.cvtColor(im_og.copy(), cv.COLOR_BGR2Lab)
-        activity_four_kMeans(im_og.copy(), im, eplison=0.01, K=14, color_space='LAB', num_iter=100, name='dugong')
-        activity_four_kMeans(im_og.copy(), im_og.copy(), eplison=0.01, K=14, color_space='BGR', num_iter=100, name='dugong')
-        activity_four_contours(imList[1], 80, name='dugong')
-#        activity_four_kMeans_edges(imList[1])
-#        activity_four_kMeans_corners(imList[1])
-#        activity_four_kmeans_area(imList[1], areas, labels, centroids)
+#        im_og = cv.imread(imList[1])
+#        im = cv.cvtColor(im_og.copy(), cv.COLOR_BGR2HSV)
+#        activity_four_kMeans(im_og.copy(), im, color_space='HSV',eplison=0.01, K=14,name='dugong', num_iter=100)
+#        im = cv.cvtColor(im_og.copy(), cv.COLOR_BGR2Luv)
+#        activity_four_kMeans(im_og.copy(), im, eplison=0.01, K=14, num_iter=100, color_space = 'LUV', name='dugong')
+#        im = cv.cvtColor(im_og.copy(), cv.COLOR_BGR2Lab)
+#        activity_four_kMeans(im_og.copy(), im, eplison=0.01, K=14, color_space='LAB', num_iter=100, name='dugong')
+#        activity_four_kMeans(im_og.copy(), im_og.copy(), eplison=0.01, K=14, color_space='BGR', num_iter=100, name='dugong')
 
-    #experiments for the water shed algorithm
-    #activity_four_watershed(imList[0], True)
-    #activity_four_watershed(imList[1])
+#        #CONTOURS FOR ACTIVITY FOUR
+#        activity_four_contours(imList[1], 80, name='dugong')
 
-    #experiments for the K-means algorithm
+        activity_four_watershed(imList[1], True)
 
-    #setting the clusters to 3 as I am counting the right side up, and the
-    #upside down two's in the image, as two different clusters
 
-    #cv.waitKey(0)
