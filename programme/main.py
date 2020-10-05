@@ -333,21 +333,54 @@ def activity_one_SIFT_scaled(im, **kwargs):
     cv.waitKey()
     clean()
 
+def activity_two_SIFT_rotated(im, pt1, pt2):
+    im = cv.imread(im)
+    im_copy = im.copy()
+
+    feature  = crop_img(im_copy, pt1, pt2)
+    cv.imshow('original image', im_copy)
+    rotated_features = [rotate_image(feature, ii) for ii in range(15,360,15)]
+    og_sift  = SIFT(im_copy)[0]
+    sift_des = [SIFT(ii)[0] for ii in rotated_features]
+
+    print(og_sift.shape)
+    check_sizes(sift_des)
+
+    comp = [cv.norm(og_sift - ii) for ii in sift_des]
+    exp_one = show_diff_dist(comp, title='the difference between rotated sift descriptors')
+
+    exp_one.show()
+    cv.waitKey()
+    clean()
+
+def activity_two_SIFT_scaled(im, pt1, pt2):
+    im = cv.imread(im)
+    im_copy = im.copy()
+
+    scaled_features = [resize_im(im_copy, factor/24 ) for factor in range(12,36,1)]
+    cropped_features = [crop_img(ii, pt1, pt2) for ii in scaled_features]
+
+    feature = crop_img(im, pt1, pt2)
+    cv.imshow('featrue', featur)
+
+    og_sift = SIFT(im_copy)[0]
+    sift_des = [SIFT(ii)[0] for ii in cropped_features]
+
+    comp = [cv.norm(og_sift - ii) for ii in sift_des]
+    exp_one = show_diff_dist(comp, title='the difference between sift scaled descrptors')
+
+    exp_one.show()
+    cv.waitKey()
+    clean()
+
 def activity_two_hog_scaled(im, pt1, pt2):
     im = cv.imread(im)
     im_copy = im.copy()
 
-    cv.imshow('original', im_copy)
-
-
-
     scaled_features = [resize_img(im_copy, factor/24) for factor in range(12,36,1)]
-    cropped_features= [crop_img(ii, pt1, pt2) for ii in scaled_features]
-    show_img_ls(cropped_features, "")
+    cropped_features = [crop_img(ii, pt1, pt2) for ii in scaled_features]
 
-    check_sizes(cropped_features)
     feature = crop_img(im_copy, pt1, pt2)
-    print(feature.shape)
     cv.imshow('feature', feature)
 
     hog = cv.HOGDescriptor()
@@ -382,7 +415,7 @@ def activity_two_hog_rotated(im, pt1, pt2):
     print(feature.shape)
     cv.imshow('feature', feature)
 
-    rotated_features = [rotate_image(feature.copy(), ii) for ii in range(15,360,15)]
+    rotated_features = [rotate_image(feature, ii) for ii in range(15,360,15)]
 
     hog = cv.HOGDescriptor()
     des_og = hog.compute(feature.copy())
@@ -851,11 +884,15 @@ if __name__ == '__main__':
     #---------------------------------------------------------------------------
     if task_num == 2 and image == 'DI':
         #activity_two_hog_rotated(imList[0], (8,1), (69,128))
-        activity_two_hog_scaled(imList[0], (8,1), (72, 129))
+        #activity_two_hog_scaled(imList[0], (8,1), (72, 129))
+
+        activity_two_SIFT_rotated(imList[0], (8,1), (69, 128))
+
 
     if task_num == 2 and image == 'DU':
         #activity_two_hog_rotated(imList[1], (393,237), (457, 365))
-        activity_two_hog_scaled(imList[1], (393,237), (457,365))
+        #activity_two_hog_scaled(imList[1], (393,237), (457,365))
+        activity_two_SIFT_rotated(imList[1], (392, 237), (457, 365))
 
     #---------------------------------------------------------------------------
     #TASK Three:
