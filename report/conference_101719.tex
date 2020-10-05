@@ -9,9 +9,15 @@
 \usepackage{xcolor}
 \usepackage{caption}
 \usepackage{csvsimple}
+\usepackage{listings}
+\usepackage{subfig}
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
+\lstset{
+  columns=fullflexible,
+  basicstyle=\ttfamily,
+}
 
 \title{Machine Perception Assignment One\\
 {\footnotesize \textbf{Due Date:} Week 10 - Monday 5 October 2020 at 5pm}
@@ -34,9 +40,6 @@ write at this at the end of your report :)
 \begin{IEEEkeywords}
 Histograms, \textbf{I don't know what this is tbh...}
 \end{IEEEkeywords}
-
-\section{Introduction}
-\textbf{do this are the end}
 
 \section{Task One: Image histogram, Harris corners and scale-invariant feature transform (SIFT) key points}\label{one}
 The Harris corner detection algorithm, and the SIFT algorithm can be thought of algorithms which will pick the key features of an image with the pre-dominate implementations of these algorithms detect the corners of the image \cite{b2} \cite{b3}. Corners can be thought of as regions in an image with large variation of intensities in all directions \cite{b2}. Therefore, the SIFT and the Harris algorithm, are algorithms for detecting the corners in an image the key differences is the invariance and variance to certain image transformations \cite{b3}. Harris corner detection algorithm is mainly invariant to rotation, and the SIFT algorithm is mainly invariant to scaling and is also invariant to rotations due the orientation assignment stage of the SIFT algorithm \cite{b3}, which is explored in greater detail in section \ref{two} subsection \ref{two ii}.
@@ -443,6 +446,8 @@ Finally, the computation of histograms is done to the output matrix array in rel
 
 
 \subsection{part i: Disadvantages of LBP}
+
+
 \begin{itemize}
 	\item cannot capture fine grained details at varying scales, this is only possible for a 3 by 3 function window \cite{b5} \cite{b10}. Although, they has been an LBP implementation algorithm proposed by Ojala et al which overcomes this problem \cite{b5}.
 	\item For the case of cell identification, it greatly identifies many regions incorrectly relative to other feature detection algorithms  \cite{b6}.
@@ -455,14 +460,94 @@ Finally, the computation of histograms is done to the output matrix array in rel
 
 \subsection{part i: the main steps in histogram of gradients (HOG)}
 
+
+The HOG algorithm is typically used for feature detection for the applications of people, animal, and vehicle detection \cite{b8}.\par
+
+The main steps for HOG can be summarised as the following:
+
+\begin{itemize}
+	\item Pre-processing
+	\item Calculation of the gradient of the image
+	\item Calculation of the HOG histograms for the neighbouring pixels
+	\item Voting process between gradient direction, and gradient magnitude.
+	\item normalisation of the histograms through a 16x16 function window
+	\item calculation of the HOG feature gradient.
+\end{itemize}
+
+Firstly, before the applying the HOG algorithm the user has to ensure that the image meets all the requirements for the HOG algorithm. These requirements include that the image has to have a ratio of 1 to two in relation to width and height, any dimension can be used but the original HOG algorithm was designed to identify pedestrians hence a dimension of 64 x 128 was used \cite{b12}. Therefore, it may be required to crop out the patch which needs to be analysed and to be scaled \cite{b12}. In the original implementation of the algorithm gamma correction was included in this step although, the performance benefits are minor hence, for simplicity this step is typically ignored \cite{b12}. \par
+
+Secondly, the vertical and horizontal gradients of the image are calculated by taking the convolution of the image by the following kernels $ \begin{bmatrix}
+-1, 0, 1
+\end{bmatrix}, and 
+\begin{bmatrix}
+-1 \\ 0 \\ 1
+\end{bmatrix}$ respectively \cite{b12} \cite{b11}. In this step of the algorithm it can be noticed that the algorithm would have removed unnecessary information such as constant coloured background but would've highlighted the shapes of objects in an image \cite{b12}. Thereafter, once vertical and horizontal gradient matrices are created, the children matrices of gradient magnitude, and gradient angle are calculated whereby gradient magnitude is the euclidean distance $ g = \sqrt{g_{x}^{2} + g_{y}^{2}}$, and $\theta = tan^{-1}(\frac{g_{y}}{g_{x}}$ \cite{b12} \cite{b11} \cite{b6}. The gradient magnitude and angle will be calculated for each channel for the respective color spaces used \cite{b12} \cite{b11}. Therefore, each pixel in an image will have their respective gradient magnitude, and angle assigned to them in separate matrices \cite{b12}. The proposed manner to store the gradient angle is to have them as signed angles hence for the angles been represented from unsigned angles of $0^{\circ}$ to $360^{\circ}$ the angles will be represented from $0^{\circ}$ to $180^{\circ}$ instead as this have been proven to work better \cite{b12} \cite{b11}.  \par
+
+Thirdly, the calculation of the histograms of the image are partaking. The image is going to be divided into equal $nxn$ cells, the size of $n$ will be determined by dimension of the original image and the design  choice, if the image had a dimension of $64x128$ then $8x8$ cells would be used for this step \cite{b12}. Representing, the image in this manner will make the representation of the image more compact, and makes the algorithm more robust against noise as individual gradients may have noise but the noise will be offset in the $nxn$ function window.\par
+
+Fourthly, the voting between the gradient magnitude and angle matrix is done into a 9 bin histogram \cite{b12}. The indexes of the bin array represent the gradient angles in increments of 20 degrees thus, the histogram will range from $0^{\circ}$ to $160^{\circ}$, and the indexes will be assigned the gradient magnitude corresponding to a gradient angle index \cite{b12} \cite{b11}. Therefore, if at the fifth index of the angle matrix has a value of $140^{\circ}$, and at the fifth index of the magnitude matrix they is a value of $69$, 69 will be assigned to the seventh index of the histogram as that represents $140^{\circ}$ \cite{b11} \cite{b12}. In the case, the angle sits between two histogram boundaries, the magnitude is split into those two indexes in proportion to how much that angle is in a bin index hence, if the ninth index has an angle of $50$ and a magnitude of $180^{\circ}$, $90^{\circ}$ will be placed into 2nd index and the remaining $90^{\circ}$ will be placed into the 3rd index \cite{b12} \cite{b11}. This will create the feature descriptor for the image \cite{b12} \cite{b11}. \par
+
+Fifthly, the produced histogram is going to be normalized to ensure robustness to lighting \cite{b11} \cite{b12}. The histogram is normalised by taking the euclidean distance of each pixel in the respective color space hence for a BGR color space each cell will be normalised by the following $\sqrt{B^{2} + G^{2} + R^{2}} = X $ then each pixel at that respective index in the color space will  be divided by the euclidean distance hence $\frac{Pixel/ value}{X}$ \cite{b12} \cite{b11}.\par
+
+Finally, the calculation of the HOG feature gradient is done by taking all the individual histograms calculated and joining them together to form a giant vector which will represent the HOG feature vector \cite{b11} \cite{b12}.
+
 \subsection{part i: the advantage of HOG}
+\begin{itemize}
+	\item powerful descriptors produced for natural scenes and object recognition \cite{b8}
+	\item The HOG algorithm is invariant to changes in lighting (photometric) \cite{b8}
+	\item The HOG algorithm is invariant to geometric changes hence, if you can reflect, transpose, scale, etc the object and the HOG algorithm will sill detect the respective algorithm	this is typically referred to as pose \cite{b8}.
+	\item address the common problem of objects obstruction another object, by in-front or behind an object of no-interest this is typically referred too partial occlusions \cite{b8}.
+	\item Although, the HOG algorithm isn't effective in capturing all the objects of an image, the algorithm will have less false positive relative to other algorithms \cite{b6}. 
+\end{itemize}
 
 \subsection{part i: the disadvantages of HOG}
+\begin{itemize}
+	\item variant to rotation hence, rotation the image will cause the HOG algorithm to produce completely different results. \cite{b8}.
+	\item computationally expensive as you have to calculate the gradient, and magnitude for an image in all channels \cite{b12}.
+\end{itemize}
 
 \subsection{part i: the main steps in SIFT}
-\subsection{part ii} \label{two ii}
+The main steps of the SIFT algorithm can be summarised as the following.
+
+\begin{itemize}
+	\item Determining extrema in produced scale  spaces
+	\item Locating the key-points in the scale space
+	\item Assigning orientation labels to the found key-points in the space
+	\item Formation of key point descriptors
+	\item key point matching is done with all the key-points.
+\end{itemize}
+
+An image which has combination of larger corners, and smaller corners an algorithm can't use the same function window size to find all those corners as larger function windows are more suitable to find larger corners, and smaller function windows are more suitable to find smaller corner therefore, to combat against this you will use scale-space filtering \cite{b3}. Scale-space filtering is the process of creating the same images with different scales and performing a Laplacian of Gaussian (LoG) which is the convolution of a Laplacian kernel with the image matrix \cite{b3} \textbf{site the LoG thing as well}. LoG is performed on the image matrix with varying threshold values ($\sigma$) lower sigma values will detect smaller corners better, and high threshold values will detect larger corners better \cite{b3}. This process will find the local maxima of pixel intensities (corners) across the image, and images in different scale spaces which is typically referred to as octaves \cite{b3}. Convolution by LoG is an extremely computationally demanding and be very costly for processing power therefore, an approximation is used which is referred to as difference gaussians (DoG) \cite{b3}. LoG/DoG will result in a matrix which has the second derivative of each pixel hence, the algorithm will note all points which are local minimums or local maximums ($\frac{d^{2}y}{dx^{2}} = 0$) \cite{b3}. Then after, the algorithm will compare the found local maximums at each octave with the octave above it and below it, and if the local maximums coincide with one another that pixel is a potential key-point \cite{b3}.\par
+
+Secondly, the list of potential key-points must be refined to find actual key points \cite{b3}. This refinement process is done through the application of Taylor series expansion through each scale space identify the actual corners in the image by filtering the corner through a contrast thresh-hold hence, if it's below the threshold the corner is going to be rejected \cite{b3}. The consequent application of DoG, is that DoG will have a high response time for edges hence, edges need to be filtered by comparing the eigenvalue of the point of interest with the edge threshold, if the eigenvalue is greater than the edge threshold that point is discarded \cite{b3}. After these process the remaining points  will be strong points of interest \cite{b3}. \par
+
+
+Thirdly, the strong points of interest are assigned an orientation dependent on their octave level and characteristics this is to make SIFT invariant to rotation although this is only applicable for angles up to $30^{\circ}$ \cite{b3}. \par
+
+Fourthly, to create robustness against illumination changes, and rotation a 16 by 16 descriptor is created around the key points which were found in the image in which 8 bin orientation histograms histograms are created \cite{b3}.
+
+Finally, for images in the octave the algorithm will match key points in relation the adjacent scaled image by identifying the nearest neighbour \cite{b3}. A ratio between between the closest-distance to the second closest distance is take if that's greater than 0.8 that key point is rejected this eliminates a great proportion of the false matches.
+\subsection{part i: the advantages of SIFT}
+The advantages of SIFT are the following:
+\begin{itemize}
+	\item It' scale invariant \cite{b8}
+	\item invariant to translation, rotation and re-scaling to a certain degree \cite{b8}
+	\item poor stability for small affine changes \cite{b13}
+	\item Can robustly identify objects even among clutter, and partial occlusion \cite{b13}. 
+	\item affine invariance \cite{b13}
+\end{itemize}
+
+\subsection{part i: the disadvantage of SIFT}
+The disadvantages of SIFT are the following:
+\begin{itemize}
+	\item it's very computationally expensive \cite{b8}.
+\end{itemize}
+\subsection{Common  and different components between SIFT, HOG, and LBP}
+
+The LBP algorithm is the only algorithm out of the three algorithms which describes texture of the image, as SIFT looks for corners in an image, and HOG finds the outlines of  the object. LBP is relative simple algorithm, and does its calculations on a gray-scale image hence, it's computationally fast while SIFT, and HOG are slower. SIFT will be the slowest algorithm out of the three because of the extra calculations done in each octave, and the performance of LoG/DoG. SIFT is the only algorithm which is a feature detector, and feature descriptor. The LBP, HOG, and SIFT algorithm are all features descriptors with different implementations. SIFT's descriptor is a descriptor is for orientation, LBP's descriptors is for the binary pattern, and HOG's descriptor is for the gradients of the image. All algorithm's perform calculations on neighbouring pixels. HOG and LBP are typically used in conjunction with other algorithms to boost the performance of other algorithms while SIFT is typically a stand alone algorithm. SIFT is the only algorithm which does comparisons with images of different scales. HOG and SIFT require the scaling of their images to initialise their algorithm.\par
 
 \section{Task Three} \label{three}
+
 \subsection{Results for Diamond playing card}
 
 \textbf{Don't forget to include the areas found by each object extracted}
@@ -603,6 +688,7 @@ Finally, the computation of histograms is done to the output matrix array in rel
 \newpage
 \clearpage
 \begin{thebibliography}{00}
+
 \bibitem{b1} Dr. S. An. 2020. Machine Perception Lecture 03 [PowerPoint slides] Available:https://learn-ap-southeast-2-prod-fleet01-xythos.s3.ap-southeast-2.amazonaws.com/5dc3e34515a0e/4348643?response-cache-control=private\%2C\%20max-age\%3D21600\&response-content-disposition=inline\%3B\%20filename\%2A\%3DUTF-8\%27\%27lecture03\_feature\_detection.pdf\&response-content-type=application\%2Fpdf\&X-Amz-Algorithm=AWS4-HMAC-SHA256\&X-Amz-Date=20200927T060000Z\&X-Amz-SignedHeaders=host\&X-Amz-Expires=21600\&X-Amz-Credential=AKIAYDKQORRYZBCCQFY5\%2F20200927\%2Fap-southeast-2\%2Fs3\%2Faws4\_request\&X-Amz-Signature=bcf107d5e76759efe45687b516ac725158189de0af558d0a7a798df1723f4299
 
 \bibitem{b2}A. Mordvinstev and K. Abid. "Harris Corner detection". OpenCV-Python Tutorials. https://opencv-python-tutroals.readthedocs.io/en/latest/py\_tutorials/py\_feature2d/py\_features\_harris/py\_features\_harris.html (retrieved Sept. 27, 2020).
@@ -611,7 +697,7 @@ Finally, the computation of histograms is done to the output matrix array in rel
 
 \bibitem{b4}C. Harris and M. Stephens. 1988. A Combined Corner And Edge Detector. Plessey Reasearch Roke Manor, UK. [Online]. Available: https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.434.4816\&rep=rep1\&type=pdf
 
-\bibitem{b5}A. Rosebrock. December, 7, 2015. "Local Binary Patterns with Python \& OpenCV". pyimagesearch. https://www.pyimagesearch.com/2015/12/07/local-binary-patterns-with-python-opencv/
+\bibitem{b5}A. Rosebrock. December, 2015. "Local Binary Patterns with Python \& OpenCV". pyimagesearch. https://www.pyimagesearch.com/2015/12/07/local-binary-patterns-with-python-opencv/
 
 \bibitem{b6} S. Ozturk, and B.Akdemir. "Comparison of HOG, MSER, SIFT, FAST, LBP and CANNY features for cell detection in histopathological images " in Helix the scientfic Explorer. Feb 2018. [Online]. Available: http://helix.dnares.in/wp-content/uploads/2018/05/3321-3325.pdf
 
@@ -622,9 +708,14 @@ Finally, the computation of histograms is done to the output matrix array in rel
 
 \bibitem{b9} C. H. Chan. "Multi-scale Local Binary Pattern Histogram for Face Recognition". The Universtiy of Surrey. Surrey, Guildford, U.K. gu27xh. September 2008. [Online]. Available: https://www.researchgate.net/profile/Chi-Ho\_Chan/publication/224936218\_Multi-scale\_Local\_Binary\_Pattern\_Histograms\_for\_Face\_Recognition/links/00b495225c98186d23000000/Multi-scale-Local-Binary-Pattern-Histograms-for-Face-Recognition.pdf
 
+
 \bibitem{b10}. Z. Tang, Y. SU, M. J. Er, F. Qi, L. Zhang, and J. Zhou. "A local Binary pattern based texture descriptors for classification of tea leaves." in Neurocomputing. December 2014. [Online]. Available: https://reader.elsevier.com/reader/sd/pii/S0925231215006475?token=53A42C9FF9C438422CB044F70C414EA9C464364C8C5A90D9A510E9D71B152E4E0ABB5302BAA3EB4C035E9A77008BC0CC
 
+\bibitem{b11} L. Weng. Oct, 2017. "Object Detection for Dummies Part 1: Gradient Vector, HOG, and SS. Lil'Log. https://lilianweng.github.io/lil-log/2017/10/29/object-recognition-for-dummies-part-1.html
 
+\bibitem{b12} S. Mallick. "Histogram of Oriented Gradients". learn OpenCV. December 2016. https://www.learnopencv.com/histogram-of-oriented-gradients/
+
+\bibitem{b13} D. G. Lowe. "Distinictive Image Features form Scale-Invariant Keypoints". The University of British Columbia. Vancouver . B.C. Canada. January 2004. [Online]. Available: https://www.cs.ubc.ca/~lowe/papers/ijcv04.pdf
 \end{thebibliography}
 
 \appendix
@@ -633,7 +724,15 @@ Finally, the computation of histograms is done to the output matrix array in rel
 	\section{Task 1 code print out}\label{ap 1}
 
 	\section{Task 2 code print out}
+	
+	\section{Full Code print out with supporting functions}
+	\subsection{Main.py}
+	\lstinputlisting*[language=python]{../programme/main.py}
+	\lstinputlisting*[language=python]{../programme/myUtils.py}
 \end{appendices}
 
-
+%import cv2
+%hog = cv2.HOGDescriptor()
+%im = cv2.imread(sample)
+%h = hog.compute(im)
 \end{document}

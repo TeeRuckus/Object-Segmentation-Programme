@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7380 64-bit) (preloaded format=pdflatex 2020.4.18)  5 OCT 2020 18:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7380 64-bit) (preloaded format=pdflatex 2020.4.18)  6 OCT 2020 02:18
 entering extended mode
 **./conference_101719.tex
 (conference_101719.tex
@@ -349,11 +349,55 @@ Package shellesc Info: Restricted shell escape enabled on input line 77.
 \c@csvcol=\count269
 \csv@out=\write3
 )
+("C:\Users\tawan\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\listings.
+sty"
+\lst@mode=\count270
+\lst@gtempboxa=\box50
+\lst@token=\toks26
+\lst@length=\count271
+\lst@currlwidth=\dimen178
+\lst@column=\count272
+\lst@pos=\count273
+\lst@lostspace=\dimen179
+\lst@width=\dimen180
+\lst@newlines=\count274
+\lst@lineno=\count275
+\lst@maxwidth=\dimen181
+
+("C:\Users\tawan\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\lstmisc.s
+ty"
+File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
+\c@lstnumber=\count276
+\lst@skipnumbers=\count277
+\lst@framebox=\box51
+)
+("C:\Users\tawan\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\listings.
+cfg"
+File: listings.cfg 2020/03/24 1.8d listings configuration
+))
+Package: listings 2020/03/24 1.8d (Carsten Heinz)
+
+("C:\Users\tawan\AppData\Local\Programs\MiKTeX 2.9\tex/latex/subfig\subfig.sty"
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+\c@KVtest=\count278
+\sf@farskip=\skip55
+\sf@captopadj=\dimen182
+\sf@capskip=\skip56
+\sf@nearskip=\skip57
+\c@subfigure=\count279
+\c@subfigure@save=\count280
+\c@lofdepth=\count281
+\c@subtable=\count282
+\c@subtable@save=\count283
+\c@lotdepth=\count284
+\sf@top=\skip58
+\sf@bottom=\skip59
+)
 ("C:\Users\tawan\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3backend\l3backen
 d-pdfmode.def"
 File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count270
-\l__pdf_internal_box=\box50
+\l__kernel_color_stack_int=\count285
+\l__pdf_internal_box=\box52
 ) (conference_101719.aux
 
 LaTeX Warning: Label `Difference of distances between histograms relative to or
@@ -411,37 +455,37 @@ LaTeX Warning: Label `Dugong: 3rd cluster found by k-means' multiply defined.
 )
 \openout1 = `conference_101719.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
 
 -- Lines per column: 56 (exact).
 
 ("C:\Users\tawan\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp-p
 df.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count271
-\scratchdimen=\dimen178
-\scratchbox=\box51
-\nofMPsegments=\count272
-\nofMParguments=\count273
-\everyMPshowfont=\toks26
-\MPscratchCnt=\count274
-\MPscratchDim=\dimen179
-\MPnumerator=\count275
-\makeMPintoPDFobject=\count276
-\everyMPtoPDFconversion=\toks27
+\scratchcounter=\count286
+\scratchdimen=\dimen183
+\scratchbox=\box53
+\nofMPsegments=\count287
+\nofMParguments=\count288
+\everyMPshowfont=\toks27
+\MPscratchCnt=\count289
+\MPscratchDim=\dimen184
+\MPnumerator=\count290
+\makeMPintoPDFobject=\count291
+\everyMPtoPDFconversion=\toks28
 )
 ("C:\Users\tawan\AppData\Local\Programs\MiKTeX 2.9\tex/latex/epstopdf-pkg\epsto
 pdf-base.sty"
@@ -450,15 +494,21 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
 )
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
  ABD: EveryShipout initializing macros
-LaTeX Font Info:    Trying to load font information for U+msa on input line 46.
+\c@lstlisting=\count292
 
+
+LaTeX Warning: Reference `two ii' on page 1 undefined on input line 45.
+
+LaTeX Font Info:    Trying to load font information for U+msa on input line 49.
 
 ("C:\Users\tawan\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 46.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 49.
 
 ("C:\Users\tawan\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -473,7 +523,7 @@ nt-one-diff-kp-detected.png Graphic file (type png)
 <use ../programme/results/Task_1/rotated_experiements/Harris/diamond/experiemen
 t-one-diff-kp-detected.png>
 Package pdftex.def Info: ../programme/results/Task_1/rotated_experiements/Harri
-s/diamond/experiement-one-diff-kp-detected.png  used on input line 93.
+s/diamond/experiement-one-diff-kp-detected.png  used on input line 96.
 (pdftex.def)             Requested size: 232.19843pt x 122.88873pt.
 <../programme/results/Task_1/rotated_experiements/Harris/diamond/experiment_two
 _raw_hists.png, id=18, 1905.1175pt x 999.735pt>
@@ -482,7 +532,7 @@ t_two_raw_hists.png Graphic file (type png)
 <use ../programme/results/Task_1/rotated_experiements/Harris/diamond/experiment
 _two_raw_hists.png>
 Package pdftex.def Info: ../programme/results/Task_1/rotated_experiements/Harri
-s/diamond/experiment_two_raw_hists.png  used on input line 99.
+s/diamond/experiment_two_raw_hists.png  used on input line 102.
 (pdftex.def)             Requested size: 232.19843pt x 121.83934pt.
 <../programme/results/Task_1/rotated_experiements/Harris/diamond/experiment_thr
 ee_distance_between_hists.png, id=19, 1914.15125pt x 1018.80624pt>
@@ -491,7 +541,7 @@ t_three_distance_between_hists.png Graphic file (type png)
 <use ../programme/results/Task_1/rotated_experiements/Harris/diamond/experiment
 _three_distance_between_hists.png>
 Package pdftex.def Info: ../programme/results/Task_1/rotated_experiements/Harri
-s/diamond/experiment_three_distance_between_hists.png  used on input line 106.
+s/diamond/experiment_three_distance_between_hists.png  used on input line 109.
 (pdftex.def)             Requested size: 309.60315pt x 164.78453pt.
 <../programme/results/Task_1/rotated_experiements/Harris/diamond/image_0.jpg, i
 d=20, 182.6825pt x 279.0425pt>
@@ -500,7 +550,7 @@ pg Graphic file (type jpg)
 <use ../programme/results/Task_1/rotated_experiements/Harris/diamond/image_0.jp
 g>
 Package pdftex.def Info: ../programme/results/Task_1/rotated_experiements/Harri
-s/diamond/image_0.jpg  used on input line 115.
+s/diamond/image_0.jpg  used on input line 118.
 (pdftex.def)             Requested size: 103.19843pt x 157.63374pt.
 <../programme/results/Task_1/rotated_experiements/Harris/diamond/image_1.jpg, i
 d=21, 247.92625pt x 316.18124pt>
@@ -509,7 +559,7 @@ pg Graphic file (type jpg)
 <use ../programme/results/Task_1/rotated_experiements/Harris/diamond/image_1.jp
 g>
 Package pdftex.def Info: ../programme/results/Task_1/rotated_experiements/Harri
-s/diamond/image_1.jpg  used on input line 121.
+s/diamond/image_1.jpg  used on input line 124.
 (pdftex.def)             Requested size: 103.19843pt x 131.60837pt.
 <../programme/results/Task_1/rotated_experiements/Harris/diamond/image_2.jpg, i
 d=22, 297.11pt x 332.24126pt>
@@ -518,7 +568,7 @@ pg Graphic file (type jpg)
 <use ../programme/results/Task_1/rotated_experiements/Harris/diamond/image_2.jp
 g>
 Package pdftex.def Info: ../programme/results/Task_1/rotated_experiements/Harri
-s/diamond/image_2.jpg  used on input line 127.
+s/diamond/image_2.jpg  used on input line 130.
 (pdftex.def)             Requested size: 103.19843pt x 115.39899pt.
 <../programme/results/Task_1/rotated_experiements/Harris/diamond/image_3.jpg, i
 d=23, 326.21875pt x 326.21875pt>
@@ -527,7 +577,7 @@ pg Graphic file (type jpg)
 <use ../programme/results/Task_1/rotated_experiements/Harris/diamond/image_3.jp
 g>
 Package pdftex.def Info: ../programme/results/Task_1/rotated_experiements/Harri
-s/diamond/image_3.jpg  used on input line 133.
+s/diamond/image_3.jpg  used on input line 136.
 (pdftex.def)             Requested size: 103.19843pt x 103.19748pt.
 <../programme/results/Task_1/scaled_experiements/Harris/diamond/experiment_one_
 diff_kp.png, id=24, 1931.215pt x 1053.9375pt>
@@ -536,7 +586,7 @@ _one_diff_kp.png Graphic file (type png)
 <use ../programme/results/Task_1/scaled_experiements/Harris/diamond/experiment_
 one_diff_kp.png>
 Package pdftex.def Info: ../programme/results/Task_1/scaled_experiements/Harris
-/diamond/experiment_one_diff_kp.png  used on input line 144.
+/diamond/experiment_one_diff_kp.png  used on input line 147.
 (pdftex.def)             Requested size: 232.19843pt x 126.70827pt.
 <../programme/results/Task_1/scaled_experiements/Harris/diamond/exp_three_diff_
 between_hists.png, id=25, 1907.125pt x 1051.93pt>
@@ -545,7 +595,7 @@ diff_between_hists.png Graphic file (type png)
 <use ../programme/results/Task_1/scaled_experiements/Harris/diamond/exp_three_d
 iff_between_hists.png>
 Package pdftex.def Info: ../programme/results/Task_1/scaled_experiements/Harris
-/diamond/exp_three_diff_between_hists.png  used on input line 150.
+/diamond/exp_three_diff_between_hists.png  used on input line 153.
 (pdftex.def)             Requested size: 232.19843pt x 128.07202pt.
 <../programme/results/Task_1/scaled_experiements/Harris/diamond/exp_two_comarin
 g_histograms.png, id=26, 1944.26375pt x 1043.9pt>
@@ -554,7 +604,7 @@ maring_histograms.png Graphic file (type png)
 <use ../programme/results/Task_1/scaled_experiements/Harris/diamond/exp_two_com
 aring_histograms.png>
 Package pdftex.def Info: ../programme/results/Task_1/scaled_experiements/Harris
-/diamond/exp_two_comaring_histograms.png  used on input line 157.
+/diamond/exp_two_comaring_histograms.png  used on input line 160.
 (pdftex.def)             Requested size: 232.19843pt x 124.6573pt.
 <../programme/results/Task_1/scaled_experiements/Harris/diamond/image_0.jpg, id
 =27, 182.6825pt x 279.0425pt>
@@ -563,10 +613,10 @@ g Graphic file (type jpg)
 <use ../programme/results/Task_1/scaled_experiements/Harris/diamond/image_0.jpg
 >
 Package pdftex.def Info: ../programme/results/Task_1/scaled_experiements/Harris
-/diamond/image_0.jpg  used on input line 166.
+/diamond/image_0.jpg  used on input line 169.
 (pdftex.def)             Requested size: 103.19843pt x 157.63374pt.
 
-Underfull \hbox (badness 3068) in paragraph at lines 167--167
+Underfull \hbox (badness 3068) in paragraph at lines 170--170
 []\OT1/ptm/m/n/10 Fig. 11: |Har-ris scaled
  []
 
@@ -577,7 +627,7 @@ g Graphic file (type jpg)
 <use ../programme/results/Task_1/scaled_experiements/Harris/diamond/image_1.jpg
 >
 Package pdftex.def Info: ../programme/results/Task_1/scaled_experiements/Harris
-/diamond/image_1.jpg  used on input line 172.
+/diamond/image_1.jpg  used on input line 175.
 (pdftex.def)             Requested size: 103.19843pt x 157.64014pt.
 <../programme/results/Task_1/scaled_experiements/Harris/diamond/image_2.jpg, id
 =29, 98.3675pt x 150.5625pt>
@@ -586,7 +636,7 @@ g Graphic file (type jpg)
 <use ../programme/results/Task_1/scaled_experiements/Harris/diamond/image_2.jpg
 >
 Package pdftex.def Info: ../programme/results/Task_1/scaled_experiements/Harris
-/diamond/image_2.jpg  used on input line 178.
+/diamond/image_2.jpg  used on input line 181.
 (pdftex.def)             Requested size: 103.19843pt x 157.95512pt.
 <../programme/results/Task_1/scaled_experiements/Harris/diamond/image_3.jpg, id
 =30, 106.3975pt x 162.6075pt>
@@ -595,7 +645,7 @@ g Graphic file (type jpg)
 <use ../programme/results/Task_1/scaled_experiements/Harris/diamond/image_3.jpg
 >
 Package pdftex.def Info: ../programme/results/Task_1/scaled_experiements/Harris
-/diamond/image_3.jpg  used on input line 184.
+/diamond/image_3.jpg  used on input line 187.
 (pdftex.def)             Requested size: 103.19843pt x 157.7266pt.
 <../programme/results/Task_1/rotated_experiements/SIFT/diamond/experiment_one_d
 ifference_found_kp.png, id=31, 1930.21124pt x 1018.80624pt>
@@ -604,7 +654,7 @@ one_difference_found_kp.png Graphic file (type png)
 <use ../programme/results/Task_1/rotated_experiements/SIFT/diamond/experiment_o
 ne_difference_found_kp.png>
 Package pdftex.def Info: ../programme/results/Task_1/rotated_experiements/SIFT/
-diamond/experiment_one_difference_found_kp.png  used on input line 197.
+diamond/experiment_one_difference_found_kp.png  used on input line 200.
 (pdftex.def)             Requested size: 232.19843pt x 122.54684pt.
 <../programme/results/Task_1/rotated_experiements/SIFT/diamond/experiment_two_p
 lotting_histograms.png, id=32, 1935.23pt x 1030.85126pt>
@@ -613,7 +663,7 @@ two_plotting_histograms.png Graphic file (type png)
 <use ../programme/results/Task_1/rotated_experiements/SIFT/diamond/experiment_t
 wo_plotting_histograms.png>
 Package pdftex.def Info: ../programme/results/Task_1/rotated_experiements/SIFT/
-diamond/experiment_two_plotting_histograms.png  used on input line 204.
+diamond/experiment_two_plotting_histograms.png  used on input line 207.
 (pdftex.def)             Requested size: 232.19843pt x 123.68108pt.
 <../programme/results/Task_1/rotated_experiements/SIFT/diamond/experiment_three
 _comparing differnces between histograms.png, id=33, 1917.1625pt x 1057.9525pt>
@@ -624,7 +674,7 @@ three_comparing differnces between histograms.png Graphic file (type png)
 hree_comparing differnces between histograms.png>
 Package pdftex.def Info: ../programme/results/Task_1/rotated_experiements/SIFT/
 diamond/experiment_three_comparing differnces between histograms.png  used on i
-nput line 211.
+nput line 214.
 (pdftex.def)             Requested size: 309.60315pt x 170.84174pt.
 <../programme/results/Task_1/rotated_experiements/SIFT/diamond/image_0.jpg, id=
 34, 182.6825pt x 279.0425pt>
@@ -633,7 +683,7 @@ File: ../programme/results/Task_1/rotated_experiements/SIFT/diamond/image_0.jpg
 <use ../programme/results/Task_1/rotated_experiements/SIFT/diamond/image_0.jpg>
 
 Package pdftex.def Info: ../programme/results/Task_1/rotated_experiements/SIFT/
-diamond/image_0.jpg  used on input line 220.
+diamond/image_0.jpg  used on input line 223.
 (pdftex.def)             Requested size: 103.19843pt x 157.63374pt.
 <../programme/results/Task_1/rotated_experiements/SIFT/diamond/image_1.jpg, id=
 35, 247.92625pt x 316.18124pt>
@@ -642,7 +692,7 @@ File: ../programme/results/Task_1/rotated_experiements/SIFT/diamond/image_1.jpg
 <use ../programme/results/Task_1/rotated_experiements/SIFT/diamond/image_1.jpg>
 
 Package pdftex.def Info: ../programme/results/Task_1/rotated_experiements/SIFT/
-diamond/image_1.jpg  used on input line 226.
+diamond/image_1.jpg  used on input line 229.
 (pdftex.def)             Requested size: 103.19843pt x 131.60837pt.
 <../programme/results/Task_1/rotated_experiements/SIFT/diamond/image_2.jpg, id=
 36, 297.11pt x 332.24126pt>
@@ -651,7 +701,7 @@ File: ../programme/results/Task_1/rotated_experiements/SIFT/diamond/image_2.jpg
 <use ../programme/results/Task_1/rotated_experiements/SIFT/diamond/image_2.jpg>
 
 Package pdftex.def Info: ../programme/results/Task_1/rotated_experiements/SIFT/
-diamond/image_2.jpg  used on input line 232.
+diamond/image_2.jpg  used on input line 235.
 (pdftex.def)             Requested size: 103.19843pt x 115.39899pt.
 <../programme/results/Task_1/rotated_experiements/SIFT/diamond/image_3.jpg, id=
 37, 326.21875pt x 326.21875pt>
@@ -660,7 +710,7 @@ File: ../programme/results/Task_1/rotated_experiements/SIFT/diamond/image_3.jpg
 <use ../programme/results/Task_1/rotated_experiements/SIFT/diamond/image_3.jpg>
 
 Package pdftex.def Info: ../programme/results/Task_1/rotated_experiements/SIFT/
-diamond/image_3.jpg  used on input line 238.
+diamond/image_3.jpg  used on input line 241.
 (pdftex.def)             Requested size: 103.19843pt x 103.19748pt.
 <../programme/results/Task_1/scaled_experiements/SIFT/diamond/diff_hists.png, i
 d=38, 1905.1175pt x 1034.86626pt>
@@ -669,14 +719,14 @@ ng Graphic file (type png)
 <use ../programme/results/Task_1/scaled_experiements/SIFT/diamond/diff_hists.pn
 g>
 Package pdftex.def Info: ../programme/results/Task_1/scaled_experiements/SIFT/d
-iamond/diff_hists.png  used on input line 250.
+iamond/diff_hists.png  used on input line 253.
 (pdftex.def)             Requested size: 232.19843pt x 126.12085pt.
 File: ../programme/results/Task_1/scaled_experiements/SIFT/diamond/diff_hists.p
 ng Graphic file (type png)
 <use ../programme/results/Task_1/scaled_experiements/SIFT/diamond/diff_hists.pn
 g>
 Package pdftex.def Info: ../programme/results/Task_1/scaled_experiements/SIFT/d
-iamond/diff_hists.png  used on input line 256.
+iamond/diff_hists.png  used on input line 259.
 (pdftex.def)             Requested size: 232.19843pt x 126.12085pt.
 <../programme/results/Task_1/scaled_experiements/SIFT/diamond/keypoints_found.p
 ng, id=39, 1905.1175pt x 1012.78375pt>
@@ -685,7 +735,7 @@ und.png Graphic file (type png)
 <use ../programme/results/Task_1/scaled_experiements/SIFT/diamond/keypoints_fou
 nd.png>
 Package pdftex.def Info: ../programme/results/Task_1/scaled_experiements/SIFT/d
-iamond/keypoints_found.png  used on input line 263.
+iamond/keypoints_found.png  used on input line 266.
 (pdftex.def)             Requested size: 232.19843pt x 123.42963pt.
 <../programme/results/Task_1/scaled_experiements/SIFT/diamond/image_0.jpg, id=4
 0, 182.6825pt x 279.0425pt>
@@ -693,10 +743,10 @@ File: ../programme/results/Task_1/scaled_experiements/SIFT/diamond/image_0.jpg
 Graphic file (type jpg)
 <use ../programme/results/Task_1/scaled_experiements/SIFT/diamond/image_0.jpg>
 Package pdftex.def Info: ../programme/results/Task_1/scaled_experiements/SIFT/d
-iamond/image_0.jpg  used on input line 272.
+iamond/image_0.jpg  used on input line 275.
 (pdftex.def)             Requested size: 103.19843pt x 157.63374pt.
 
-Underfull \hbox (badness 3068) in paragraph at lines 273--273
+Underfull \hbox (badness 3068) in paragraph at lines 276--276
 []\OT1/ptm/m/n/10 Fig. 25: |Har-ris scaled
  []
 
@@ -706,7 +756,7 @@ File: ../programme/results/Task_1/scaled_experiements/SIFT/diamond/image_1.jpg
 Graphic file (type jpg)
 <use ../programme/results/Task_1/scaled_experiements/SIFT/diamond/image_1.jpg>
 Package pdftex.def Info: ../programme/results/Task_1/scaled_experiements/SIFT/d
-iamond/image_1.jpg  used on input line 278.
+iamond/image_1.jpg  used on input line 281.
 (pdftex.def)             Requested size: 103.19843pt x 157.64014pt.
 <../programme/results/Task_1/scaled_experiements/SIFT/diamond/image_2.jpg, id=4
 2, 98.3675pt x 150.5625pt>
@@ -714,7 +764,7 @@ File: ../programme/results/Task_1/scaled_experiements/SIFT/diamond/image_2.jpg
 Graphic file (type jpg)
 <use ../programme/results/Task_1/scaled_experiements/SIFT/diamond/image_2.jpg>
 Package pdftex.def Info: ../programme/results/Task_1/scaled_experiements/SIFT/d
-iamond/image_2.jpg  used on input line 284.
+iamond/image_2.jpg  used on input line 287.
 (pdftex.def)             Requested size: 103.19843pt x 157.95512pt.
 <../programme/results/Task_1/scaled_experiements/SIFT/diamond/image_3.jpg, id=4
 3, 106.3975pt x 162.6075pt>
@@ -722,7 +772,7 @@ File: ../programme/results/Task_1/scaled_experiements/SIFT/diamond/image_3.jpg
 Graphic file (type jpg)
 <use ../programme/results/Task_1/scaled_experiements/SIFT/diamond/image_3.jpg>
 Package pdftex.def Info: ../programme/results/Task_1/scaled_experiements/SIFT/d
-iamond/image_3.jpg  used on input line 290.
+iamond/image_3.jpg  used on input line 293.
 (pdftex.def)             Requested size: 103.19843pt x 157.7266pt.
 <../programme/results/Task_1/rotated_experiements/Harris/dugong/num_corners.png
 , id=44, 1896.08376pt x 1002.74625pt>
@@ -731,7 +781,7 @@ s.png Graphic file (type png)
 <use ../programme/results/Task_1/rotated_experiements/Harris/dugong/num_corners
 .png>
 Package pdftex.def Info: ../programme/results/Task_1/rotated_experiements/Harri
-s/dugong/num_corners.png  used on input line 302.
+s/dugong/num_corners.png  used on input line 305.
 (pdftex.def)             Requested size: 232.19843pt x 122.78777pt.
 <../programme/results/Task_1/rotated_experiements/Harris/dugong/diff_hists.png,
  id=45, 1921.1775pt x 997.7275pt>
@@ -740,7 +790,7 @@ File: ../programme/results/Task_1/rotated_experiements/Harris/dugong/diff_hists
 <use ../programme/results/Task_1/rotated_experiements/Harris/dugong/diff_hists.
 png>
 Package pdftex.def Info: ../programme/results/Task_1/rotated_experiements/Harri
-s/dugong/diff_hists.png  used on input line 308.
+s/dugong/diff_hists.png  used on input line 311.
 (pdftex.def)             Requested size: 232.19843pt x 120.57468pt.
 <../programme/results/Task_1/rotated_experiements/Harris/dugong/hists.png, id=4
 6, 1914.15125pt x 990.70125pt>
@@ -748,7 +798,7 @@ File: ../programme/results/Task_1/rotated_experiements/Harris/dugong/hists.png
 Graphic file (type png)
 <use ../programme/results/Task_1/rotated_experiements/Harris/dugong/hists.png>
 Package pdftex.def Info: ../programme/results/Task_1/rotated_experiements/Harri
-s/dugong/hists.png  used on input line 315.
+s/dugong/hists.png  used on input line 318.
 (pdftex.def)             Requested size: 232.19843pt x 120.16396pt.
 <../programme/results/Task_1/rotated_experiements/Harris/dugong/image_0.jpg, id
 =47, 863.225pt x 481.8pt>
@@ -757,7 +807,7 @@ g Graphic file (type jpg)
 <use ../programme/results/Task_1/rotated_experiements/Harris/dugong/image_0.jpg
 >
 Package pdftex.def Info: ../programme/results/Task_1/rotated_experiements/Harri
-s/dugong/image_0.jpg  used on input line 324.
+s/dugong/image_0.jpg  used on input line 327.
 (pdftex.def)             Requested size: 103.19843pt x 57.59294pt.
 <../programme/results/Task_1/rotated_experiements/Harris/dugong/image_1.jpg, id
 =48, 957.5775pt x 688.5725pt>
@@ -766,7 +816,7 @@ g Graphic file (type jpg)
 <use ../programme/results/Task_1/rotated_experiements/Harris/dugong/image_1.jpg
 >
 Package pdftex.def Info: ../programme/results/Task_1/rotated_experiements/Harri
-s/dugong/image_1.jpg  used on input line 330.
+s/dugong/image_1.jpg  used on input line 333.
 (pdftex.def)             Requested size: 103.19843pt x 74.1987pt.
 <../programme/results/Task_1/rotated_experiements/Harris/dugong/image_2.jpg, id
 =49, 987.69pt x 848.16875pt>
@@ -775,7 +825,7 @@ g Graphic file (type jpg)
 <use ../programme/results/Task_1/rotated_experiements/Harris/dugong/image_2.jpg
 >
 Package pdftex.def Info: ../programme/results/Task_1/rotated_experiements/Harri
-s/dugong/image_2.jpg  used on input line 336.
+s/dugong/image_2.jpg  used on input line 339.
 (pdftex.def)             Requested size: 103.19843pt x 88.61385pt.
 <../programme/results/Task_1/rotated_experiements/Harris/dugong/image_3.jpg, id
 =50, 950.55125pt x 950.55125pt>
@@ -784,7 +834,7 @@ g Graphic file (type jpg)
 <use ../programme/results/Task_1/rotated_experiements/Harris/dugong/image_3.jpg
 >
 Package pdftex.def Info: ../programme/results/Task_1/rotated_experiements/Harri
-s/dugong/image_3.jpg  used on input line 342.
+s/dugong/image_3.jpg  used on input line 345.
 (pdftex.def)             Requested size: 103.19843pt x 103.19756pt.
 <../programme/results/Task_1/scaled_experiements/Harris/dugong/diff between key
 points found.png, id=51, 1924.18875pt x 1000.73875pt>
@@ -793,7 +843,7 @@ n keypoints found.png Graphic file (type png)
 <use ../programme/results/Task_1/scaled_experiements/Harris/dugong/diff between
  keypoints found.png>
 Package pdftex.def Info: ../programme/results/Task_1/scaled_experiements/Harris
-/dugong/diff between keypoints found.png  used on input line 354.
+/dugong/diff between keypoints found.png  used on input line 357.
 (pdftex.def)             Requested size: 232.19843pt x 120.75534pt.
 <../programme/results/Task_1/scaled_experiements/Harris/dugong/hists.png, id=52
 , 1920.17375pt x 1056.94875pt>
@@ -801,7 +851,7 @@ File: ../programme/results/Task_1/scaled_experiements/Harris/dugong/hists.png G
 raphic file (type png)
 <use ../programme/results/Task_1/scaled_experiements/Harris/dugong/hists.png>
 Package pdftex.def Info: ../programme/results/Task_1/scaled_experiements/Harris
-/dugong/hists.png  used on input line 360.
+/dugong/hists.png  used on input line 363.
 (pdftex.def)             Requested size: 232.19843pt x 127.81216pt.
 <../programme/results/Task_1/scaled_experiements/Harris/dugong/diff_hists.png, 
 id=53, 1927.2pt x 1016.79875pt>
@@ -810,7 +860,7 @@ png Graphic file (type png)
 <use ../programme/results/Task_1/scaled_experiements/Harris/dugong/diff_hists.p
 ng>
 Package pdftex.def Info: ../programme/results/Task_1/scaled_experiements/Harris
-/dugong/diff_hists.png  used on input line 367.
+/dugong/diff_hists.png  used on input line 370.
 (pdftex.def)             Requested size: 232.19843pt x 122.50706pt.
 <../programme/results/Task_1/scaled_experiements/Harris/dugong/image_0.jpg, id=
 54, 863.225pt x 481.8pt>
@@ -819,7 +869,7 @@ File: ../programme/results/Task_1/scaled_experiements/Harris/dugong/image_0.jpg
 <use ../programme/results/Task_1/scaled_experiements/Harris/dugong/image_0.jpg>
 
 Package pdftex.def Info: ../programme/results/Task_1/scaled_experiements/Harris
-/dugong/image_0.jpg  used on input line 376.
+/dugong/image_0.jpg  used on input line 379.
 (pdftex.def)             Requested size: 103.19843pt x 57.59294pt.
 <../programme/results/Task_1/scaled_experiements/Harris/dugong/image_1.jpg, id=
 55, 431.6125pt x 240.9pt>
@@ -828,7 +878,7 @@ File: ../programme/results/Task_1/scaled_experiements/Harris/dugong/image_1.jpg
 <use ../programme/results/Task_1/scaled_experiements/Harris/dugong/image_1.jpg>
 
 Package pdftex.def Info: ../programme/results/Task_1/scaled_experiements/Harris
-/dugong/image_1.jpg  used on input line 382.
+/dugong/image_1.jpg  used on input line 385.
 (pdftex.def)             Requested size: 103.19843pt x 57.59662pt.
 <../programme/results/Task_1/scaled_experiements/Harris/dugong/image_2.jpg, id=
 56, 466.74374pt x 260.975pt>
@@ -837,7 +887,7 @@ File: ../programme/results/Task_1/scaled_experiements/Harris/dugong/image_2.jpg
 <use ../programme/results/Task_1/scaled_experiements/Harris/dugong/image_2.jpg>
 
 Package pdftex.def Info: ../programme/results/Task_1/scaled_experiements/Harris
-/dugong/image_2.jpg  used on input line 388.
+/dugong/image_2.jpg  used on input line 391.
 (pdftex.def)             Requested size: 103.19843pt x 57.70139pt.
 <../programme/results/Task_1/scaled_experiements/Harris/dugong/image_3.jpg, id=
 57, 502.87875pt x 281.05pt>
@@ -846,15 +896,15 @@ File: ../programme/results/Task_1/scaled_experiements/Harris/dugong/image_3.jpg
 <use ../programme/results/Task_1/scaled_experiements/Harris/dugong/image_3.jpg>
 
 Package pdftex.def Info: ../programme/results/Task_1/scaled_experiements/Harris
-/dugong/image_3.jpg  used on input line 394.
+/dugong/image_3.jpg  used on input line 397.
 (pdftex.def)             Requested size: 103.19843pt x 57.67566pt.
 
 LaTeX Warning: Reference `Diamond Harris rotated original produced image' on pa
-ge 2 undefined on input line 404.
+ge 2 undefined on input line 407.
 
 
 LaTeX Warning: Reference `the dugong images' on page 2 undefined on input line 
-404.
+407.
 
 [2
 
@@ -907,178 +957,15 @@ d.png> <../programme/results/Task_1/scaled_experiements/SIFT/diamond/image_0.jp
 g> <../programme/results/Task_1/scaled_experiements/SIFT/diamond/image_1.jpg> <
 ../programme/results/Task_1/scaled_experiements/SIFT/diamond/image_2.jpg> <../p
 rogramme/results/Task_1/scaled_experiements/SIFT/diamond/image_3.jpg>]
-<../programme/results/Task_3/diamond/image_0.jpg, id=84, 182.6825pt x 279.0425p
-t>
-File: ../programme/results/Task_3/diamond/image_0.jpg Graphic file (type jpg)
-<use ../programme/results/Task_3/diamond/image_0.jpg>
-Package pdftex.def Info: ../programme/results/Task_3/diamond/image_0.jpg  used 
-on input line 466.
-(pdftex.def)             Requested size: 103.19843pt x 157.63374pt.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Underfull \hbox (badness 10000) in paragraph at lines 467--467
-[]\OT1/ptm/m/n/10 Fig. 43: |Di-a-mond:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 467--467
-\OT1/ptm/m/n/10 Seper-ated fore-ground
- []
-
-<../programme/results/Task_3/diamond/image_1.jpg, id=85, 182.6825pt x 279.0425p
-t>
-File: ../programme/results/Task_3/diamond/image_1.jpg Graphic file (type jpg)
-<use ../programme/results/Task_3/diamond/image_1.jpg>
-Package pdftex.def Info: ../programme/results/Task_3/diamond/image_1.jpg  used 
-on input line 472.
-(pdftex.def)             Requested size: 103.19843pt x 157.63374pt.
-
-Underfull \hbox (badness 1824) in paragraph at lines 473--473
-[]\OT1/ptm/m/n/10 Fig. 44: |Di-a-mond: the
- []
-
-[7 <../programme/results/Task_1/rotated_experiements/Harris/dugong/num_corners.
-png> <../programme/results/Task_1/rotated_experiements/Harris/dugong/diff_hists
-.png> <../programme/results/Task_1/rotated_experiements/Harris/dugong/hists.png
-> <../programme/results/Task_1/rotated_experiements/Harris/dugong/image_0.jpg> 
-<../programme/results/Task_1/rotated_experiements/Harris/dugong/image_1.jpg> <.
-./programme/results/Task_1/rotated_experiements/Harris/dugong/image_2.jpg> <../
-programme/results/Task_1/rotated_experiements/Harris/dugong/image_3.jpg>]
-<../programme/results/Task_3/dugong/image_0.jpg, id=93, 863.225pt x 481.8pt>
-File: ../programme/results/Task_3/dugong/image_0.jpg Graphic file (type jpg)
-<use ../programme/results/Task_3/dugong/image_0.jpg>
-Package pdftex.def Info: ../programme/results/Task_3/dugong/image_0.jpg  used o
-n input line 491.
-(pdftex.def)             Requested size: 206.39685pt x 115.19325pt.
-<../programme/results/Task_3/dugong/image_1.jpg, id=94, 863.225pt x 481.8pt>
-File: ../programme/results/Task_3/dugong/image_1.jpg Graphic file (type jpg)
-<use ../programme/results/Task_3/dugong/image_1.jpg>
-Package pdftex.def Info: ../programme/results/Task_3/dugong/image_1.jpg  used o
-n input line 497.
-(pdftex.def)             Requested size: 206.39685pt x 115.19325pt.
-<../programme/results/Task_4/diamond/HSV/image_1.jpg, id=95, 182.6825pt x 279.0
-425pt>
-File: ../programme/results/Task_4/diamond/HSV/image_1.jpg Graphic file (type jp
-g)
-<use ../programme/results/Task_4/diamond/HSV/image_1.jpg>
-Package pdftex.def Info: ../programme/results/Task_4/diamond/HSV/image_1.jpg  u
-sed on input line 513.
-(pdftex.def)             Requested size: 103.19843pt x 157.63374pt.
-
-Underfull \hbox (badness 2096) in paragraph at lines 514--514
-[]\OT1/ptm/m/n/10 Fig. 47: |Di-a-mond: 1st
- []
-
-<../programme/results/Task_4/diamond/HSV/image_2.jpg, id=96, 182.6825pt x 279.0
-425pt>
-File: ../programme/results/Task_4/diamond/HSV/image_2.jpg Graphic file (type jp
-g)
-<use ../programme/results/Task_4/diamond/HSV/image_2.jpg>
-Package pdftex.def Info: ../programme/results/Task_4/diamond/HSV/image_2.jpg  u
-sed on input line 519.
-(pdftex.def)             Requested size: 103.19843pt x 157.63374pt.
-<../programme/results/Task_4/diamond/BGR/image_2.jpg, id=97, 182.6825pt x 279.0
-425pt>
-File: ../programme/results/Task_4/diamond/BGR/image_2.jpg Graphic file (type jp
-g)
-<use ../programme/results/Task_4/diamond/BGR/image_2.jpg>
-Package pdftex.def Info: ../programme/results/Task_4/diamond/BGR/image_2.jpg  u
-sed on input line 527.
-(pdftex.def)             Requested size: 103.19843pt x 157.63374pt.
-<../programme/results/Task_4/diamond/contours/image_0.jpg, id=98, 182.6825pt x 
-279.0425pt>
-File: ../programme/results/Task_4/diamond/contours/image_0.jpg Graphic file (ty
-pe jpg)
-<use ../programme/results/Task_4/diamond/contours/image_0.jpg>
-Package pdftex.def Info: ../programme/results/Task_4/diamond/contours/image_0.j
-pg  used on input line 535.
-(pdftex.def)             Requested size: 103.19843pt x 157.63374pt.
-<../programme/results/Task_4/dugong/HSV/image_1.jpg, id=99, 863.225pt x 481.8pt
->
-File: ../programme/results/Task_4/dugong/HSV/image_1.jpg Graphic file (type jpg
-)
-<use ../programme/results/Task_4/dugong/HSV/image_1.jpg>
-Package pdftex.def Info: ../programme/results/Task_4/dugong/HSV/image_1.jpg  us
-ed on input line 546.
-(pdftex.def)             Requested size: 103.19843pt x 57.59294pt.
-
-Underfull \hbox (badness 5787) in paragraph at lines 547--547
-[]\OT1/ptm/m/n/10 Fig. 51: |Dugong: 1st
- []
-
-<../programme/results/Task_4/dugong/HSV/image_2.jpg, id=100, 863.225pt x 481.8p
-t>
-File: ../programme/results/Task_4/dugong/HSV/image_2.jpg Graphic file (type jpg
-)
-<use ../programme/results/Task_4/dugong/HSV/image_2.jpg>
-Package pdftex.def Info: ../programme/results/Task_4/dugong/HSV/image_2.jpg  us
-ed on input line 552.
-(pdftex.def)             Requested size: 103.19843pt x 57.59294pt.
-
-Underfull \hbox (badness 3058) in paragraph at lines 553--553
-[]\OT1/ptm/m/n/10 Fig. 52: |Dugong: 2nd
- []
-
-<../programme/results/Task_4/dugong/HSV/image_3.jpg, id=101, 863.225pt x 481.8p
-t>
-File: ../programme/results/Task_4/dugong/HSV/image_3.jpg Graphic file (type jpg
-)
-<use ../programme/results/Task_4/dugong/HSV/image_3.jpg>
-Package pdftex.def Info: ../programme/results/Task_4/dugong/HSV/image_3.jpg  us
-ed on input line 558.
-(pdftex.def)             Requested size: 103.19843pt x 57.59294pt.
-
-Underfull \hbox (badness 4279) in paragraph at lines 559--559
-[]\OT1/ptm/m/n/10 Fig. 53: |Dugong: 3rd
- []
-
-<../programme/results/Task_4/dugong/BGR/image_1.jpg, id=102, 863.225pt x 481.8p
-t>
-File: ../programme/results/Task_4/dugong/BGR/image_1.jpg Graphic file (type jpg
-)
-<use ../programme/results/Task_4/dugong/BGR/image_1.jpg>
-Package pdftex.def Info: ../programme/results/Task_4/dugong/BGR/image_1.jpg  us
-ed on input line 568.
-(pdftex.def)             Requested size: 103.19843pt x 57.59294pt.
-
-Underfull \hbox (badness 5787) in paragraph at lines 569--569
-[]\OT1/ptm/m/n/10 Fig. 54: |Dugong: 1st
- []
-
-<../programme/results/Task_4/dugong/BGR/image_2.jpg, id=103, 863.225pt x 481.8p
-t>
-File: ../programme/results/Task_4/dugong/BGR/image_2.jpg Graphic file (type jpg
-)
-<use ../programme/results/Task_4/dugong/BGR/image_2.jpg>
-Package pdftex.def Info: ../programme/results/Task_4/dugong/BGR/image_2.jpg  us
-ed on input line 574.
-(pdftex.def)             Requested size: 103.19843pt x 57.59294pt.
-
-Underfull \hbox (badness 3058) in paragraph at lines 575--575
-[]\OT1/ptm/m/n/10 Fig. 55: |Dugong: 2nd
- []
-
-<../programme/results/Task_4/dugong/BGR/image_3.jpg, id=104, 863.225pt x 481.8p
-t>
-File: ../programme/results/Task_4/dugong/BGR/image_3.jpg Graphic file (type jpg
-)
-<use ../programme/results/Task_4/dugong/BGR/image_3.jpg>
-Package pdftex.def Info: ../programme/results/Task_4/dugong/BGR/image_3.jpg  us
-ed on input line 580.
-(pdftex.def)             Requested size: 103.19843pt x 57.59294pt.
-
-Underfull \hbox (badness 4279) in paragraph at lines 581--581
-[]\OT1/ptm/m/n/10 Fig. 56: |Dugong: 3rd
- []
-
-<../programme/results/Task_4/dugong/contours/image_0.jpg, id=105, 863.225pt x 4
-81.8pt>
-File: ../programme/results/Task_4/dugong/contours/image_0.jpg Graphic file (typ
-e jpg)
-<use ../programme/results/Task_4/dugong/contours/image_0.jpg>
-Package pdftex.def Info: ../programme/results/Task_4/dugong/contours/image_0.jp
-g  used on input line 589.
-(pdftex.def)             Requested size: 258.0pt x 143.99709pt.
-
+ [7 <../programme/results/Task_1/rotated_experiements/Harris/dugong/num_corners
+.png> <../programme/results/Task_1/rotated_experiements/Harris/dugong/diff_hist
+s.png> <../programme/results/Task_1/rotated_experiements/Harris/dugong/hists.pn
+g> <../programme/results/Task_1/rotated_experiements/Harris/dugong/image_0.jpg>
+ <../programme/results/Task_1/rotated_experiements/Harris/dugong/image_1.jpg> <
+../programme/results/Task_1/rotated_experiements/Harris/dugong/image_2.jpg> <..
+/programme/results/Task_1/rotated_experiements/Harris/dugong/image_3.jpg>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [8 <../programme/results/Task_1/scaled_experiements/Harris/dugong/diff between
@@ -1089,69 +976,234 @@ ugong/hists.png> <../programme/results/Task_1/scaled_experiements/Harris/dugong
 age_1.jpg> <../programme/results/Task_1/scaled_experiements/Harris/dugong/image
 _2.jpg> <../programme/results/Task_1/scaled_experiements/Harris/dugong/image_3.
 jpg>]
-[9 <../programme/results/Task_3/diamond/image_0.jpg> <../programme/results/Task
-_3/diamond/image_1.jpg> <../programme/results/Task_3/dugong/image_0.jpg> <../pr
-ogramme/results/Task_3/dugong/image_1.jpg> <../programme/results/Task_4/diamond
-/HSV/image_1.jpg> <../programme/results/Task_4/diamond/HSV/image_2.jpg>]
-[10 <../programme/results/Task_4/diamond/BGR/image_2.jpg> <../programme/results
+[9]
+<../programme/results/Task_3/diamond/image_0.jpg, id=101, 182.6825pt x 279.0425
+pt>
+File: ../programme/results/Task_3/diamond/image_0.jpg Graphic file (type jpg)
+<use ../programme/results/Task_3/diamond/image_0.jpg>
+Package pdftex.def Info: ../programme/results/Task_3/diamond/image_0.jpg  used 
+on input line 558.
+(pdftex.def)             Requested size: 103.19843pt x 157.63374pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 559--559
+[]\OT1/ptm/m/n/10 Fig. 43: |Di-a-mond:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 559--559
+\OT1/ptm/m/n/10 Seper-ated fore-ground
+ []
+
+<../programme/results/Task_3/diamond/image_1.jpg, id=102, 182.6825pt x 279.0425
+pt>
+File: ../programme/results/Task_3/diamond/image_1.jpg Graphic file (type jpg)
+<use ../programme/results/Task_3/diamond/image_1.jpg>
+Package pdftex.def Info: ../programme/results/Task_3/diamond/image_1.jpg  used 
+on input line 564.
+(pdftex.def)             Requested size: 103.19843pt x 157.63374pt.
+
+Underfull \hbox (badness 1824) in paragraph at lines 565--565
+[]\OT1/ptm/m/n/10 Fig. 44: |Di-a-mond: the
+ []
+
+<../programme/results/Task_3/dugong/image_0.jpg, id=103, 863.225pt x 481.8pt>
+File: ../programme/results/Task_3/dugong/image_0.jpg Graphic file (type jpg)
+<use ../programme/results/Task_3/dugong/image_0.jpg>
+Package pdftex.def Info: ../programme/results/Task_3/dugong/image_0.jpg  used o
+n input line 583.
+(pdftex.def)             Requested size: 206.39685pt x 115.19325pt.
+<../programme/results/Task_3/dugong/image_1.jpg, id=104, 863.225pt x 481.8pt>
+File: ../programme/results/Task_3/dugong/image_1.jpg Graphic file (type jpg)
+<use ../programme/results/Task_3/dugong/image_1.jpg>
+Package pdftex.def Info: ../programme/results/Task_3/dugong/image_1.jpg  used o
+n input line 589.
+(pdftex.def)             Requested size: 206.39685pt x 115.19325pt.
+<../programme/results/Task_4/diamond/HSV/image_1.jpg, id=105, 182.6825pt x 279.
+0425pt>
+File: ../programme/results/Task_4/diamond/HSV/image_1.jpg Graphic file (type jp
+g)
+<use ../programme/results/Task_4/diamond/HSV/image_1.jpg>
+Package pdftex.def Info: ../programme/results/Task_4/diamond/HSV/image_1.jpg  u
+sed on input line 605.
+(pdftex.def)             Requested size: 103.19843pt x 157.63374pt.
+
+Underfull \hbox (badness 2096) in paragraph at lines 606--606
+[]\OT1/ptm/m/n/10 Fig. 47: |Di-a-mond: 1st
+ []
+
+<../programme/results/Task_4/diamond/HSV/image_2.jpg, id=106, 182.6825pt x 279.
+0425pt>
+File: ../programme/results/Task_4/diamond/HSV/image_2.jpg Graphic file (type jp
+g)
+<use ../programme/results/Task_4/diamond/HSV/image_2.jpg>
+Package pdftex.def Info: ../programme/results/Task_4/diamond/HSV/image_2.jpg  u
+sed on input line 611.
+(pdftex.def)             Requested size: 103.19843pt x 157.63374pt.
+<../programme/results/Task_4/diamond/BGR/image_2.jpg, id=107, 182.6825pt x 279.
+0425pt>
+File: ../programme/results/Task_4/diamond/BGR/image_2.jpg Graphic file (type jp
+g)
+<use ../programme/results/Task_4/diamond/BGR/image_2.jpg>
+Package pdftex.def Info: ../programme/results/Task_4/diamond/BGR/image_2.jpg  u
+sed on input line 619.
+(pdftex.def)             Requested size: 103.19843pt x 157.63374pt.
+<../programme/results/Task_4/diamond/contours/image_0.jpg, id=108, 182.6825pt x
+ 279.0425pt>
+File: ../programme/results/Task_4/diamond/contours/image_0.jpg Graphic file (ty
+pe jpg)
+<use ../programme/results/Task_4/diamond/contours/image_0.jpg>
+Package pdftex.def Info: ../programme/results/Task_4/diamond/contours/image_0.j
+pg  used on input line 627.
+(pdftex.def)             Requested size: 103.19843pt x 157.63374pt.
+<../programme/results/Task_4/dugong/HSV/image_1.jpg, id=109, 863.225pt x 481.8p
+t>
+File: ../programme/results/Task_4/dugong/HSV/image_1.jpg Graphic file (type jpg
+)
+<use ../programme/results/Task_4/dugong/HSV/image_1.jpg>
+Package pdftex.def Info: ../programme/results/Task_4/dugong/HSV/image_1.jpg  us
+ed on input line 638.
+(pdftex.def)             Requested size: 103.19843pt x 57.59294pt.
+
+Underfull \hbox (badness 5787) in paragraph at lines 639--639
+[]\OT1/ptm/m/n/10 Fig. 51: |Dugong: 1st
+ []
+
+<../programme/results/Task_4/dugong/HSV/image_2.jpg, id=110, 863.225pt x 481.8p
+t>
+File: ../programme/results/Task_4/dugong/HSV/image_2.jpg Graphic file (type jpg
+)
+<use ../programme/results/Task_4/dugong/HSV/image_2.jpg>
+Package pdftex.def Info: ../programme/results/Task_4/dugong/HSV/image_2.jpg  us
+ed on input line 644.
+(pdftex.def)             Requested size: 103.19843pt x 57.59294pt.
+
+Underfull \hbox (badness 3058) in paragraph at lines 645--645
+[]\OT1/ptm/m/n/10 Fig. 52: |Dugong: 2nd
+ []
+
+<../programme/results/Task_4/dugong/HSV/image_3.jpg, id=111, 863.225pt x 481.8p
+t>
+File: ../programme/results/Task_4/dugong/HSV/image_3.jpg Graphic file (type jpg
+)
+<use ../programme/results/Task_4/dugong/HSV/image_3.jpg>
+Package pdftex.def Info: ../programme/results/Task_4/dugong/HSV/image_3.jpg  us
+ed on input line 650.
+(pdftex.def)             Requested size: 103.19843pt x 57.59294pt.
+
+Underfull \hbox (badness 4279) in paragraph at lines 651--651
+[]\OT1/ptm/m/n/10 Fig. 53: |Dugong: 3rd
+ []
+
+<../programme/results/Task_4/dugong/BGR/image_1.jpg, id=112, 863.225pt x 481.8p
+t>
+File: ../programme/results/Task_4/dugong/BGR/image_1.jpg Graphic file (type jpg
+)
+<use ../programme/results/Task_4/dugong/BGR/image_1.jpg>
+Package pdftex.def Info: ../programme/results/Task_4/dugong/BGR/image_1.jpg  us
+ed on input line 660.
+(pdftex.def)             Requested size: 103.19843pt x 57.59294pt.
+
+Underfull \hbox (badness 5787) in paragraph at lines 661--661
+[]\OT1/ptm/m/n/10 Fig. 54: |Dugong: 1st
+ []
+
+<../programme/results/Task_4/dugong/BGR/image_2.jpg, id=113, 863.225pt x 481.8p
+t>
+File: ../programme/results/Task_4/dugong/BGR/image_2.jpg Graphic file (type jpg
+)
+<use ../programme/results/Task_4/dugong/BGR/image_2.jpg>
+Package pdftex.def Info: ../programme/results/Task_4/dugong/BGR/image_2.jpg  us
+ed on input line 666.
+(pdftex.def)             Requested size: 103.19843pt x 57.59294pt.
+
+Underfull \hbox (badness 3058) in paragraph at lines 667--667
+[]\OT1/ptm/m/n/10 Fig. 55: |Dugong: 2nd
+ []
+
+<../programme/results/Task_4/dugong/BGR/image_3.jpg, id=114, 863.225pt x 481.8p
+t>
+File: ../programme/results/Task_4/dugong/BGR/image_3.jpg Graphic file (type jpg
+)
+<use ../programme/results/Task_4/dugong/BGR/image_3.jpg>
+Package pdftex.def Info: ../programme/results/Task_4/dugong/BGR/image_3.jpg  us
+ed on input line 672.
+(pdftex.def)             Requested size: 103.19843pt x 57.59294pt.
+
+Underfull \hbox (badness 4279) in paragraph at lines 673--673
+[]\OT1/ptm/m/n/10 Fig. 56: |Dugong: 3rd
+ []
+
+<../programme/results/Task_4/dugong/contours/image_0.jpg, id=115, 863.225pt x 4
+81.8pt>
+File: ../programme/results/Task_4/dugong/contours/image_0.jpg Graphic file (typ
+e jpg)
+<use ../programme/results/Task_4/dugong/contours/image_0.jpg>
+Package pdftex.def Info: ../programme/results/Task_4/dugong/contours/image_0.jp
+g  used on input line 681.
+(pdftex.def)             Requested size: 258.0pt x 143.99709pt.
+[10] [11 <../programme/results/Task_3/diamond/image_0.jpg> <../programme/result
+s/Task_3/diamond/image_1.jpg> <../programme/results/Task_3/dugong/image_0.jpg> 
+<../programme/results/Task_3/dugong/image_1.jpg> <../programme/results/Task_4/d
+iamond/HSV/image_1.jpg> <../programme/results/Task_4/diamond/HSV/image_2.jpg>]
+[12 <../programme/results/Task_4/diamond/BGR/image_2.jpg> <../programme/results
 /Task_4/diamond/contours/image_0.jpg> <../programme/results/Task_4/dugong/HSV/i
 mage_1.jpg> <../programme/results/Task_4/dugong/HSV/image_2.jpg> <../programme/
 results/Task_4/dugong/HSV/image_3.jpg> <../programme/results/Task_4/dugong/BGR/
 image_1.jpg> <../programme/results/Task_4/dugong/BGR/image_2.jpg> <../programme
-/results/Task_4/dugong/BGR/image_3.jpg>] [11 <../programme/results/Task_4/dugon
+/results/Task_4/dugong/BGR/image_3.jpg>] [13 <../programme/results/Task_4/dugon
 g/contours/image_0.jpg>]
-Underfull \hbox (badness 3240) in paragraph at lines 599--600
+Underfull \hbox (badness 3240) in paragraph at lines 692--693
 []\OT1/ptm/m/n/8 Dr. S. An. 2020. Ma-chine Per-cep-tion Lec-ture 03 [Pow-er-Poi
 nt
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 599--600
+Underfull \hbox (badness 10000) in paragraph at lines 692--693
 \OT1/ptm/m/n/8 southeast-2.amazonaws.com/5dc3e34515a0e/4348643?response-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 599--600
+Underfull \hbox (badness 10000) in paragraph at lines 692--693
 \OT1/ptm/m/n/8 cache-control=private%2C%20max-age%3D21600&response-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 599--600
+Underfull \hbox (badness 10000) in paragraph at lines 692--693
 \OT1/ptm/m/n/8 content-disposition=inline%3B%20filename%2A%3DUTF-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 599--600
+Underfull \hbox (badness 10000) in paragraph at lines 692--693
 \OT1/ptm/m/n/8 8%27%27lecture03[]feature[]detection.pdf&response-content-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 599--600
+Underfull \hbox (badness 10000) in paragraph at lines 692--693
 \OT1/ptm/m/n/8 type=application%2Fpdf&X-Amz-Algorithm=AWS4-HMAC-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 599--600
+Underfull \hbox (badness 10000) in paragraph at lines 692--693
 \OT1/ptm/m/n/8 SHA256&X-Amz-Date=20200927T060000Z&X-Amz-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 599--600
+Underfull \hbox (badness 10000) in paragraph at lines 692--693
 \OT1/ptm/m/n/8 SignedHeaders=host&X-Amz-Expires=21600&X-Amz-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 599--600
+Underfull \hbox (badness 10000) in paragraph at lines 692--693
 \OT1/ptm/m/n/8 Credential=AKIAYDKQORRYZBCCQFY5%2F20200927%2Fap-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 599--600
+Underfull \hbox (badness 10000) in paragraph at lines 692--693
 \OT1/ptm/m/n/8 southeast-2%2Fs3%2Faws4[]request&X-Amz-
  []
 
 
-Overfull \hbox (46.34296pt too wide) in paragraph at lines 599--600
+Overfull \hbox (46.34296pt too wide) in paragraph at lines 692--693
 \OT1/ptm/m/n/8 Signature=bcf107d5e76759efe45687b516ac725158189de0af558d0a7a798d
 f1723f4299 
  []
@@ -1160,199 +1212,189 @@ f1723f4299
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 601--602
+Underfull \hbox (badness 10000) in paragraph at lines 694--695
 []\OT1/ptm/m/n/8 A. Mord-vin-stev and K. Abid. "Har-ris Cor-ner de-tec-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 601--602
+Underfull \hbox (badness 10000) in paragraph at lines 694--695
 \OT1/ptm/m/n/8 tion". OpenCV-Python Tu-to-ri-als. https://opencv-python-
  []
 
 
-Overfull \hbox (92.39612pt too wide) in paragraph at lines 601--602
+Overfull \hbox (92.39612pt too wide) in paragraph at lines 694--695
 \OT1/ptm/m/n/8 tutroals.readthedocs.io/en/latest/py[]tutorials/py[]feature2d/py
 []features[]harris/py[]features[]harris.html
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 603--604
+Underfull \hbox (badness 10000) in paragraph at lines 696--697
 []\OT1/ptm/m/n/8 OpenCV. "In-tro-duc-tion to SIFT (Scale-Invariant Fea-ture
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 603--604
+Underfull \hbox (badness 10000) in paragraph at lines 696--697
 \OT1/ptm/m/n/8 Trans-form)". OpenCV-Open source Com-puter vi-sion.
  []
 
 
-Overfull \hbox (56.54938pt too wide) in paragraph at lines 605--606
+Overfull \hbox (56.54938pt too wide) in paragraph at lines 698--699
 \OT1/ptm/m/n/8 https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.434.48
 16&rep=rep1&type=pdf 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 607--608
-[]\OT1/ptm/m/n/8 A. Rose-brock. De-cem-ber, 7, 2015. "Lo-cal Bi-nary
+Underfull \hbox (badness 10000) in paragraph at lines 700--701
+[]\OT1/ptm/m/n/8 A. Rose-brock. De-cem-ber, 2015. "Lo-cal Bi-nary Pat-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 607--608
-\OT1/ptm/m/n/8 Pat-terns with Python & OpenCV". py-im-age-search.
+Underfull \hbox (badness 10000) in paragraph at lines 700--701
+\OT1/ptm/m/n/8 terns with Python & OpenCV". py-im-age-search.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 607--608
+Underfull \hbox (badness 10000) in paragraph at lines 700--701
 \OT1/ptm/m/n/8 https://www.pyimagesearch.com/2015/12/07/local-binary-patterns-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 611--612
+Underfull \hbox (badness 10000) in paragraph at lines 704--705
 []\OT1/ptm/m/n/8 Kanan C, Cot-trell GW (2012) Color-to-Grayscale: Does the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 613--614
+Underfull \hbox (badness 10000) in paragraph at lines 706--707
 \OT1/ptm/m/n/8 Avail-able: https://learn-ap-southeast-2-prod-fleet01-xythos.s3.
 ap-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 613--614
+Underfull \hbox (badness 10000) in paragraph at lines 706--707
 \OT1/ptm/m/n/8 southeast-2.amazonaws.com/5dc3e34515a0e/6301343?response-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 613--614
+Underfull \hbox (badness 10000) in paragraph at lines 706--707
 \OT1/ptm/m/n/8 cache-control=private%2C%20max-age%3D21600&response-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 613--614
+Underfull \hbox (badness 10000) in paragraph at lines 706--707
 \OT1/ptm/m/n/8 content-disposition=inline%3B%20filename%2A%3DUTF-
  []
 
 
-Overfull \hbox (10.37453pt too wide) in paragraph at lines 613--614
+Overfull \hbox (10.37453pt too wide) in paragraph at lines 706--707
 \OT1/ptm/m/n/8 8%27%27lecture04[]feature[]extraction[]2019%25281%2529.pdf&respo
 nse-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 613--614
+Underfull \hbox (badness 10000) in paragraph at lines 706--707
 \OT1/ptm/m/n/8 content-type=application%2Fpdf&X-Amz-Algorithm=AWS4-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 613--614
+Underfull \hbox (badness 10000) in paragraph at lines 706--707
 \OT1/ptm/m/n/8 HMAC-SHA256&X-Amz-Date=20201005T060000Z&X-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 613--614
+Underfull \hbox (badness 10000) in paragraph at lines 706--707
 \OT1/ptm/m/n/8 Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 613--614
+Underfull \hbox (badness 10000) in paragraph at lines 706--707
 \OT1/ptm/m/n/8 Credential=AKIAYDKQORRYZBCCQFY5%2F20201005%2Fap-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 613--614
+Underfull \hbox (badness 10000) in paragraph at lines 706--707
 \OT1/ptm/m/n/8 southeast-2%2Fs3%2Faws4[]request&X-Amz-
  []
 
 
-Overfull \hbox (47.22284pt too wide) in paragraph at lines 613--614
+Overfull \hbox (47.22284pt too wide) in paragraph at lines 706--707
 \OT1/ptm/m/n/8 Signature=c3d82f1e880c0787db8eb858336ae4e82df4d25ad29ea5a9563494
 a6f57cc6d4 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 616--617
+Underfull \hbox (badness 10000) in paragraph at lines 709--710
 []\OT1/ptm/m/n/8 C. H. Chan. "Multi-scale Lo-cal Bi-nary Pat-tern His-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 616--617
+Underfull \hbox (badness 10000) in paragraph at lines 709--710
 \OT1/ptm/m/n/8 togram for Face Recog-ni-tion". The Uni-ver-stiy of Sur-rey.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 616--617
+Underfull \hbox (badness 10000) in paragraph at lines 709--710
 \OT1/ptm/m/n/8 Sur-rey, Guild-ford, U.K. gu27xh. Septem-ber 2008. [On-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 616--617
+Underfull \hbox (badness 10000) in paragraph at lines 709--710
 \OT1/ptm/m/n/8 line]. Avail-able: https://www.researchgate.net/profile/Chi-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 616--617
+Underfull \hbox (badness 10000) in paragraph at lines 709--710
 \OT1/ptm/m/n/8 Ho[]Chan/publication/224936218[]Multi-
  []
 
 
-Overfull \hbox (111.39716pt too wide) in paragraph at lines 616--617
+Overfull \hbox (111.39716pt too wide) in paragraph at lines 709--710
 \OT1/ptm/m/n/8 scale[]Local[]Binary[]Pattern[]Histograms[]for[]Face[]Recognitio
 n/links/00b495225c98186d23000000/Multi-
  []
 
 
-Overfull \hbox (420.96425pt too wide) in paragraph at lines 618--619
+Overfull \hbox (420.96425pt too wide) in paragraph at lines 712--713
 \OT1/ptm/m/n/8 https://reader.elsevier.com/reader/sd/pii/S0925231215006475?toke
 n=53A42C9FF9C438422CB044F70C414EA9C464364C8C5A90D9A510E9D71B152E4E0ABB5302BAA3E
 B4C035E9A77008BC0CC 
  []
 
 
-** Conference Paper **
-Before submitting the final camera ready copy, remember to:
-
- 1. Manually equalize the lengths of two columns on the last page
- of your paper;
-
- 2. Ensure that any PostScript and/or PDF output post-processing
- uses only Type 1 fonts and that every step in the generation
- process uses the appropriate paper size.
-
-[12
-
-] (conference_101719.aux)
-
-LaTeX Warning: There were undefined references.
+Underfull \hbox (badness 3199) in paragraph at lines 716--717
+[]\OT1/ptm/m/n/8 S. Mallick. "His-togram of Ori-ented Gra-di-ents". learn OpenC
+V.
+ []
 
 
-LaTeX Warning: There were multiply-defined labels.
+Underfull \hbox (badness 2181) in paragraph at lines 716--717
+\OT1/ptm/m/n/8 De-cem-ber 2016. https://www.learnopencv.com/histogram-of-orient
+ed-
+ []
 
- ) 
+** WARNING: Ignoring useless \section in Appendix (line 725).
+** WARNING: Ignoring useless \section in Appendix (line 727).
+** WARNING: Ignoring useless \section in Appendix (line 729).
+
+! Package Listings Error: File `*(.tex)' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: tex)
+
+Enter file name: 
+! Emergency stop.
+<read *> 
+         
+l.731 	\lstinputlisting*
+                        [language=python]{../programme/main.py}
+*** (cannot \read from terminal in nonstop modes)
+
+ 
 Here is how much of TeX's memory you used:
- 6801 strings out of 480896
- 135492 string characters out of 2898165
- 378296 words of memory out of 3000000
- 22584 multiletter control sequences out of 15000+200000
+ 8279 strings out of 480896
+ 156867 string characters out of 2898165
+ 403232 words of memory out of 3000000
+ 24047 multiletter control sequences out of 15000+200000
  565618 words of font info for 82 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 43i,9n,48p,2170b,332s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/tawan/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc
-}<C:/Users/tawan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmex10.pfb><C:/Users/tawan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmmi10.pfb><C:/Users/tawan/AppData/Local/Programs/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/tawan/AppData/Local/Programs/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/tawan/AppData/Loca
-l/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/tawan/A
-ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/
-Users/tawan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
-sy7.pfb><C:/Users/tawan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times
-/utmb8a.pfb><C:/Users/tawan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/t
-imes/utmbi8a.pfb><C:/Users/tawan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
-urw/times/utmr8a.pfb><C:/Users/tawan/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
-pe1/urw/times/utmri8a.pfb>
-Output written on conference_101719.pdf (12 pages, 2920435 bytes).
-PDF statistics:
- 160 PDF objects out of 1000 (max. 8388607)
- 0 named destinations out of 1000 (max. 500000)
- 281 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+ 43i,9n,48p,2170b,335s stack positions out of 5000i,500n,10000p,200000b,50000s
+!  ==> Fatal error occurred, no output PDF file produced!
