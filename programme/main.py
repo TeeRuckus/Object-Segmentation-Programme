@@ -333,94 +333,67 @@ def activity_one_SIFT_scaled(im, **kwargs):
     cv.waitKey()
     clean()
 
-def activity_two_hog(im, pt1, pt2):
+def activity_two_hog_scaled(im, pt1, pt2):
     im = cv.imread(im)
     im_copy = im.copy()
 
-    #-------------------------------------------------------------------------------
-    #SET UP
-    #-------------------------------------------------------------------------------
+    cv.imshow('original', im_copy)
 
-    #I have choosen the two as the intresting keypoint hence, extracting the two
-    cv.imshow('diamond', im_copy)
-    #pre-processing: the image must have a ratio of 1:2 for the hog to work
-    #properly
 
-    #need to pad the image, so we can extract the two by itself without the
-    #diamond, and to maintain a ratio of 1:2
+
+    scaled_features = [resize_img(im_copy, factor/24) for factor in range(12,36,1)]
+    cropped_features= [crop_img(ii, pt1, pt2) for ii in scaled_features]
+    show_img_ls(cropped_features, "")
+
+    check_sizes(cropped_features)
     feature = crop_img(im_copy, pt1, pt2)
-    feature = pad_image(feature, 4, 1)
-    cv.imshow('feature', feature)
-    print(feature.shape)
-
-#    rotated_twos = [rotate_image_b(two.copy(), angle) for angle in range(15,360,15)]
-#
-    #focessing the images, too maintain that image ratio of 1:2
-    #rotated_twos = [hog_preprocessing(ii) for ii in rotated_twos]
-
-    #using the recommended values for hog
-
-    og_hog = hog_descriptor(feature,
-            cell_size=(5,5),
-            block_size=(10,10),
-            block_stride=(5,5),
-            num_bins=9,
-            deriv_aperature=1,
-            win_sigma=-1,
-            hist_norm_type=0,
-            mag_thresh=0.2,
-            gamma=1,
-            num_lvls=64,
-            signed_grad=True )
-
-    og_des = og_hog.compute(feature)
-
-def hog_play(im, pt1, pt2):
-    im = cv.imread(im)
-    im_copy = im.copy()
-    cv.imshow('orginal image', im_copy)
-
-    feature = crop_img(im_copy, pt1, pt2)
-    feature = pad_image(feature, 4, 1)
     print(feature.shape)
     cv.imshow('feature', feature)
 
     hog = cv.HOGDescriptor()
-    des = hog.compute(im_copy)
+    des_og = hog.compute(feature)
 
+    h_ls = [hog.compute(ii) for ii in cropped_features[7:]]
+    comp = [cv.norm(des_og - ii) for ii in h_ls]
 
-def activity_two_rotated(im):
+    exp_one = show_diff_dist(comp, title='Showing the difference between orignal descriptors and scaled descriptors')
+
+    exp_one.show()
+    cv.waitKey()
+    clean()
+
+def activity_two_hog_rotated(im, pt1, pt2):
     im = cv.imread(im)
     im_copy = im.copy()
+
+    cv.imshow('original', im_copy)
 
     #-------------------------------------------------------------------------------
     #SET UP
     #-------------------------------------------------------------------------------
 
     #I have choosen the two as the intresting keypoint hence, extracting the two
-    cv.imshow('diamond', im_copy)
     #pre-processing: the image must have a ratio of 1:2 for the hog to work
     #properly
 
     #need to pad the image, so we can extract the two by itself without the
     #diamond, and to maintain a ratio of 1:2
-    two = crop_img(im_copy, (8, 1), (28, 46))
-    two = pad_image(two, 4, 1)
+    feature = crop_img(im_copy, pt1, pt2)
+    print(feature.shape)
+    cv.imshow('feature', feature)
 
-    rotated_twos = [rotate_image_b(two.copy(), angle) for angle in range(15,360,15)]
-    rotated_twos.insert(0, two)
-    #to keep the experiements fair, we have to test the operations on the same
-    #scalling
+    rotated_features = [rotate_image(feature.copy(), ii) for ii in range(15,360,15)]
 
-    #MAKE SURE THAT YOU'RE USING THE SAME IMAGES AS HOG
-    rotated_twos = [hog_preprocessing(ii) for ii in rotated_twos]
-    rotated_twos_SIFT_kp = [SIFT(ii)[1] for ii in rotated_twos]
+    hog = cv.HOGDescriptor()
+    des_og = hog.compute(feature.copy())
+    h_ls = [hog.compute(ii) for ii in rotated_features]
+    comp = [cv.norm(des_og - ii) for ii in h_ls]
+    exp_one = show_diff_dist(comp, title='showing the difference between orignal hog descriptor and rotated hog descriptor')
 
-    #EXPERIMENT ONE: finding the number of features extracted in the image
-    lens_imgs = [len(ii) for ii in rotated_twos_SIFT_kp]
-    show_diff_dist(lens_imgs, title='number of keypoints found for each image')
+    exp_one.show()
+    cv.waitKey()
+    clean()
 
-    #EXPERIMENT TWO:
 
 def display_kp_ls(in_ls):
     for ii, num_kp in  enumerate(in_ls):
@@ -877,9 +850,12 @@ if __name__ == '__main__':
     #TASK TWO: Diamond
     #---------------------------------------------------------------------------
     if task_num == 2 and image == 'DI':
-        activity_two_hog(imList[0], (8,1), (28,46))
-        activity_two_rotated(imList[0])
-        hog_play(imList[0], (8,1), (28,46))
+        #activity_two_hog_rotated(imList[0], (8,1), (69,128))
+        activity_two_hog_scaled(imList[0], (8,1), (72, 129))
+
+    if task_num == 2 and image == 'DU':
+        #activity_two_hog_rotated(imList[1], (393,237), (457, 365))
+        activity_two_hog_scaled(imList[1], (393,237), (457,365))
 
     #---------------------------------------------------------------------------
     #TASK Three:
